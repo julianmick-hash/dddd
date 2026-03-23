@@ -139,6 +139,11 @@
     .footer-link:hover { color: rgba(247,244,239,0.6); }
 
     /* ================================================
+       ANIMATIONS
+    ================================================ */
+    @keyframes spinCompass { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* ================================================
        FADE UTILITY
     ================================================ */
     .fade-up { opacity: 0; transform: translateY(20px); }
@@ -171,7 +176,7 @@
       </div>
     </div>
     <a href="./ueber-uns.html" class="active">Über uns</a>
-    <a href="./index.html#referenzen">Referenzen</a>
+    <a href="./referenzen.html">Referenzen</a>
     <a href="./wissen.html">Wissen</a>
     <a href="./faq.html">FAQ</a>
     <a href="./kontakt.html" class="nav-cta">Termin vereinbaren</a>
@@ -440,10 +445,6 @@
   });
 })();
 </script>
-
-<style>
-  @keyframes spinCompass { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-</style>
 
 </body>
 </html>

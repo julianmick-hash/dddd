@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Was macht einen guten M&A-Berater aus? 10 Kriterien die Unternehmer kennen sollten — und was einen Berater disqualifiziert.">
+  <title>Was macht einen guten M&A-Berater aus — Julian Mick M&A Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ================================================
+       RESET & ROOT
+    ================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:      #0D1B2A;
+      --gold:      #B8955A;
+      --offwhite:  #F7F4EF;
+      --warm-gray: #8C8880;
+      --border-dark: rgba(13,27,42,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Syne', sans-serif; background: var(--offwhite); color: var(--navy); overflow-x: hidden; }
+
+    /* NAV */
+    #mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(240,228,204,0.97); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border-dark); transition: padding 0.3s; }
+    #mainNav.scrolled { padding: 0.875rem 4rem; }
+    .nav-logo { font-family: 'Spectral', serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links > a { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links > a:hover, .nav-links > a.active { color: var(--gold); }
+    .nav-cta { background: var(--gold) !important; color: var(--offwhite) !important; padding: 0.6rem 1.4rem !important; border-radius: 2px; transition: background 0.3s !important; }
+    .nav-cta:hover { background: var(--navy) !important; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-transform: uppercase; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; background: none; border: none; font-family: 'Syne', sans-serif; padding: 0; transition: color 0.3s; }
+    .nav-dropdown-toggle:hover, .nav-dropdown.open .nav-dropdown-toggle { color: var(--gold); }
+    .nav-dropdown-toggle svg { width: 10px; height: 10px; transition: transform 0.25s; }
+    .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%) translateY(-6px); background: var(--navy); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 0.75rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-menu a { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; font-family: 'Syne', sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.65); text-decoration: none; transition: color 0.2s, background 0.2s; }
+    .nav-dropdown-menu a:hover { color: #F7F4EF; background: rgba(247,244,239,0.05); }
+    .nav-dropdown-menu a svg { width: 13px; height: 13px; flex-shrink: 0; opacity: 0.35; transition: opacity 0.2s; }
+    .nav-dropdown-menu a:hover svg { opacity: 0.7; }
+    .nav-divider { height: 0.5px; background: rgba(247,244,239,0.07); margin: 0.4rem 1.5rem; }
+
+    /* ARTICLE HERO */
+    .article-hero { background: var(--navy); padding: 10rem 5rem 6rem; position: relative; overflow: hidden; }
+    .article-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 75% 40%, rgba(184,149,90,0.07), transparent 55%); pointer-events: none; }
+    .article-hero-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 1; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(184,149,90,0.6); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.3s; }
+    .back-link:hover { color: var(--gold); }
+    .back-link svg { width: 13px; height: 13px; }
+    .article-category { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
+    .article-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2rem, 3.5vw, 3rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 1.75rem; }
+    .article-headline em { font-style: italic; color: var(--gold); }
+    .article-meta { display: flex; align-items: center; gap: 2rem; font-family: Syne, sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.4); }
+    .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(247,244,239,0.2); }
+
+    /* ARTICLE BODY */
+    .article-body { background: var(--offwhite); padding: 6rem 5rem; }
+    .article-inner { max-width: 820px; margin: 0 auto; }
+    .article-lead { font-family: Spectral, serif; font-size: 1.2rem; line-height: 1.75; color: var(--navy); margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 0.5px solid rgba(13,27,42,0.1); }
+    .article-lead em { font-style: italic; color: var(--gold); }
+    h2.section-head { font-family: Spectral, serif; font-weight: 600; font-size: 1.4rem; color: var(--navy); line-height: 1.3; margin: 3rem 0 1.25rem; }
+    h2.section-head em { font-style: italic; color: var(--gold); }
+    p.body { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: #5F5E5A; margin-bottom: 1.25rem; }
+    .pullquote { margin: 3rem 0; padding: 2.5rem 3rem; border-left: 2px solid var(--gold); background: #fff; border-radius: 0 4px 4px 0; }
+    .pullquote p { font-family: Spectral, serif; font-style: italic; font-size: 1.15rem; line-height: 1.7; color: var(--navy); }
+    .pullquote p em { font-style: normal; color: var(--gold); }
+    .criterion { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.25rem 2.5rem; margin: 1rem 0; display: flex; gap: 1.5rem; align-items: flex-start; }
+    .criterion-num { font-family: Spectral, serif; font-weight: 600; font-size: 1.5rem; color: rgba(184,149,90,0.3); flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+    .criterion h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.3; }
+    .criterion p { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.85; color: #5F5E5A; }
+    .criterion p em { font-style: italic; color: var(--gold); }
+    .warning-box { background: rgba(184,149,90,0.06); border: 1px solid rgba(184,149,90,0.2); border-radius: 4px; padding: 2rem 2.5rem; margin: 2rem 0; }
+    .warning-box h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: var(--navy); margin-bottom: 1rem; }
+    .warning-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .warning-box ul li { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.8; color: #5F5E5A; display: flex; gap: 0.75rem; align-items: flex-start; }
+    .warning-box ul li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+    .article-cta { background: var(--navy); border-radius: 6px; padding: 3rem 3.5rem; margin-top: 4rem; position: relative; overflow: hidden; }
+    .article-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
+    .article-cta h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.3rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .article-cta h3 em { font-style: italic; color: var(--gold); }
+    .article-cta p { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.85; color: rgba(247,244,239,0.45); margin-bottom: 1.75rem; }
+    .article-cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2rem; border-radius: 3px; text-decoration: none; transition: background 0.25s, transform 0.2s; }
+    .article-cta-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .article-cta-btn svg { width: 15px; height: 15px; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy); padding: 0 5rem 3rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 2.5rem; }
+    .footer-name { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: rgba(247,244,239,0.4); }
+    .footer-links { display: flex; gap: 2.5rem; }
+    .footer-link { font-family: Syne, sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(247,244,239,0.25); text-decoration: none; transition: color 0.3s; }
+    .footer-link:hover { color: rgba(247,244,239,0.6); }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="../index.html" class="nav-logo">[Beratung]</a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle">
+        Leistungen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="../leistungen.html">
+          Alle Leistungen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <div class="nav-divider"></div>
+        <a href="../unternehmensverkauf.html">Unternehmensverkauf</a>
+        <a href="../nachfolgeberatung.html">Nachfolgeberatung</a>
+        <a href="../buyside.html">Buy-Side &amp; Akquisition</a>
+        <a href="../eigenkapital.html">Eigenkapital &amp; Wachstum</a>
+        <a href="../exitreadiness.html">Exit Readiness</a>
+      </div>
+    </div>
+    <a href="../ueber-uns.html">Über uns</a>
+    <a href="../referenzen.html">Referenzen</a>
+    <a href="../wissen.html" class="active">Wissen</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../kontakt.html" class="nav-cta">Termin vereinbaren</a>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="article-hero-inner">
+    <a href="../wissen.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Zurück zu Wissen & Perspektiven</a>
+    <p class="article-category">Grundsatzfrage</p>
+    <h1 class="article-headline">Was macht einen guten<br>M&A-Berater wirklich aus —<br>und was <em>disqualifiziert</em> einen?</h1>
+    <div class="article-meta">
+      <span>Julian Mick</span>
+      <span class="meta-dot"></span>
+      <span>12 Minuten Lesezeit</span>
+      <span class="meta-dot"></span>
+      <span>März 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="article-inner">
+
+    <p class="article-lead">Die Frage die fast jeder Unternehmer falsch stellt: „Wie viele Transaktionen haben Sie gemacht?" Die Frage die er stellen sollte: <em>„Auf welcher Seite des Tisches saßen Sie dabei?"</em></p>
+
+    <p class="body">Ich sage das nicht um arrogant zu klingen. Ich sage es, weil ich beide Seiten kenne — und weil der Unterschied fundamental ist. Ein Berater der nur Verkaufsprozesse begleitet hat, versteht Käufer intellektuell. Einer der selbst als Investor Unternehmen gekauft, bewertet, verhandelt und integriert hat, versteht sie intuitiv. Das ist kein kleiner Unterschied. Im Verhandlungsraum ist es der entscheidende.</p>
+
+    <p class="body">Aber fangen wir von vorne an. Was macht einen guten M&A-Berater aus — wirklich, jenseits der üblichen Floskeln?</p>
+
+    <h2 class="section-head">Die Hygienefaktoren — notwendig, aber nicht hinreichend</h2>
+
+    <p class="body">Netzwerk, Transaktionserfahrung, Branchenkenntnisse, solide Unterlagen — das sind Grundvoraussetzungen. Wer die nicht hat, scheidet sofort aus. Aber sie erklären nicht warum manche Berater systematisch bessere Ergebnisse erzielen als andere. Dafür braucht es mehr.</p>
+
+    <div class="pullquote">
+      <p>„Der beste Verkaufspreis ist nicht das Ergebnis eines guten Netzwerks. Er ist das Ergebnis eines Beraters der versteht, <em>was den Käufer nachts wachhält</em> — und dieses Wissen aktiv einsetzt."</p>
+    </div>
+
+    <h2 class="section-head">Die 10 Kriterien die wirklich entscheiden</h2>
+
+    <div class="criterion">
+      <span class="criterion-num">01</span>
+      <div>
+        <h3>Käuferperspektive aus erster Hand</h3>
+        <p>Hat der Berater selbst Investitionsentscheidungen getroffen? Hat er Due Diligence aus Käufersicht durchgeführt? Hat er erlebt wie sich eine schlechte Dokumentation oder eine schwache Wachstumsstory auf den gebotenen Preis auswirkt? <em>Wenn nicht, fehlt ihm die wichtigste Perspektive.</em> Er kann nur erraten was Käufer wirklich denken.</p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">02</span>
+      <div>
+        <h3>Qualität der Unterlagen — nicht Quantität</h3>
+        <p>Ein Information Memorandum das wie eine Vorlage aussieht, kommuniziert: Dieser Berater arbeitet im Akkord. Professionelle Käufer erkennen das sofort — und passen ihre Erwartungshaltung entsprechend an. <em>Die Qualität der Unterlagen ist das erste Signal über die Qualität des Prozesses.</em></p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">03</span>
+      <div>
+        <h3>Interessengleichheit — echte, nicht behauptete</h3>
+        <p>Ein Berater der viele parallele Mandate führt und primär von Erfolgsprovisionen lebt, hat einen strukturellen Druck zum schnellen Abschluss. <em>Das ist kein Vorwurf — es ist Mathematik.</em> Fragen Sie: Wie viele aktive Mandate haben Sie gerade? Was passiert wenn ich sage ich bin noch nicht bereit?</p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">04</span>
+      <div>
+        <h3>Diskretion als Kultur, nicht als Versprechen</h3>
+        <p>Diskretion ist nicht, einen NDA zu verschicken. Diskretion ist eine Haltung — wie man über laufende Mandate spricht, wie man Outreach gestaltet, was man bereit ist preiszugeben um einen Interessenten zu gewinnen. <em>Fragen Sie: Wie sind Sie bisher mit meinem Namen umgegangen?</em> Die Antwort verrät viel.</p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">05</span>
+      <div>
+        <h3>Die Fähigkeit, Nein zu sagen</h3>
+        <p>Ein guter Berater sagt Ihnen wenn Sie noch nicht verkaufsbereit sind. Wenn der Zeitpunkt schlecht ist. Wenn der Käufer nicht passt. <em>Das kostet ihn kurzfristig Provision — aber langfristig baut es Vertrauen und Ruf.</em> Wer immer Ja sagt, hat entweder keine Meinung oder einen Interessenkonflikt.</p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">06</span>
+      <div>
+        <h3>Echter Outreach — kein Massenversand</h3>
+        <p>Es gibt M&A-Berater die denselben anonymen Teaser an 200 Adressen schicken und das „strukturierten Prozess" nennen. Das Gegenteil von Diskretion. Das Gegenteil von Qualität. <em>Gute Outreach ist recherchiert, individuell, und respektvoll gegenüber dem Unternehmer auf der anderen Seite.</em> Und sie kommt von jemandem der das Netzwerk wirklich hat.</p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">07</span>
+      <div>
+        <h3>Verständnis für die menschliche Dimension</h3>
+        <p>Ein Unternehmensverkauf ist kein Immobiliendeal. Der Verkäufer hat zwanzig Jahre in dieses Unternehmen investiert — oft sein ganzes Leben. <em>Ein Berater der das nicht versteht, der nur Zahlen und Prozesse sieht, wird in den entscheidenden Momenten das Falsche tun.</em></p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">08</span>
+      <div>
+        <h3>Analytische Tiefe bei Bewertung und Struktur</h3>
+        <p>Kann der Berater ein LBO-Modell lesen? Versteht er die Implikationen einer Earn-out-Struktur? Weiß er wie ein Käufer Ihre normalisierten EBITDA-Zahlen interpretiert? <em>Das ist kein akademisches Wissen — es ist die Grundlage jeder Verhandlung.</em></p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">09</span>
+      <div>
+        <h3>Persönliche Kontinuität — kein Handoff</h3>
+        <p>In großen Beratungshäusern pitcht ein Senior Partner und dann übernimmt ein Analyst den Prozess. <em>Fragen Sie explizit: Wer führt meinen Prozess Tag für Tag?</em> Die ehrliche Antwort ist manchmal eine andere als die im Pitch.</p>
+      </div>
+    </div>
+
+    <div class="criterion">
+      <span class="criterion-num">10</span>
+      <div>
+        <h3>Referenzen — von Unternehmern, nicht von Käufern</h3>
+        <p>Viele Berater listen ihre Käuferkontakte als Referenzen auf. Das sagt wenig darüber aus wie sie für Verkäufer arbeiten. <em>Fragen Sie nach Unternehmern die mit ihnen verkauft haben — und rufen Sie diese an.</em></p>
+      </div>
+    </div>
+
+    <h2 class="section-head">Was einen Berater <em>disqualifiziert</em></h2>
+
+    <div class="warning-box">
+      <h3>Warnsignale die Unternehmer oft übersehen:</h3>
+      <div class="warning-list">
+        <div class="warning-item">Er nennt Ihnen eine Bewertung im Erstgespräch ohne Ihr Unternehmen zu kennen. Das ist Verkaufsrhetorik, keine Analyse.</div>
+        <div class="warning-item">Er verspricht Exklusivität bei Käufern die er „bereits kennt". Prüfen Sie diese Beziehungen — oft sind sie oberflächlich.</div>
+        <div class="warning-item">Er drängt auf schnellen Prozessstart. Gut vorbereitete Prozesse brauchen Zeit. Druck zum Schnellstart kommt selten vom Mandat.</div>
+        <div class="warning-item">Er hat noch nie selbst auf der Investorenseite gesessen. Er versteht Käufer aus Büchern — nicht aus Erfahrung.</div>
+        <div class="warning-item">Er zögert wenn Sie fragen wie viele parallele Mandate er führt. Die Antwort ist entscheidend für Ihre Priorisierung.</div>
+        <div class="warning-item">Er spricht abwertend über andere Berater. Das sagt mehr über ihn als über die anderen.</div>
+      </div>
+    </div>
+
+    <h2 class="section-head">Die Frage die ich jedem Unternehmer empfehle</h2>
+
+    <p class="body">Wenn Sie einen M&A-Berater evaluieren, stellen Sie diese eine Frage: <strong>„Nennen Sie mir einen Fall in dem Sie einem Mandanten empfohlen haben, nicht zu verkaufen — und warum."</strong></p>
+
+    <p class="body">Wer keine Antwort hat, hat entweder keine solche Situation erlebt — was bei einem erfahrenen Berater unwahrscheinlich ist — oder hat nie den Mut gehabt, diese Empfehlung auszusprechen. Beides ist ein schlechtes Zeichen.</p>
+
+    <p class="body">Ein guter Berater verdient langfristig durch Vertrauen und Ruf. Das bedeutet manchmal kurzfristig auf Provision zu verzichten. Wer dazu nicht bereit ist, ist kein Partner — er ist ein Dienstleister mit anderen Interessen.</p>
+
+    <div class="pullquote">
+      <p>„Das Ziel ist nicht der Abschluss. Das Ziel ist das <em>richtige Ergebnis</em> — für Sie, für Ihr Unternehmen, für Ihre Mitarbeiter. Manchmal ist das nicht der höchste Preis. Manchmal ist es gar kein Verkauf."</p>
+    </div>
+
+    <div class="article-end">
+      <p>Julian Mick ist M&A-Berater mit Erfahrung aus Investment Banking (Barclays), Private Equity (Maxburg Capital Partners) und Corporate Development (Banyan Software). Er berät Unternehmer im deutschen Mittelstand bei Verkauf, Nachfolge und Akquisition.</p>
+      <a href="../kontakt.html" class="article-cta">Gespräch vereinbaren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+  </div>
+</section>
+
+<section class="more-articles">
+  <div class="more-inner">
+    <p class="more-label">Weitere Beiträge</p>
+    <div class="more-grid">
+      <a href="#" class="more-card">
+        <p class="more-cat">Meinung</p>
+        <p class="more-title">Der Preis ist nicht alles — und Berater die das sagen, wollen nur schnell abschließen.</p>
+      </a>
+      <a href="#" class="more-card">
+        <p class="more-cat">Beobachtung</p>
+        <p class="more-title">Warum fast jeder Mittelständler zu spät anfängt — und was das wirklich kostet.</p>
+      </a>
+      <a href="#" class="more-card">
+        <p class="more-cat">Insider</p>
+        <p class="more-title">Was PE-Investoren wirklich denken — aber Ihnen nie sagen werden.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-name">Julian Mick M&A Advisory</span>
+    <div class="footer-links">
+      <a href="../impressum.html" class="footer-link">Impressum</a>
+      <a href="../datenschutz.html" class="footer-link">Datenschutz</a>
+      <a href="../kontakt.html" class="footer-link">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  var dd = document.querySelector('.nav-dropdown');
+  if (dd) {
+    dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+      e.stopPropagation(); dd.classList.toggle('open');
+    });
+    document.addEventListener('click', function() { dd.classList.remove('open'); });
+  }
+})();
+</script>
+
+</body>
+</html>

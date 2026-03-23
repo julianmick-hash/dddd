@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="M&A-Wissen für Mittelständler — Leitfäden, Ratgeber und Perspektiven zum Unternehmensverkauf, Nachfolge und Unternehmensbewertung.">
+  <title>Wissen & Perspektiven — Julian Mick M&A Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0D1B2A; --gold: #B8955A; --offwhite: #F7F4EF;
+      --warm-gray: #8C8880; --border-dark: rgba(13,27,42,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Syne', sans-serif; background: var(--offwhite); color: var(--navy); overflow-x: hidden; }
+
+    /* NAV */
+    #mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(240,228,204,0.97); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border-dark); transition: padding 0.3s; }
+    #mainNav.scrolled { padding: 0.875rem 4rem; }
+    .nav-logo { font-family: 'Spectral', serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links > a { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links > a:hover, .nav-links > a.active { color: var(--gold); }
+    .nav-cta { background: var(--gold) !important; color: var(--offwhite) !important; padding: 0.6rem 1.4rem !important; border-radius: 2px; transition: background 0.3s !important; }
+    .nav-cta:hover { background: var(--navy) !important; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-transform: uppercase; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; background: none; border: none; font-family: 'Syne', sans-serif; padding: 0; transition: color 0.3s; }
+    .nav-dropdown-toggle:hover, .nav-dropdown.open .nav-dropdown-toggle { color: var(--gold); }
+    .nav-dropdown-toggle svg { width: 10px; height: 10px; transition: transform 0.25s; }
+    .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%) translateY(-6px); background: var(--navy); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 0.75rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-menu a { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; font-family: 'Syne', sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.65); text-decoration: none; transition: color 0.2s, background 0.2s; }
+    .nav-dropdown-menu a:hover { color: #F7F4EF; background: rgba(247,244,239,0.05); }
+    .nav-dropdown-menu a svg { width: 13px; height: 13px; flex-shrink: 0; opacity: 0.35; transition: opacity 0.2s; }
+    .nav-dropdown-menu a:hover svg { opacity: 0.7; }
+    .nav-divider { height: 0.5px; background: rgba(247,244,239,0.07); margin: 0.4rem 1.5rem; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--navy); padding: 10rem 5rem 6rem; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(184,149,90,0.06), transparent 55%); pointer-events: none; }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
+    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.5rem, 4vw, 4rem); color: #F7F4EF; line-height: 1.15; max-width: 700px; }
+    .page-headline em { font-style: italic; color: var(--gold); }
+    .hero-line { width: 60px; height: 1.5px; background: var(--gold); margin: 2.5rem 0; }
+    .page-sub { font-family: Syne, sans-serif; font-size: 1rem; line-height: 1.9; color: rgba(247,244,239,0.5); max-width: 520px; }
+
+    /* FEATURED ARTICLE */
+    .featured { background: var(--offwhite); padding: 6rem 5rem 3rem; }
+    .featured-inner { max-width: 1200px; margin: 0 auto; }
+    .featured-label { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
+    .featured-card {
+      display: grid; grid-template-columns: 1fr 280px; gap: 5rem; align-items: center;
+      background: var(--navy); border-radius: 6px; padding: 4rem 5rem;
+      text-decoration: none; position: relative; overflow: hidden;
+      transition: box-shadow 0.3s;
+      opacity: 0; transform: translateY(16px);
+    }
+    .featured-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s; }
+    .featured-card:hover { box-shadow: 0 16px 60px rgba(13,27,42,0.2); }
+    .featured-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
+    .fc-category { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.25em; color: rgba(184,149,90,0.7); text-transform: uppercase; margin-bottom: 1.25rem; }
+    .fc-title { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.5rem, 2.2vw, 2rem); color: #F7F4EF; line-height: 1.25; margin-bottom: 1.5rem; }
+    .fc-title em { font-style: italic; color: var(--gold); }
+    .fc-excerpt { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: rgba(247,244,239,0.5); margin-bottom: 2rem; max-width: 520px; }
+    .fc-meta { display: flex; align-items: center; justify-content: space-between; }
+    .fc-author { font-family: Syne, sans-serif; font-size: 0.75rem; color: rgba(184,149,90,0.6); }
+    .fc-read { display: inline-flex; align-items: center; gap: 0.5rem; font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(184,149,90,0.3); padding-bottom: 0.2rem; transition: gap 0.3s, border-color 0.3s; }
+    .featured-card:hover .fc-read { gap: 0.8rem; border-color: var(--gold); }
+    .fc-read svg { width: 14px; height: 14px; }
+    .featured-card-visual { display: flex; align-items: center; justify-content: center; }
+
+    /* ARTICLES GRID */
+    .articles { background: var(--offwhite); padding: 3rem 5rem 6rem; }
+    .articles-inner { max-width: 1200px; margin: 0 auto; }
+    .articles-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
+    .articles-header h2 { font-family: Spectral, serif; font-weight: 600; font-size: 1.6rem; color: var(--navy); line-height: 1.2; }
+    .articles-header h2 em { font-style: italic; color: var(--gold); }
+    .articles-count { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: var(--warm-gray); text-transform: uppercase; }
+    .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .article-card {
+      background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px;
+      padding: 2.5rem; text-decoration: none; display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.3s;
+      opacity: 0; transform: translateY(16px);
+    }
+    .article-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .article-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .article-card:hover::before { transform: scaleX(1); }
+    .article-card:hover { box-shadow: 0 8px 32px rgba(13,27,42,0.08); transform: translateY(-2px); }
+    .ac-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+    .ac-category { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: rgba(184,149,90,0.7); text-transform: uppercase; }
+    .ac-reading { font-family: Syne, sans-serif; font-size: 0.68rem; color: var(--warm-gray); }
+    .ac-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); line-height: 1.4; margin-bottom: 1rem; flex: 1; }
+    .ac-excerpt { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.85; color: #5F5E5A; margin-bottom: 1.5rem; flex: 1; }
+    .ac-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1.25rem; border-top: 0.5px solid var(--border-dark); margin-top: auto; }
+    .ac-author { font-family: Syne, sans-serif; font-size: 0.72rem; color: var(--warm-gray); }
+    .ac-arrow { color: var(--gold); transition: transform 0.3s; }
+    .article-card:hover .ac-arrow { transform: translateX(4px); }
+
+    /* PERSPECTIVE SECTION */
+    .perspective { background: var(--navy); padding: 7rem 5rem; }
+    .perspective-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .perspective-left h2 { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 1.25rem; }
+    .perspective-left h2 em { font-style: italic; color: var(--gold); }
+    .perspective-left p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.85; color: rgba(247,244,239,0.45); margin-bottom: 2rem; }
+    .perspective-cta { display: inline-flex; align-items: center; gap: 0.6rem; font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,149,90,0.3); padding-bottom: 0.25rem; transition: gap 0.3s, border-color 0.3s; }
+    .perspective-cta:hover { gap: 0.9rem; border-color: var(--gold); }
+    .perspective-cta svg { width: 14px; height: 14px; }
+    .perspective-right { display: flex; flex-direction: column; gap: 0; }
+    .insight-item { padding: 1.75rem 0; border-bottom: 0.5px solid rgba(247,244,239,0.07); display: flex; gap: 1.5rem; align-items: flex-start; }
+    .insight-item:first-child { border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .insight-num { font-family: Spectral, serif; font-weight: 600; font-size: 1.5rem; color: rgba(184,149,90,0.25); flex-shrink: 0; line-height: 1.2; }
+    .insight-text { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: rgba(247,244,239,0.5); padding-top: 0.2rem; }
+    .insight-text em { color: #F7F4EF; font-style: normal; }
+
+    /* CTA STRIP */
+    .cta-strip { background: var(--navy); padding: 5rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .cta-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
+    .cta-text h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.8rem; color: #F7F4EF; line-height: 1.3; }
+    .cta-text h3 em { font-style: italic; color: var(--gold); }
+    .cta-text p { font-family: Syne, sans-serif; font-size: 0.875rem; color: rgba(247,244,239,0.4); margin-top: 0.75rem; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .cta-btn svg { width: 16px; height: 16px; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy); padding: 0 5rem 3rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 2.5rem; }
+    .footer-name { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: rgba(247,244,239,0.4); }
+    .footer-links { display: flex; gap: 2.5rem; }
+    .footer-link { font-family: Syne, sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(247,244,239,0.25); text-decoration: none; transition: color 0.3s; }
+    .footer-link:hover { color: rgba(247,244,239,0.6); }
+
+    .fade-up { opacity: 0; transform: translateY(20px); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="./index.html" class="nav-logo">[Beratung]</a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle">
+        Leistungen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="./leistungen.html">Alle Leistungen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="nav-divider"></div>
+        <a href="./unternehmensverkauf.html">Unternehmensverkauf</a>
+        <a href="./nachfolgeberatung.html">Nachfolgeberatung</a>
+        <a href="./buyside.html">Buy-Side & Akquisition</a>
+        <a href="./eigenkapital.html">Eigenkapital & Wachstum</a>
+        <a href="./exitreadiness.html">Exit Readiness</a>
+      </div>
+    </div>
+    <a href="./ueber-uns.html">Über uns</a>
+    <a href="./referenzen.html">Referenzen</a>
+    <a href="./wissen.html" class="active">Wissen</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./kontakt.html" class="nav-cta">Termin vereinbaren</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Wissen & Perspektiven</p>
+    <h1 class="page-headline">Meinungen die ich<br>wirklich habe —<br><em>nicht die ich haben soll.</em></h1>
+    <div class="hero-line"></div>
+    <p class="page-sub">Kein Content-Marketing. Keine SEO-Artikel. Nur Beobachtungen aus zehn Jahren auf beiden Seiten des Tisches — manche unbequem, alle ehrlich.</p>
+  </div>
+</section>
+
+<section class="featured">
+  <div class="featured-inner">
+    <p class="featured-label">Leitartikel</p>
+    <a href="./wissen/was-macht-einen-guten-ma-berater-aus.html" class="featured-card">
+      <div class="featured-card-text">
+        <p class="fc-category">Grundsatzfrage</p>
+        <h2 class="fc-title">Was macht einen guten<br>M&A-Berater wirklich aus —<br>und was <em>disqualifiziert</em> einen?</h2>
+        <p class="fc-excerpt">Die Antwort die die meisten geben ist falsch. Netzwerk, Erfahrung, Transaktionsvolumen — das sind Hygienefaktoren. Was wirklich entscheidet, ist schwerer zu messen. Und genau deshalb wird es selten gefragt.</p>
+        <div class="fc-meta">
+          <span class="fc-author">Julian Mick · 12 Minuten</span>
+          <span class="fc-read">Lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </div>
+      <div class="featured-card-visual">
+        <svg viewBox="0 0 280 280" width="240" height="240" xmlns="http://www.w3.org/2000/svg">
+          <line x1="140" y1="40" x2="140" y2="200" stroke="#B8955A" stroke-width="1.5" opacity="0.5"/>
+          <circle cx="140" cy="40" r="5" fill="#B8955A" opacity="0.7"/>
+          <line x1="60" y1="100" x2="220" y2="100" stroke="#B8955A" stroke-width="1.5" opacity="0.4"/>
+          <path d="M60,100 Q40,115 35,130 Q40,145 60,145 Q80,145 85,130 Q80,115 60,100" fill="rgba(184,149,90,0.1)" stroke="#B8955A" stroke-width="1" opacity="0.5"/>
+          <path d="M220,100 Q240,110 245,125 Q240,140 220,140 Q200,140 195,125 Q200,110 220,100" fill="rgba(184,149,90,0.06)" stroke="rgba(247,244,239,0.2)" stroke-width="1" opacity="0.5"/>
+          <circle cx="52" cy="122" r="6" fill="#B8955A" opacity="0.6"/>
+          <circle cx="65" cy="128" r="4" fill="#B8955A" opacity="0.5"/>
+          <circle cx="58" cy="135" r="5" fill="#B8955A" opacity="0.4"/>
+          <circle cx="215" cy="120" r="4" fill="rgba(247,244,239,0.2)"/>
+          <circle cx="225" cy="127" r="3" fill="rgba(247,244,239,0.15)"/>
+          <line x1="120" y1="200" x2="160" y2="200" stroke="#B8955A" stroke-width="1.5" opacity="0.3"/>
+          <line x1="115" y1="220" x2="165" y2="220" stroke="#B8955A" stroke-width="1" opacity="0.2"/>
+          <circle cx="140" cy="130" r="110" fill="none" stroke="rgba(184,149,90,0.05)" stroke-width="0.75" stroke-dasharray="3 10"/>
+        </svg>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="articles">
+  <div class="articles-inner">
+    <div class="articles-header fade-up">
+      <h2>Weitere <em>Beiträge</em></h2>
+      <span class="articles-count">4 Artikel</span>
+    </div>
+    <div class="articles-grid">
+
+      <a href="./wissen/der-preis-ist-nicht-alles.html" class="article-card">
+        <div class="ac-top">
+          <span class="ac-category">Meinung</span>
+          <span class="ac-reading">8 Min.</span>
+        </div>
+        <h3 class="ac-title">Der Preis ist nicht alles — und Berater die das sagen, wollen nur schnell abschließen.</h3>
+        <p class="ac-excerpt">Jeder Berater behauptet, den maximalen Preis zu erzielen. Die Frage die niemand stellt: Maximaler Preis für wen — und zu welchem Preis für Sie?</p>
+        <div class="ac-footer">
+          <span class="ac-author">Julian Mick</span>
+          <svg class="ac-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="./wissen/warum-mittelstaendler-zu-spaet-anfangen.html" class="article-card">
+        <div class="ac-top">
+          <span class="ac-category">Beobachtung</span>
+          <span class="ac-reading">6 Min.</span>
+        </div>
+        <h3 class="ac-title">Warum fast jeder Mittelständler zu spät anfängt — und was das wirklich kostet.</h3>
+        <p class="ac-excerpt">Nicht an Geld gemessen. Sondern an Optionen. Die meisten Unternehmer merken erst, wenn es knapp wird, wie viel Verhandlungsmacht rechtzeitige Vorbereitung bedeutet hätte.</p>
+        <div class="ac-footer">
+          <span class="ac-author">Julian Mick</span>
+          <svg class="ac-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="./wissen/was-pe-investoren-wirklich-denken.html" class="article-card">
+        <div class="ac-top">
+          <span class="ac-category">Insider</span>
+          <span class="ac-reading">10 Min.</span>
+        </div>
+        <h3 class="ac-title">Was PE-Investoren wirklich denken — aber Ihnen nie sagen werden.</h3>
+        <p class="ac-excerpt">Ich war selbst auf dieser Seite des Tisches. Was in Investoren-Köpfen vorgeht während sie Ihr Unternehmen bewerten, ist selten das was sie kommunizieren.</p>
+        <div class="ac-footer">
+          <span class="ac-author">Julian Mick</span>
+          <svg class="ac-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="./wissen/inhaberabhaengigkeit-groesste-werttreiber.html" class="article-card">
+        <div class="ac-top">
+          <span class="ac-category">Werttreiber</span>
+          <span class="ac-reading">7 Min.</span>
+        </div>
+        <h3 class="ac-title">Inhaberabhängigkeit ist das teuerste Problem das kein Unternehmer ernst nimmt.</h3>
+        <p class="ac-excerpt">„Ohne mich läuft hier nichts" klingt nach Stolz. Im Verkaufsprozess klingt es nach Risikoaufschlag — und der kommt direkt vom Kaufpreis ab.</p>
+        <div class="ac-footer">
+          <span class="ac-author">Julian Mick</span>
+          <svg class="ac-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="perspective">
+  <div class="perspective-inner">
+    <div class="perspective-left fade-up">
+      <h2>Thesen die ich<br><em>wirklich vertrete.</em></h2>
+      <p>Manche davon werden Berater-Kollegen ärgern. Das ist in Ordnung.</p>
+      <a href="./kontakt.html" class="perspective-cta">Diskutieren Sie mit mir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="perspective-right fade-up">
+      <div class="insight-item">
+        <span class="insight-num">1</span>
+        <p class="insight-text">Die meisten M&A-Berater haben noch nie selbst eine Investitionsentscheidung getroffen. Sie begleiten Transaktionen — aber sie <em>verstehen</em> Investoren nicht.</p>
+      </div>
+      <div class="insight-item">
+        <span class="insight-num">2</span>
+        <p class="insight-text">Ein Information Memorandum das aussieht wie eine PowerPoint-Vorlage aus 2015 sagt dem Käufer alles über die Qualität des Beraters — <em>bevor er eine Zeile gelesen hat.</em></p>
+      </div>
+      <div class="insight-item">
+        <span class="insight-num">3</span>
+        <p class="insight-text">„Wir haben 20 Interessenten" ist keine gute Nachricht. <em>Drei ernsthafte Käufer</em> sind besser als zwanzig unqualifizierte.</p>
+      </div>
+      <div class="insight-item">
+        <span class="insight-num">4</span>
+        <p class="insight-text">Wer nur dann verdient wenn er verkauft, hat keinen Anreiz Ihnen zu sagen dass <em>Sie noch nicht bereit sind.</em> Wir schon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-text">
+      <h3>Über eines dieser<br><em>Themen sprechen?</em></h3>
+      <p>Vertraulich, direkt, ohne Agenda.</p>
+    </div>
+    <a href="./kontakt.html" class="cta-btn">Gespräch vereinbaren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-name">Julian Mick M&A Advisory</span>
+    <div class="footer-links">
+      <a href="./impressum.html" class="footer-link">Impressum</a>
+      <a href="./datenschutz.html" class="footer-link">Datenschutz</a>
+      <a href="./kontakt.html" class="footer-link">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  var dd = document.querySelector('.nav-dropdown');
+  if (dd) {
+    dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('open'); });
+    document.addEventListener('click', function() { dd.classList.remove('open'); });
+  }
+  var allAnim = document.querySelectorAll('.fade-up, .featured-card, .article-card');
+  allAnim.forEach(function(el, i) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { setTimeout(function() { e.target.classList.add('visible'); }, i * 80); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+    obs.observe(el);
+  });
+})();
+</script>
+
+</body>
+</html>

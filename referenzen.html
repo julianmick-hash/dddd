@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ausgewählte Transaktionen und Referenzen — Buy-Side M&A im deutschen Mittelstand. Saracus, Neo Cos, Immo Office, Logicheck.">
+  <title>Referenzen — Julian Mick M&A Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0D1B2A; --gold: #B8955A; --offwhite: #F7F4EF;
+      --warm-gray: #8C8880; --border-dark: rgba(13,27,42,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Syne', sans-serif; background: var(--offwhite); color: var(--navy); overflow-x: hidden; }
+
+    /* NAV */
+    #mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(240,228,204,0.97); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border-dark); transition: padding 0.3s; }
+    #mainNav.scrolled { padding: 0.875rem 4rem; }
+    .nav-logo { font-family: 'Spectral', serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links > a { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links > a:hover, .nav-links > a.active { color: var(--gold); }
+    .nav-cta { background: var(--gold) !important; color: var(--offwhite) !important; padding: 0.6rem 1.4rem !important; border-radius: 2px; transition: background 0.3s !important; }
+    .nav-cta:hover { background: var(--navy) !important; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-transform: uppercase; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; background: none; border: none; font-family: 'Syne', sans-serif; padding: 0; transition: color 0.3s; }
+    .nav-dropdown-toggle:hover, .nav-dropdown.open .nav-dropdown-toggle { color: var(--gold); }
+    .nav-dropdown-toggle svg { width: 10px; height: 10px; transition: transform 0.25s; }
+    .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%) translateY(-6px); background: var(--navy); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 0.75rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-menu a { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; font-family: 'Syne', sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.65); text-decoration: none; transition: color 0.2s, background 0.2s; }
+    .nav-dropdown-menu a:hover { color: #F7F4EF; background: rgba(247,244,239,0.05); }
+    .nav-dropdown-menu a svg { width: 13px; height: 13px; flex-shrink: 0; opacity: 0.35; transition: opacity 0.2s; }
+    .nav-dropdown-menu a:hover svg { opacity: 0.7; }
+    .nav-divider { height: 0.5px; background: rgba(247,244,239,0.07); margin: 0.4rem 1.5rem; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--navy); padding: 10rem 5rem 7rem; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 75% 50%, rgba(184,149,90,0.06), transparent 55%); pointer-events: none; }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: end; }
+    .page-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
+    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.5rem, 4vw, 4rem); color: #F7F4EF; line-height: 1.15; }
+    .page-headline em { font-style: italic; color: var(--gold); }
+    .hero-line { width: 60px; height: 1.5px; background: var(--gold); margin: 2.5rem 0; }
+    .page-sub { font-family: Syne, sans-serif; font-size: 1rem; line-height: 1.9; color: rgba(247,244,239,0.5); }
+    .hero-note { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.85; color: rgba(247,244,239,0.35); font-style: italic; padding: 1.5rem 2rem; border-left: 2px solid rgba(184,149,90,0.25); background: rgba(184,149,90,0.04); border-radius: 0 4px 4px 0; }
+
+    /* DEALS GRID */
+    .deals-section { background: var(--offwhite); padding: 7rem 5rem; }
+    .deals-inner { max-width: 1200px; margin: 0 auto; }
+    .deals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    /* DEAL CARD — clickable, opens detail panel */
+    .deal-card {
+      background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px;
+      overflow: hidden; cursor: pointer;
+      transition: box-shadow 0.3s, transform 0.3s;
+      opacity: 0; transform: translateY(16px);
+    }
+    .deal-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .deal-card:hover { box-shadow: 0 8px 40px rgba(13,27,42,0.1); transform: translateY(-3px); }
+    .deal-card-accent { height: 3px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.15)); }
+    .deal-card-body { padding: 2.75rem 3rem; }
+    .deal-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; }
+    .deal-company { font-family: Spectral, serif; font-weight: 600; font-size: 1.5rem; color: var(--navy); line-height: 1.2; }
+    .deal-year { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--gold); background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.25); border-radius: 20px; padding: 0.3rem 0.9rem; white-space: nowrap; }
+    .deal-sector { font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; color: var(--warm-gray); text-transform: uppercase; margin-bottom: 1rem; }
+    .deal-desc { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.85; color: #5F5E5A; margin-bottom: 1.75rem; }
+    .deal-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+    .deal-tag { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; color: var(--navy); background: rgba(13,27,42,0.05); border-radius: 3px; padding: 0.3rem 0.7rem; }
+    .deal-expand { display: flex; align-items: center; justify-content: space-between; padding-top: 1.25rem; border-top: 0.5px solid var(--border-dark); }
+    .deal-expand-label { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .deal-expand-icon { width: 28px; height: 28px; background: rgba(184,149,90,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s, transform 0.3s; }
+    .deal-expand-icon svg { width: 14px; height: 14px; color: var(--gold); transition: transform 0.3s; }
+    .deal-card.open .deal-expand-icon { background: rgba(184,149,90,0.2); }
+    .deal-card.open .deal-expand-icon svg { transform: rotate(45deg); }
+
+    /* DEAL DETAIL PANEL */
+    .deal-detail { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; background: rgba(13,27,42,0.02); border-top: 0.5px solid var(--border-dark); }
+    .deal-card.open .deal-detail { max-height: 600px; }
+    .deal-detail-inner { padding: 2.5rem 3rem; }
+    .detail-section { margin-bottom: 2rem; }
+    .detail-section:last-child { margin-bottom: 0; }
+    .detail-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(184,149,90,0.7); margin-bottom: 0.75rem; }
+    .detail-text { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: #5F5E5A; }
+    .detail-points { display: flex; flex-direction: column; gap: 0.5rem; }
+    .detail-point { display: flex; align-items: flex-start; gap: 0.75rem; font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.75; color: #5F5E5A; }
+    .detail-point::before { content: '—'; color: var(--gold); flex-shrink: 0; font-weight: 600; }
+
+    /* DISCLAIMER */
+    .disclaimer { max-width: 1200px; margin: 3rem auto 0; padding: 0 0; }
+    .disclaimer p { font-family: Syne, sans-serif; font-size: 0.78rem; line-height: 1.8; color: var(--warm-gray); font-style: italic; padding-top: 2rem; border-top: 0.5px solid var(--border-dark); }
+
+    /* ANSATZ SECTION */
+    .ansatz-section { background: var(--navy); padding: 7rem 5rem; }
+    .ansatz-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .ansatz-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
+    .ansatz-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 2rem; }
+    .ansatz-headline em { font-style: italic; color: var(--gold); }
+    .ansatz-text { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.9; color: rgba(247,244,239,0.5); margin-bottom: 1.25rem; }
+    .ansatz-items { display: flex; flex-direction: column; gap: 1rem; }
+    .ansatz-item { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.07); border-radius: 3px; padding: 2rem 2.5rem; display: flex; gap: 1.5rem; align-items: flex-start; }
+    .ansatz-icon { width: 44px; height: 44px; flex-shrink: 0; background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .ansatz-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .ansatz-item-title { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: #F7F4EF; margin-bottom: 0.4rem; line-height: 1.3; }
+    .ansatz-item-text { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.8; color: rgba(247,244,239,0.45); }
+
+    /* CTA */
+    .cta-strip { background: var(--offwhite); padding: 5rem; }
+    .cta-strip-inner { max-width: 1200px; margin: 0 auto; background: var(--navy); border-radius: 6px; padding: 4.5rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 4rem; position: relative; overflow: hidden; }
+    .cta-strip-inner::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
+    .cta-text h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.8rem; color: #F7F4EF; line-height: 1.3; }
+    .cta-text h3 em { font-style: italic; color: var(--gold); }
+    .cta-text p { font-family: Syne, sans-serif; font-size: 0.875rem; color: rgba(247,244,239,0.4); margin-top: 0.75rem; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .cta-btn svg { width: 16px; height: 16px; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy); padding: 0 5rem 3rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 2.5rem; }
+    .footer-name { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: rgba(247,244,239,0.4); }
+    .footer-links { display: flex; gap: 2.5rem; }
+    .footer-link { font-family: Syne, sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(247,244,239,0.25); text-decoration: none; transition: color 0.3s; }
+    .footer-link:hover { color: rgba(247,244,239,0.6); }
+
+    .fade-up { opacity: 0; transform: translateY(20px); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="./index.html" class="nav-logo">[Beratung]</a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle">
+        Leistungen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="./leistungen.html">Alle Leistungen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div class="nav-divider"></div>
+        <a href="./unternehmensverkauf.html">Unternehmensverkauf</a>
+        <a href="./nachfolgeberatung.html">Nachfolgeberatung</a>
+        <a href="./buyside.html">Buy-Side & Akquisition</a>
+        <a href="./eigenkapital.html">Eigenkapital & Wachstum</a>
+        <a href="./exitreadiness.html">Exit Readiness</a>
+      </div>
+    </div>
+    <a href="./ueber-uns.html">Über uns</a>
+    <a href="./referenzen.html" class="active">Referenzen</a>
+    <a href="./wissen.html">Wissen</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./kontakt.html" class="nav-cta">Termin vereinbaren</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <p class="page-eyebrow">Ausgewählte Transaktionen</p>
+      <h1 class="page-headline">Erfahrung die<br><em>für sich spricht.</em></h1>
+      <div class="hero-line"></div>
+      <p class="page-sub">Jede Transaktion ist anders. Was bleibt, ist der Anspruch: das beste Ergebnis für alle Beteiligten — nicht nur auf dem Papier, sondern langfristig.</p>
+    </div>
+    <div>
+      <p class="hero-note">Alle aufgeführten Transaktionen wurden als Investor auf der Käuferseite durchgeführt. Aus Gründen der Vertraulichkeit werden keine Details zu Transaktionsvolumen oder Bewertungen veröffentlicht.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEALS -->
+<section class="deals-section">
+  <div class="deals-inner">
+    <div class="deals-grid">
+
+      <!-- SARACUS -->
+      <div class="deal-card" onclick="toggleDeal(this)">
+        <div class="deal-card-accent"></div>
+        <div class="deal-card-body">
+          <div class="deal-card-top">
+            <div class="deal-company">Saracus Consulting</div>
+            <span class="deal-year">2020</span>
+          </div>
+          <p class="deal-sector">IT Services · Data & Analytics</p>
+          <p class="deal-desc">Akquisition eines spezialisierten Beratungshauses im Bereich Datenarchitektur und Analytics. Starke Kundenbasis im DACH-Mittelstand, wiederkehrender Umsatz durch langfristige Projektbeziehungen.</p>
+          <div class="deal-tags">
+            <span class="deal-tag">Buy-Side</span>
+            <span class="deal-tag">Mittelstand</span>
+            <span class="deal-tag">DACH</span>
+          </div>
+          <div class="deal-expand">
+            <span class="deal-expand-label">Details ansehen</span>
+            <span class="deal-expand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </div>
+        </div>
+        <div class="deal-detail">
+          <div class="deal-detail-inner">
+            <div class="detail-section">
+              <p class="detail-label">Transaktionsprofil</p>
+              <div class="detail-points">
+                <p class="detail-point">Vollständige Akquisition eines spezialisierten IT-Beratungshauses</p>
+                <p class="detail-point">Schwerpunkt: Datenarchitektur, BI und Analytics für Mittelstandskunden</p>
+                <p class="detail-point">Hoher Anteil wiederkehrender Projektumsätze mit langfristigen Kundenbeziehungen</p>
+                <p class="detail-point">Plattform-Investment mit Add-on-Potenzial im fragmentierten DACH-Markt</p>
+              </div>
+            </div>
+            <div class="detail-section">
+              <p class="detail-label">Unsere Rolle</p>
+              <p class="detail-text">Deal Sourcing, Erstansprache, Financial Modelling, Due Diligence Koordination und Verhandlungsführung bis Closing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEO COS -->
+      <div class="deal-card" onclick="toggleDeal(this)">
+        <div class="deal-card-accent"></div>
+        <div class="deal-card-body">
+          <div class="deal-card-top">
+            <div class="deal-company">Neo Cos Service</div>
+            <span class="deal-year">2021</span>
+          </div>
+          <p class="deal-sector">Kosmetik · Lohnherstellung</p>
+          <p class="deal-desc">Erwerb eines Lohnherstellers im Bereich Kosmetik und Körperpflege. Spezialisierte Produktionskapazitäten, etablierte Kundenbeziehungen zu nationalen und internationalen Marken.</p>
+          <div class="deal-tags">
+            <span class="deal-tag">Buy-Side</span>
+            <span class="deal-tag">Produktion</span>
+            <span class="deal-tag">DACH</span>
+          </div>
+          <div class="deal-expand">
+            <span class="deal-expand-label">Details ansehen</span>
+            <span class="deal-expand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </div>
+        </div>
+        <div class="deal-detail">
+          <div class="deal-detail-inner">
+            <div class="detail-section">
+              <p class="detail-label">Transaktionsprofil</p>
+              <div class="detail-points">
+                <p class="detail-point">Erwerb eines etablierten Lohnherstellers für Kosmetik- und Körperpflegeprodukte</p>
+                <p class="detail-point">Spezialisierte Produktionslinien und regulatorische Zertifizierungen als Eintrittsbarriere</p>
+                <p class="detail-point">Langfristige Rahmenverträge mit nationalen und internationalen Markenherstellern</p>
+                <p class="detail-point">Wachstumspotenzial durch Kapazitätserweiterung und Kundenakquise in Nachbarländern</p>
+              </div>
+            </div>
+            <div class="detail-section">
+              <p class="detail-label">Unsere Rolle</p>
+              <p class="detail-text">Eigenständiges Deal Sourcing über proprietären Outreach-Ansatz, vollständige Prozessführung von der Erstansprache bis zum Signing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMMO OFFICE -->
+      <div class="deal-card" onclick="toggleDeal(this)">
+        <div class="deal-card-accent"></div>
+        <div class="deal-card-body">
+          <div class="deal-card-top">
+            <div class="deal-company">Immo Office</div>
+            <span class="deal-year">2023</span>
+          </div>
+          <p class="deal-sector">Immobilien · Verwaltung & Services</p>
+          <p class="deal-desc">Akquisition eines regionalen Immobiliendienstleisters mit verwalteten Beständen und stabiler Ertragsbasis. Attraktives Plattform-Asset für weiteres Buy-and-Build im fragmentierten Markt.</p>
+          <div class="deal-tags">
+            <span class="deal-tag">Buy-Side</span>
+            <span class="deal-tag">Plattform</span>
+            <span class="deal-tag">DACH</span>
+          </div>
+          <div class="deal-expand">
+            <span class="deal-expand-label">Details ansehen</span>
+            <span class="deal-expand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </div>
+        </div>
+        <div class="deal-detail">
+          <div class="deal-detail-inner">
+            <div class="detail-section">
+              <p class="detail-label">Transaktionsprofil</p>
+              <div class="detail-points">
+                <p class="detail-point">Erwerb eines regionalen Immobilienverwalters mit gewerblichem und privatem Verwaltungsbestand</p>
+                <p class="detail-point">Stabile, wiederkehrende Umsätze durch langfristige Verwaltungsverträge</p>
+                <p class="detail-point">Fragmentierter Markt mit signifikantem Konsolidierungspotenzial</p>
+                <p class="detail-point">Plattforminvestment mit definierten Add-on-Kriterien für Buy-and-Build-Strategie</p>
+              </div>
+            </div>
+            <div class="detail-section">
+              <p class="detail-label">Unsere Rolle</p>
+              <p class="detail-text">Marktanalyse, Identifikation und Erstansprache des Targets, vollständige Begleitung durch Due Diligence und Vertragsverhandlung.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGICHECK -->
+      <div class="deal-card" onclick="toggleDeal(this)">
+        <div class="deal-card-accent"></div>
+        <div class="deal-card-body">
+          <div class="deal-card-top">
+            <div class="deal-company">Logicheck</div>
+            <span class="deal-year">2026</span>
+          </div>
+          <p class="deal-sector">InsurTech · Schadenmanagement & SaaS</p>
+          <p class="deal-desc">Investition in einen spezialisierten Anbieter digitaler Schadenmanagement-Lösungen für die Versicherungsbranche. Proprietäre SaaS-Plattform, wiederkehrender Umsatz, starke Positionierung im DACH-Versicherungsmarkt.</p>
+          <div class="deal-tags">
+            <span class="deal-tag">Buy-Side</span>
+            <span class="deal-tag">SaaS</span>
+            <span class="deal-tag">InsurTech</span>
+            <span class="deal-tag">DACH</span>
+          </div>
+          <div class="deal-expand">
+            <span class="deal-expand-label">Details ansehen</span>
+            <span class="deal-expand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </div>
+        </div>
+        <div class="deal-detail">
+          <div class="deal-detail-inner">
+            <div class="detail-section">
+              <p class="detail-label">Transaktionsprofil</p>
+              <div class="detail-points">
+                <p class="detail-point">Investment in proprietäre SaaS-Plattform für digitales Schadenmanagement</p>
+                <p class="detail-point">Wiederkehrender Umsatz durch Subscription-Modell mit etablierten Versicherungskunden</p>
+                <p class="detail-point">Starke Marktposition in der DACH-Versicherungsbranche mit hohen Wechselkosten</p>
+                <p class="detail-point">Wachstumstreiber: Digitalisierungsdruck bei Versicherungen und Expansion ins europäische Ausland</p>
+              </div>
+            </div>
+            <div class="detail-section">
+              <p class="detail-label">Unsere Rolle</p>
+              <p class="detail-text">Identifikation über proprietären Marktansatz, Investitionsanalyse, Strukturierung und vollständige Transaktionsbegleitung bis Closing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disclaimer">
+      <p>Alle aufgeführten Transaktionen wurden als Investor auf der Käuferseite durchgeführt. Aus Gründen der Vertraulichkeit werden keine weiteren Details zu Transaktionsvolumen, Bewertungen oder Käuferidentitäten veröffentlicht.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ANSATZ -->
+<section class="ansatz-section">
+  <div class="ansatz-inner">
+    <div class="fade-up">
+      <p class="ansatz-eyebrow">Was unsere Arbeit prägt</p>
+      <h2 class="ansatz-headline">Erfahrung von<br><em>beiden Seiten</em><br>des Tisches.</h2>
+      <p class="ansatz-text">Alle aufgeführten Transaktionen haben wir als Investoren durchgeführt — nicht als Berater. Diese Perspektive ist der Kern unserer Beratungsarbeit: Wir wissen wie Käufer denken, weil wir es waren.</p>
+      <p class="ansatz-text">Heute nutzen wir diese Erfahrung auf der Verkäuferseite — und helfen Unternehmern genau die Informationsasymmetrie zu überwinden, von der wir früher selbst profitiert haben.</p>
+    </div>
+    <div class="ansatz-items fade-up">
+      <div class="ansatz-item">
+        <div class="ansatz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div>
+          <div class="ansatz-item-title">Eigenständiges Deal Sourcing</div>
+          <p class="ansatz-item-text">Wir haben Targets nicht über Broker gefunden — sondern über eigene Recherche und direkten Outreach. Hohe Antwortquoten durch individuelle, persönliche Ansprache.</p>
+        </div>
+      </div>
+      <div class="ansatz-item">
+        <div class="ansatz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.51 0 2.93.37 4.18 1.03"/></svg></div>
+        <div>
+          <div class="ansatz-item-title">Institutionelle Qualität der Analyse</div>
+          <p class="ansatz-item-text">Due Diligence, Finanzmodelle und Bewertungsrahmen auf dem Niveau einer PE-Transaktion — nicht die vereinfachte Version eines Boutique-Beraters.</p>
+        </div>
+      </div>
+      <div class="ansatz-item">
+        <div class="ansatz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <div class="ansatz-item-title">Netzwerk das wir wirklich kennen</div>
+          <p class="ansatz-item-text">Kein Adressbuch — sondern aktive Beziehungen zu PE-Fonds, Family Offices und strategischen Käufern in DACH und Europa, die wir über Jahre aufgebaut haben.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-text">
+      <h3>Ihre Transaktion<br><em>in guten Händen.</em></h3>
+      <p>Vertrauliches Erstgespräch — kostenlos, unverbindlich, ohne Druck.</p>
+    </div>
+    <a href="./kontakt.html" class="cta-btn">
+      Erstgespräch vereinbaren
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-name">Julian Mick M&A Advisory</span>
+    <div class="footer-links">
+      <a href="./impressum.html" class="footer-link">Impressum</a>
+      <a href="./datenschutz.html" class="footer-link">Datenschutz</a>
+      <a href="./kontakt.html" class="footer-link">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  var dd = document.querySelector('.nav-dropdown');
+  if (dd) {
+    dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('open'); });
+    document.addEventListener('click', function() { dd.classList.remove('open'); });
+  }
+  var allAnim = document.querySelectorAll('.deal-card, .fade-up, .ansatz-item');
+  allAnim.forEach(function(el, i) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { setTimeout(function() { e.target.classList.add('visible'); }, i * 80); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+    obs.observe(el);
+  });
+})();
+
+window.toggleDeal = function(card) {
+  var isOpen = card.classList.contains('open');
+  document.querySelectorAll('.deal-card.open').forEach(function(c) { c.classList.remove('open'); });
+  if (!isOpen) card.classList.add('open');
+};
+</script>
+
+</body>
+</html>
