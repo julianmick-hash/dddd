@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eigenkapitallösungen und Wachstumsfinanzierung für den Mittelstand. Minderheitsbeteiligung, Mezzanine und Wachstumskapital.">
+  <title>Eigenkapital & Wachstumsfinanzierung — Julian Mick M&A Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ================================================
+       RESET & ROOT
+    ================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:      #0D1B2A;
+      --gold:      #B8955A;
+      --offwhite:  #F7F4EF;
+      --warm-gray: #8C8880;
+      --border-dark: rgba(13,27,42,0.08);
+      --border-gold: rgba(184,149,90,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Syne', sans-serif; background: var(--offwhite); color: var(--navy); overflow-x: hidden; }
+
+    /* ================================================
+       NAV
+    ================================================ */
+    #mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(240,228,204,0.97); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border-dark); transition: padding 0.3s; }
+    #mainNav.scrolled { padding: 0.875rem 4rem; }
+    .nav-logo { font-family: 'Spectral', serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links > a { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links > a:hover, .nav-links > a.active { color: var(--gold); }
+    .nav-cta { background: var(--gold) !important; color: var(--offwhite) !important; padding: 0.6rem 1.4rem !important; border-radius: 2px; transition: background 0.3s !important; }
+    .nav-cta:hover { background: var(--navy) !important; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-transform: uppercase; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; background: none; border: none; font-family: 'Syne', sans-serif; padding: 0; transition: color 0.3s; }
+    .nav-dropdown-toggle:hover, .nav-dropdown.open .nav-dropdown-toggle { color: var(--gold); }
+    .nav-dropdown-toggle svg { width: 10px; height: 10px; transition: transform 0.25s; }
+    .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%) translateY(-6px); background: var(--navy); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 0.75rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-menu a { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; font-family: 'Syne', sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.65); text-decoration: none; transition: color 0.2s, background 0.2s; }
+    .nav-dropdown-menu a:hover { color: #F7F4EF; background: rgba(247,244,239,0.05); }
+    .nav-dropdown-menu a svg { width: 13px; height: 13px; flex-shrink: 0; opacity: 0.35; transition: opacity 0.2s; }
+    .nav-dropdown-menu a:hover svg { opacity: 0.7; }
+    .nav-divider { height: 0.5px; background: rgba(247,244,239,0.07); margin: 0.4rem 1.5rem; }
+
+    /* ================================================
+       PAGE HERO
+    ================================================ */
+    .page-hero { background: var(--navy); min-height: 500px; position: relative; overflow: hidden; display: flex; align-items: center; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(184,149,90,0.07), transparent 55%); pointer-events: none; }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; padding: 10rem 5rem 7rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; z-index: 1; }
+    .page-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
+    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.2rem, 3.5vw, 3.5rem); color: #F7F4EF; line-height: 1.15; margin-bottom: 2rem; }
+    .page-headline em { font-style: italic; color: var(--gold); }
+    .page-hero-sub { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.55); max-width: 460px; }
+    .hero-visual { display: flex; align-items: center; justify-content: center; }
+
+    /* ================================================
+       INTRO SECTION
+    ================================================ */
+    .intro { background: var(--offwhite); padding: 7rem 5rem; }
+    .intro-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .intro-left h2 { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.4vw, 2.4rem); color: var(--navy); line-height: 1.25; margin-bottom: 1.75rem; }
+    .intro-left h2 em { font-style: italic; color: var(--gold); }
+    .intro-left p { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: #5F5E5A; margin-bottom: 1.25rem; }
+    .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-dark); border: 0.5px solid var(--border-dark); border-radius: 4px; overflow: hidden; margin-bottom: 2rem; }
+    .kpi-item { background: #fff; padding: 2rem; text-align: center; }
+    .kpi-number { font-family: Spectral, serif; font-weight: 600; font-size: 2rem; color: var(--navy); line-height: 1; }
+    .kpi-label { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-top: 0.5rem; }
+    .kpi-gold { color: var(--gold); }
+    .intro-note { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.8; color: var(--warm-gray); font-style: italic; padding: 1.5rem; border-left: 2px solid rgba(184,149,90,0.3); background: rgba(184,149,90,0.04); border-radius: 0 4px 4px 0; }
+    /* Reality cards (Nachfolge) */
+    .reality-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .reality-card { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 1.75rem 2rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+    .reality-icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .reality-icon svg { width: 18px; height: 18px; color: var(--gold); }
+    .reality-card h4 { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.35rem; }
+    .reality-card p { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.75; color: var(--warm-gray); }
+    /* Stat highlights (Buy-Side) */
+    .stat-highlight { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.5rem; margin-bottom: 1.25rem; position: relative; overflow: hidden; }
+    .stat-highlight::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--gold); }
+    .stat-num { font-family: Spectral, serif; font-weight: 600; font-size: 2.5rem; color: var(--gold); line-height: 1; }
+    .stat-label { font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); margin-top: 0.5rem; }
+    .stat-sub { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.75; color: #5F5E5A; margin-top: 0.75rem; }
+    /* Use cases (Eigenkapital) */
+    .usecases { display: flex; flex-direction: column; gap: 1rem; }
+    .uc-item { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.25rem 2.75rem; display: flex; gap: 1.75rem; align-items: flex-start; transition: box-shadow 0.3s; opacity: 0; transform: translateY(14px); }
+    .uc-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .uc-item:hover { box-shadow: 0 6px 24px rgba(13,27,42,0.06); }
+    .uc-icon { width: 46px; height: 46px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .uc-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .uc-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+    .uc-text { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: #5F5E5A; }
+
+    /* ================================================
+       DARK SECTIONS (leistungen, wege, prozess)
+    ================================================ */
+    .leistungen, .dark, .wege, .stations-section { background: var(--navy); padding: 7rem 5rem; position: relative; overflow: hidden; }
+    .leistungen-bg, .wege-bg, .stations-bg { position: absolute; right: -150px; top: 50%; transform: translateY(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(184,149,90,0.04), transparent 70%); pointer-events: none; }
+    .leistungen-inner, .wege-inner, .dark .section-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .section-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
+    .section-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline em { font-style: italic; color: var(--gold); }
+    .section-headline-dark { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline-dark em { font-style: italic; color: var(--gold); }
+    /* List items (dark bg) */
+    .leistungen-list, .item-list { display: flex; flex-direction: column; gap: 1rem; }
+    .l-item, .list-item { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.07); border-radius: 3px; padding: 2.5rem 3rem; display: flex; gap: 2rem; align-items: flex-start; transition: background 0.3s; opacity: 0; transform: translateY(16px); }
+    .l-item.visible, .list-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s; }
+    .l-item:hover, .list-item:hover { background: rgba(247,244,239,0.05); }
+    .l-icon, .li-icon { width: 48px; height: 48px; flex-shrink: 0; background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .l-icon svg, .li-icon svg { width: 22px; height: 22px; color: var(--gold); }
+    .l-content h3, .li-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: #F7F4EF; margin-bottom: 0.6rem; line-height: 1.3; }
+    .l-content p, .li-text { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: rgba(247,244,239,0.45); }
+    /* Outreach box */
+    .outreach-box { background: rgba(184,149,90,0.08); border: 1px solid rgba(184,149,90,0.25); border-radius: 6px; padding: 3rem; margin-top: 3rem; position: relative; }
+    .outreach-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2)); }
+    .outreach-box h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.2rem; color: #F7F4EF; margin-bottom: 0.75rem; }
+    .outreach-box p { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: rgba(247,244,239,0.55); }
+    /* Wege cards (Nachfolge) */
+    .wege-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .weg-card { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(16px); }
+    .weg-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .weg-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .weg-card:hover { background: rgba(247,244,239,0.05); }
+    .weg-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .weg-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.15rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .weg-text { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.85; color: rgba(247,244,239,0.45); margin-bottom: 1.5rem; }
+    .weg-pros { display: flex; flex-direction: column; gap: 0.5rem; }
+    .weg-pro { display: flex; align-items: flex-start; gap: 0.6rem; font-family: Syne, sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.4); }
+    .weg-pro svg { width: 13px; height: 13px; color: var(--gold); flex-shrink: 0; margin-top: 0.15rem; }
+    /* Instruments grid (Eigenkapital) */
+    .instruments { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .instr-card { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(14px); }
+    .instr-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .instr-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .instr-card:hover { background: rgba(247,244,239,0.05); }
+    .instr-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .instr-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .instr-text { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.85; color: rgba(247,244,239,0.45); }
+    /* Two-col layout */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .body-text { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: #5F5E5A; margin-bottom: 1.25rem; }
+    .body-text-dark { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: rgba(247,244,239,0.5); margin-bottom: 1.25rem; }
+
+    /* ================================================
+       LIGHT SECTIONS
+    ================================================ */
+    .unterschied, .light, .prozess { background: var(--offwhite); padding: 7rem 5rem; }
+    .unterschied-inner, .prozess-inner, .light .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-headline-light { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: var(--navy); line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline-light em { font-style: italic; color: var(--gold); }
+    /* Unterschied / u-cards */
+    .unterschied-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 4rem; }
+    .u-card { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.5rem; opacity: 0; transform: translateY(16px); transition: box-shadow 0.3s; }
+    .u-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .u-card:hover { box-shadow: 0 6px 30px rgba(13,27,42,0.06); }
+    .u-card-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .u-icon { width: 44px; height: 44px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .u-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .u-card h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); line-height: 1.3; }
+    .u-card p { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.85; color: #5F5E5A; }
+    /* Light list items */
+    .light-list { display: flex; flex-direction: column; gap: 1rem; }
+    .light-item { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 3px; padding: 2.25rem 2.75rem; display: flex; gap: 1.75rem; align-items: flex-start; transition: box-shadow 0.3s; opacity: 0; transform: translateY(14px); }
+    .light-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .light-item:hover { box-shadow: 0 6px 24px rgba(13,27,42,0.06); }
+    .li-icon-light { width: 46px; height: 46px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .li-icon-light svg { width: 20px; height: 20px; color: var(--gold); }
+    .li-title-light { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+    .li-text-light { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: #5F5E5A; }
+    /* Prozess steps (Nachfolge) */
+    .prozess-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+    .prozess-steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(184,149,90,0.2) 20%, rgba(184,149,90,0.2) 80%, transparent); }
+    .p-step { text-align: center; padding: 0 1.5rem; opacity: 0; transform: translateY(16px); }
+    .p-step.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .p-dot { width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 1px solid rgba(184,149,90,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+    .p-dot svg { width: 22px; height: 22px; color: var(--gold); }
+    .p-title { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.3; }
+    .p-text { font-family: Syne, sans-serif; font-size: 0.78rem; line-height: 1.8; color: var(--warm-gray); }
+    /* Checklist (Exit Readiness) */
+    .checklist { display: flex; flex-direction: column; border-top: 0.5px solid var(--border-dark); }
+    .check-item { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border-dark); opacity: 0; transform: translateX(-12px); }
+    .check-item.visible { opacity: 1; transform: translateX(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .check-num { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: rgba(184,149,90,0.4); min-width: 2rem; }
+    .check-label { font-family: Syne, sans-serif; font-size: 0.9rem; font-weight: 500; color: var(--navy); }
+    .check-status { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 20px; }
+    .status-key { background: rgba(184,149,90,0.12); color: var(--gold); border: 0.5px solid rgba(184,149,90,0.3); }
+    .status-often { background: rgba(13,27,42,0.05); color: var(--warm-gray); border: 0.5px solid var(--border-dark); }
+    /* Optim steps (Exit Readiness) */
+    .optim-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+    .opt-step { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(14px); }
+    .opt-step.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .opt-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .opt-step:hover { background: rgba(247,244,239,0.05); }
+    .opt-horizon { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .opt-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .opt-items { display: flex; flex-direction: column; gap: 0.5rem; }
+    .opt-item { display: flex; align-items: flex-start; gap: 0.6rem; font-family: Syne, sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.45); }
+    .opt-item svg { width: 12px; height: 12px; color: var(--gold); flex-shrink: 0; margin-top: 0.2rem; }
+
+    /* ================================================
+       QUOTE SECTION
+    ================================================ */
+    .quote-section { background: var(--navy); padding: 6rem 5rem; }
+    .quote-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .quote-text { font-family: Spectral, serif; font-style: italic; font-size: clamp(1.2rem, 1.8vw, 1.8rem); color: #F7F4EF; line-height: 1.7; margin-bottom: 2rem; }
+    .quote-text em { color: var(--gold); font-style: normal; }
+    .quote-author { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(184,149,90,0.6); }
+
+    /* ================================================
+       FAQ STRIP
+    ================================================ */
+    .faq-strip { background: var(--navy); padding: 5rem; }
+    .faq-strip-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .faq-left h2 { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.6rem, 2.2vw, 2.2rem); color: #F7F4EF; line-height: 1.3; margin-bottom: 1rem; }
+    .faq-left h2 em { font-style: italic; color: var(--gold); }
+    .faq-left p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: rgba(247,244,239,0.45); margin-bottom: 2rem; }
+    .faq-link { display: inline-flex; align-items: center; gap: 0.75rem; font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,149,90,0.3); padding-bottom: 0.35rem; transition: gap 0.3s, border-color 0.3s; }
+    .faq-link:hover { gap: 1.1rem; border-color: var(--gold); }
+    .faq-link svg { width: 14px; height: 14px; }
+    .faq-items { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 0.5px solid rgba(247,244,239,0.07); padding: 1.5rem 0; }
+    .faq-item:first-child { border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .faq-q { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: #F7F4EF; margin-bottom: 0.6rem; line-height: 1.4; }
+    .faq-a { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.85; color: rgba(247,244,239,0.4); }
+    /* Light FAQ variant */
+    .faq-strip.light-faq { background: var(--offwhite); }
+    .faq-strip.light-faq .faq-left h2 { color: var(--navy); }
+    .faq-strip.light-faq .faq-left p { color: var(--warm-gray); }
+    .faq-strip.light-faq .faq-item { border-color: var(--border-dark); }
+    .faq-strip.light-faq .faq-q { color: var(--navy); }
+    .faq-strip.light-faq .faq-a { color: var(--warm-gray); }
+
+    /* ================================================
+       CTA STRIP
+    ================================================ */
+    .cta-strip { background: var(--offwhite); padding: 5rem; }
+    .cta-strip-inner { max-width: 1200px; margin: 0 auto; background: var(--navy); border-radius: 6px; padding: 4.5rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 4rem; position: relative; overflow: hidden; }
+    .cta-strip-inner::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
+    /* Dark cta variant */
+    .cta-strip.dark-cta { background: var(--navy); padding: 5rem; }
+    .cta-strip.dark-cta .cta-strip-inner { background: none; border-radius: 0; padding: 0; max-width: 1200px; }
+    .cta-text h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.8rem; color: #F7F4EF; line-height: 1.3; }
+    .cta-text h3 em { font-style: italic; color: var(--gold); }
+    .cta-text p { font-family: Syne, sans-serif; font-size: 0.875rem; color: rgba(247,244,239,0.4); margin-top: 0.75rem; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .cta-btn svg { width: 16px; height: 16px; }
+    /* CTA box (Exit Readiness) */
+    .cta-box { background: rgba(184,149,90,0.08); border: 1px solid rgba(184,149,90,0.2); border-radius: 6px; padding: 3.5rem; margin-top: 4rem; text-align: center; position: relative; }
+    .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .cta-box h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.5rem; color: #F7F4EF; margin-bottom: 0.75rem; }
+    .cta-box p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.8; color: rgba(247,244,239,0.5); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-box-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; transition: background 0.25s, transform 0.2s; }
+    .cta-box-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .cta-box-btn svg { width: 16px; height: 16px; }
+
+    /* ================================================
+       FOOTER
+    ================================================ */
+    .site-footer { background: var(--navy); padding: 0 5rem 3rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 2.5rem; }
+    .footer-name { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: rgba(247,244,239,0.4); }
+    .footer-links { display: flex; gap: 2.5rem; }
+    .footer-link { font-family: Syne, sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(247,244,239,0.25); text-decoration: none; transition: color 0.3s; }
+    .footer-link:hover { color: rgba(247,244,239,0.6); }
+
+    /* ================================================
+       FADE-UP UTILITY
+    ================================================ */
+    .fade-up { opacity: 0; transform: translateY(20px); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+    /* ================================================
+       SVG ANIMATIONS (Unternehmensverkauf / Nachfolge etc.)
+    ================================================ */
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin2 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin3 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin4 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin5 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="./index.html" class="nav-logo">[Beratung]</a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-toggle">
+        Leistungen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="./leistungen.html">
+          Alle Leistungen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <div class="nav-divider"></div>
+        <a href="./unternehmensverkauf.html">Unternehmensverkauf</a>
+        <a href="./nachfolgeberatung.html">Nachfolgeberatung</a>
+        <a href="./buyside.html">Buy-Side & Akquisition</a>
+        <a href="./eigenkapital.html">Eigenkapital & Wachstum</a>
+        <a href="./exitreadiness.html">Exit Readiness</a>
+      </div>
+    </div>
+    <a href="./ueber-uns.html">Über uns</a>
+    <a href="./index.html#referenzen">Referenzen</a>
+    <a href="./wissen.html">Wissen</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./kontakt.html" class="nav-cta">Termin vereinbaren</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <p class="page-eyebrow">Leistungen · Eigenkapital & Wachstumsfinanzierung</p>
+      <h1 class="page-headline">Kapital das zu<br>Ihrem Unternehmen<br><em>passt.</em></h1>
+      <p class="page-hero-sub">Wachstum, Restrukturierung, Gesellschafterwechsel — manchmal braucht es Kapital ohne gleich zu verkaufen. Wir finden den richtigen Partner und die richtige Struktur.</p>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 400 400" width="360" height="360" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="hg4" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#B8955A" stop-opacity="0.1"/><stop offset="100%" stop-color="#B8955A" stop-opacity="0"/></radialGradient></defs>
+        <circle cx="200" cy="200" r="180" fill="url(#hg4)"/>
+        <circle cx="200" cy="200" r="155" fill="none" stroke="rgba(184,149,90,0.08)" stroke-width="0.75"/>
+        <!-- Growth chart bars -->
+        <rect x="110" y="260" width="28" height="60" rx="3" fill="#B8955A" opacity="0.25"/>
+        <rect x="150" y="230" width="28" height="90" rx="3" fill="#B8955A" opacity="0.35"/>
+        <rect x="190" y="195" width="28" height="125" rx="3" fill="#B8955A" opacity="0.5"/>
+        <rect x="230" y="155" width="28" height="165" rx="3" fill="#B8955A" opacity="0.65"/>
+        <rect x="270" y="120" width="28" height="200" rx="3" fill="#B8955A" opacity="0.8"/>
+        <!-- Trend line -->
+        <path d="M124,258 L164,228 L204,192 L244,152 L284,118" stroke="#B8955A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+        <!-- Trend dots -->
+        <circle cx="124" cy="258" r="4" fill="#B8955A" opacity="0.7"/>
+        <circle cx="164" cy="228" r="4" fill="#B8955A" opacity="0.75"/>
+        <circle cx="204" cy="192" r="4" fill="#B8955A" opacity="0.8"/>
+        <circle cx="244" cy="152" r="4" fill="#B8955A" opacity="0.85"/>
+        <circle cx="284" cy="118" r="5" fill="#B8955A" opacity="0.9"/>
+        <circle cx="284" cy="118" r="10" fill="none" stroke="#B8955A" stroke-width="1" opacity="0.3"/>
+        <!-- Base line -->
+        <line x1="100" y1="320" x2="320" y2="320" stroke="rgba(184,149,90,0.2)" stroke-width="1"/>
+        <!-- Orbit -->
+        <g style="transform-origin:200px 200px;animation:spin4 32s linear infinite">
+          <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(184,149,90,0.05)" stroke-width="0.75" stroke-dasharray="3 10"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<section class="light">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="fade-up">
+        <p class="eyebrow">Unsere Rolle</p>
+        <h2 class="headline-light">Nicht jeder Schritt<br>erfordert einen <em>Verkauf.</em></h2>
+        <p class="body-text">Manchmal braucht ein Unternehmen Kapital um zu wachsen — ohne dass der Unternehmer die Kontrolle abgeben oder ganz verkaufen möchte. Manchmal will ein Gesellschafter aussteigen, während das Unternehmen weiterläuft. Und manchmal ist eine Wachstumsfinanzierung der erste Schritt zu einem späteren Exit.</p>
+        <p class="body-text">Wir begleiten Sie dabei, die richtige Kapitalstruktur zu finden und den passenden Investor zu identifizieren — ob Minderheitsbeteiligung, Mezzanine, Wachstumskapital oder Gesellschafterdarlehen.</p>
+      </div>
+      <div class="fade-up">
+        <div class="usecases">
+          <div class="uc-item">
+            <div class="uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <div>
+              <h3 class="uc-title">Wachstumsfinanzierung</h3>
+              <p class="uc-text">Kapital für Expansion, neue Märkte oder strategische Akquisitionen — ohne Kontrollverlust.</p>
+            </div>
+          </div>
+          <div class="uc-item">
+            <div class="uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div>
+              <h3 class="uc-title">Gesellschafterwechsel</h3>
+              <p class="uc-text">Ein Gesellschafter möchte aussteigen — wir strukturieren die Transaktion und finden einen passenden Nachfolger auf Gesellschafterebene.</p>
+            </div>
+          </div>
+          <div class="uc-item">
+            <div class="uc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div>
+              <h3 class="uc-title">Liquidität für den Unternehmer</h3>
+              <p class="uc-text">Teilweise Vermögensliquidierung durch Minderheitsverkauf — Sie bleiben unternehmerisch aktiv, diversifizieren aber Ihr Vermögen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div style="position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,149,90,0.04),transparent 70%);pointer-events:none;"></div>
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <p class="eyebrow fade-up">Instrumente</p>
+    <h2 class="headline-dark fade-up">Die wichtigsten<br><em>Finanzierungsformen.</em></h2>
+    <div class="instruments">
+      <div class="instr-card">
+        <p class="instr-label">Eigenkapital</p>
+        <h3 class="instr-title">Minderheitsbeteiligung</h3>
+        <p class="instr-text">Ein Finanzinvestor oder strategischer Partner erwirbt eine Minderheit. Sie behalten die Mehrheit und unternehmerische Kontrolle — profitieren aber von Kapital, Netzwerk und Know-how des Partners.</p>
+      </div>
+      <div class="instr-card">
+        <p class="instr-label">Eigenkapital</p>
+        <h3 class="instr-title">Mehrheitsbeteiligung mit Verbleib</h3>
+        <p class="instr-text">Verkauf der Mehrheit an einen Investor, Sie bleiben als Gesellschafter und/oder Geschäftsführer aktiv. Liquidität heute, zweiter Exit in 3–7 Jahren.</p>
+      </div>
+      <div class="instr-card">
+        <p class="instr-label">Mezzanine</p>
+        <h3 class="instr-title">Nachrangkapital & Mezzanine</h3>
+        <p class="instr-text">Hybrid aus Eigen- und Fremdkapital — flexibel strukturierbar, ohne Stimmrechtsverwässerung. Geeignet für Wachstumsfinanzierung und Gesellschafterablösung.</p>
+      </div>
+      <div class="instr-card">
+        <p class="instr-label">Fremdkapital</p>
+        <h3 class="instr-title">Unitranche & Acquisition Finance</h3>
+        <p class="instr-text">Strukturierte Fremdkapitallösungen für Akquisitionsfinanzierungen oder Wachstumsprojekte — oft in Kombination mit Eigenkapital aus unserem Investorennetzwerk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-text">
+      <h3>Kapitalbedarf oder<br><em>Gesellschafterwechsel?</em></h3>
+      <p>Wir finden die richtige Struktur und den passenden Partner.</p>
+    </div>
+    <a href="./kontakt.html" class="cta-btn">Erstgespräch vereinbaren<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-name">Julian Mick M&A Advisory</span>
+    <div class="footer-links">
+      <a href="./impressum.html" class="footer-link">Impressum</a>
+      <a href="./datenschutz.html" class="footer-link">Datenschutz</a>
+      <a href="./kontakt.html" class="footer-link">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+(function() {
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  var dd = document.querySelector('.nav-dropdown');
+  if (dd) {
+    dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+      e.stopPropagation(); dd.classList.toggle('open');
+    });
+    document.addEventListener('click', function() { dd.classList.remove('open'); });
+  }
+  // Animate all fade/visible elements
+  var allAnimated = document.querySelectorAll('.fade-up, .l-item, .list-item, .u-card, .weg-card, .instr-card, .light-item, .uc-item, .opt-step, .p-step, .check-item');
+  allAnimated.forEach(function(el, i) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          setTimeout(function() { e.target.classList.add('visible'); }, i * 60);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+    obs.observe(el);
+  });
+})();
+</script>
+
+</body>
+</html>
