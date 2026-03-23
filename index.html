@@ -172,29 +172,6 @@
     .hero-right { position: relative; z-index: 2; opacity: 0; animation: fadeIn 1s ease 0.5s forwards; }
     #particleCanvas { width: 100%; height: 100%; display: block; }
 
-    /* STATS BAR */
-    .stats-bar {
-      min-height: 110px;
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      background: var(--gold);
-      opacity: 0; animation: fadeUp 0.9s ease 0.8s forwards;
-    }
-    .stat-item {
-      padding: 0 2.5rem;
-      display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
-      border-right: 0.5px solid rgba(247,244,239,0.2);
-      transition: background 0.3s; cursor: default;
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-item:hover { background: rgba(247,244,239,0.1); }
-    .stat-number {
-      font-family: 'Spectral', serif; font-size: 2.6rem; font-weight: 600;
-      color: #F7F4EF; display: block; margin-bottom: 0.35rem; line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.14em;
-      text-transform: uppercase; color: rgba(13,27,42,0.7);
-    }
 
     /* ================================================
        SECTION 2 — PROBLEM / KONTEXT
@@ -526,7 +503,7 @@
 <div class="hero-wrap">
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-label">M&A-Beratung · Nachfolge · Mittelstand</div>
+      <div class="hero-label">Unternehmensverkauf · Nachfolge · DACH</div>
       <h1 class="hero-title">
         Für Unternehmer,<br>
         die ihrem Lebenswerk<br>
@@ -536,6 +513,28 @@
       <p class="hero-sub">
         Der Verkauf eines Unternehmens ist kein gewöhnlicher Deal — er ist der Abschluss eines Lebenswerks. Wir bringen unsere jahrelange Erfahrung aus führenden Investmentinstitutionen in Ihren entscheidenden Moment — diskret, partnerschaftlich, mit dem Einsatz den Ihr Lebenswerk verdient.
       </p>
+      <div class="hero-kpis">
+        <div class="hero-kpi">
+          <span class="hero-kpi-num" data-target="20" data-suffix="+">0+</span>
+          <span class="hero-kpi-label">Transaktionen</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi">
+          <span class="hero-kpi-num" data-target="10" data-suffix="">0</span>
+          <span class="hero-kpi-label">Jahre Erfahrung</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi">
+          <span class="hero-kpi-num" data-target="500" data-suffix="+">0+</span>
+          <span class="hero-kpi-label">Investorenkontakte</span>
+        </div>
+        <div class="hero-kpi-divider"></div>
+        <div class="hero-kpi">
+          <span class="hero-kpi-num">DACH</span>
+          <span class="hero-kpi-label">+ Europa</span>
+        </div>
+      </div>
+
       <div class="hero-ctas">
         <a href="./kontakt.html" class="btn-primary">Vertrauliches Erstgespräch</a>
       </div>
@@ -545,24 +544,6 @@
     </div>
   </section>
 
-  <div class="stats-bar">
-    <div class="stat-item">
-      <span class="stat-number" data-target="20" data-suffix="+">0+</span>
-      <span class="stat-label">Transaktionen</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number" data-target="10" data-suffix="">0</span>
-      <span class="stat-label">Jahre Erfahrung</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number" data-target="500" data-suffix="+">0+</span>
-      <span class="stat-label">Investorenkontakte</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">DACH</span>
-      <span class="stat-label">+ Europa</span>
-    </div>
-  </div>
 </div>
 
 <!-- SECTION 2: PROBLEM / KONTEXT -->
