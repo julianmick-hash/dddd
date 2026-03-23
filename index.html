@@ -3,464 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="M&A-Beratung für den deutschen Mittelstand. Unternehmensverkauf, Nachfolge und Akquisition — mit institutioneller Erfahrung von beiden Seiten des Tisches.">
-  <title>M&A-Beratung für den Mittelstand — Julian Mick Advisory</title>
+  <meta name="description" content="Häufige Fragen zum Unternehmensverkauf, Nachfolge und M&A-Beratung — offen, direkt und ohne Berater-Prosa.">
+  <title>FAQ — Julian Mick M&A Advisory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-
     /* ================================================
        RESET & ROOT
     ================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --navy:     #0D1B2A;
-      --navy-mid: #1A2E42;
-      --gold:     #B8955A;
-      --gold-pale:#F0E4CC;
-      --offwhite: #F7F4EF;
-      --warm-gray:#8C8880;
+      --navy:      #0D1B2A;
+      --gold:      #B8955A;
+      --offwhite:  #F7F4EF;
+      --warm-gray: #8C8880;
       --border-dark: rgba(13,27,42,0.08);
       --border-gold: rgba(184,149,90,0.2);
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Syne', sans-serif;
-      background: var(--offwhite);
-      color: var(--navy);
-      overflow-x: hidden;
-    }
+    body { font-family: 'Syne', sans-serif; background: var(--offwhite); color: var(--navy); overflow-x: hidden; }
 
     /* ================================================
        NAV
     ================================================ */
-    #mainNav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 1.25rem 4rem;
-      display: flex; align-items: center; justify-content: space-between;
-      background: rgba(240,228,204,0.97);
-      backdrop-filter: blur(16px);
-      border-bottom: 0.5px solid var(--border-dark);
-      transition: padding 0.3s;
-    }
+    #mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(240,228,204,0.97); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border-dark); transition: padding 0.3s; }
     #mainNav.scrolled { padding: 0.875rem 4rem; }
-    .nav-logo {
-      font-family: 'Spectral', serif; font-weight: 600; font-size: 1.25rem;
-      color: var(--navy); text-decoration: none; letter-spacing: 0.01em;
-    }
+    .nav-logo { font-family: 'Spectral', serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); text-decoration: none; }
     .nav-links { display: flex; align-items: center; gap: 2.5rem; }
-    .nav-links > a {
-      font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em;
-      color: var(--navy); text-decoration: none; text-transform: uppercase;
-      transition: color 0.3s;
-    }
+    .nav-links > a { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
     .nav-links > a:hover, .nav-links > a.active { color: var(--gold); }
-    .nav-cta {
-      background: var(--gold) !important; color: var(--offwhite) !important;
-      padding: 0.6rem 1.4rem !important; border-radius: 2px;
-      transition: background 0.3s !important;
-    }
+    .nav-cta { background: var(--gold) !important; color: var(--offwhite) !important; padding: 0.6rem 1.4rem !important; border-radius: 2px; transition: background 0.3s !important; }
     .nav-cta:hover { background: var(--navy) !important; }
     .nav-dropdown { position: relative; }
-    .nav-dropdown-toggle {
-      font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em;
-      color: var(--navy); text-transform: uppercase; cursor: pointer;
-      display: flex; align-items: center; gap: 0.35rem;
-      background: none; border: none; font-family: 'Syne', sans-serif;
-      padding: 0; transition: color 0.3s;
-    }
-    .nav-dropdown-toggle:hover,
-    .nav-dropdown.open .nav-dropdown-toggle { color: var(--gold); }
+    .nav-dropdown-toggle { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; color: var(--navy); text-transform: uppercase; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; background: none; border: none; font-family: 'Syne', sans-serif; padding: 0; transition: color 0.3s; }
+    .nav-dropdown-toggle:hover, .nav-dropdown.open .nav-dropdown-toggle { color: var(--gold); }
     .nav-dropdown-toggle svg { width: 10px; height: 10px; transition: transform 0.25s; }
     .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
-    .nav-dropdown-menu {
-      position: absolute; top: calc(100% + 1rem); left: 50%;
-      transform: translateX(-50%) translateY(-6px);
-      background: var(--navy);
-      border: 0.5px solid rgba(247,244,239,0.08);
-      border-radius: 4px; padding: 0.75rem 0; min-width: 260px;
-      opacity: 0; visibility: hidden;
-      transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
-    }
-    .nav-dropdown.open .nav-dropdown-menu {
-      opacity: 1; visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
-    .nav-dropdown-menu a {
-      display: block; padding: 0.75rem 1.5rem;
-      font-family: 'Syne', sans-serif; font-size: 0.78rem;
-      color: rgba(247,244,239,0.65); text-decoration: none;
-      transition: color 0.2s, background 0.2s;
-    }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%) translateY(-6px); background: var(--navy); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 0.75rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; box-shadow: 0 16px 48px rgba(0,0,0,0.2); }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-menu a { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; font-family: 'Syne', sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.65); text-decoration: none; transition: color 0.2s, background 0.2s; }
     .nav-dropdown-menu a:hover { color: #F7F4EF; background: rgba(247,244,239,0.05); }
-    .nav-dropdown-menu a .sub {
-      display: block; font-size: 0.62rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: rgba(184,149,90,0.5); margin-bottom: 0.1rem;
-    }
-    .nav-dropdown-menu .nav-divider {
-      height: 0.5px; background: rgba(247,244,239,0.07); margin: 0.4rem 1.5rem;
-    }
-    .nav-dropdown-menu a svg {
-      width: 13px; height: 13px; flex-shrink: 0; opacity: 0.35;
-      transition: opacity 0.2s;
-    }
+    .nav-dropdown-menu a svg { width: 13px; height: 13px; flex-shrink: 0; opacity: 0.35; transition: opacity 0.2s; }
     .nav-dropdown-menu a:hover svg { opacity: 0.7; }
-    .nav-dropdown-menu a {
-      display: flex; align-items: center; justify-content: space-between;
-    }
+    .nav-divider { height: 0.5px; background: rgba(247,244,239,0.07); margin: 0.4rem 1.5rem; }
 
     /* ================================================
-       HERO
+       PAGE HERO
     ================================================ */
-    .hero-wrap { position: relative; background: var(--navy); overflow: hidden; }
-    .hero {
-      min-height: calc(100vh - 110px);
-      display: grid; grid-template-columns: 52% 48%;
-      position: relative;
-    }
-    .hero::after {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 18% 55%, rgba(184,149,90,0.07) 0%, transparent 55%);
-      pointer-events: none; z-index: 1;
-    }
-    .hero-left {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 3rem 4rem 5rem;
-      position: relative; z-index: 2;
-    }
-    .hero-label {
-      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.4em;
-      color: var(--gold); text-transform: uppercase; margin-bottom: 2rem;
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.8s ease 0.2s forwards;
-    }
-    .hero-title {
-      font-family: 'Spectral', serif; font-weight: 600;
-      font-size: clamp(2.5rem, 3.4vw, 3.7rem); line-height: 1.1; color: var(--offwhite);
-      opacity: 0; transform: translateY(30px);
-      animation: fadeUp 0.9s ease 0.35s forwards;
-    }
-    .hero-title em { font-style: italic; color: var(--gold); }
-    .hero-line {
-      width: 52px; height: 1px; background: var(--gold); margin: 2rem 0;
-      opacity: 0; transform: scaleX(0); transform-origin: left;
-      animation: lineGrow 0.8s ease 0.65s forwards;
-    }
-    .hero-sub {
-      font-size: 0.87rem; font-weight: 400; line-height: 1.95;
-      color: rgba(140,136,128,0.85); max-width: 490px; margin-bottom: 2.75rem;
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.9s ease 0.75s forwards;
-    }
-    .hero-ctas {
-      display: flex; align-items: center; gap: 1.75rem;
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.9s ease 0.9s forwards;
-    }
-    .btn-primary {
-      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--offwhite);
-      background: transparent; border: 0.5px solid var(--gold);
-      padding: 0.9rem 2rem; border-radius: 2px; text-decoration: none;
-      transition: background 0.3s; white-space: nowrap;
-    }
-    .btn-primary:hover { background: var(--gold); }
-    .hero-right { position: relative; z-index: 2; opacity: 0; animation: fadeIn 1s ease 0.5s forwards; }
-    #particleCanvas { width: 100%; height: 100%; display: block; }
-
+    .page-hero { background: var(--navy); padding: 10rem 5rem 6rem; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(184,149,90,0.06), transparent 55%); pointer-events: none; }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
+    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.5rem, 4vw, 4rem); color: #F7F4EF; line-height: 1.15; max-width: 700px; }
+    .page-headline em { font-style: italic; color: var(--gold); }
+    .hero-line { width: 60px; height: 1.5px; background: var(--gold); margin: 2.5rem 0; }
+    .page-sub { font-family: Syne, sans-serif; font-size: 1rem; line-height: 1.9; color: rgba(247,244,239,0.5); max-width: 520px; }
 
     /* ================================================
-       SECTION 2 — PROBLEM / KONTEXT
+       CTA STRIP
     ================================================ */
-    .s2-section { background: var(--offwhite); overflow: hidden; position: relative; }
-    .s2-bg-num {
-      position: absolute; font-family: Spectral, serif; font-size: 28vw; font-weight: 600;
-      color: rgba(13,27,42,0.04); line-height: 1; top: -2rem; right: -2rem;
-      pointer-events: none; user-select: none; z-index: 0;
-    }
-    .s2-inner { max-width: 1200px; margin: 0 auto; padding: 8rem 5rem; position: relative; z-index: 1; }
-    .s2-top { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; margin-bottom: 6rem; }
-    .s2-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
-    .s2-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.2rem, 3vw, 3.2rem); color: var(--navy); line-height: 1.15; }
-    .s2-headline em { font-style: italic; color: var(--gold); }
-    .s2-line { width: 52px; height: 1px; background: var(--gold); margin: 2rem 0; }
-    .s2-body { font-family: Syne, sans-serif; font-size: 1.05rem; font-weight: 400; line-height: 1.95; color: #5F5E5A; }
-    .s2-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .s2-card {
-      background: #fff; border: 0.5px solid rgba(13,27,42,0.07); border-radius: 4px;
-      padding: 2.5rem; position: relative; overflow: hidden;
-      transition: transform 0.4s ease, border-color 0.3s, box-shadow 0.4s;
-      opacity: 0; transform: translateY(40px);
-    }
-    .s2-card.visible { opacity: 1; transform: translateY(0); }
-    .s2-card:hover { transform: translateY(-5px); border-color: rgba(184,149,90,0.5); box-shadow: 0 20px 40px rgba(13,27,42,0.08); }
-    .s2-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: var(--gold); transform: scaleX(0); transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .s2-card:hover::before { transform: scaleX(1); }
-    .s2-card-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.2rem; color: var(--navy); margin-bottom: 1rem; line-height: 1.3; }
-    .s2-card-text { font-family: Syne, sans-serif; font-size: 0.88rem; font-weight: 400; line-height: 1.9; color: var(--warm-gray); }
+    .cta-strip { background: var(--navy); padding: 5rem; }
+    .cta-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
+    .cta-text h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.8rem; color: #F7F4EF; line-height: 1.3; }
+    .cta-text h3 em { font-style: italic; color: var(--gold); }
+    .cta-text p { font-family: Syne, sans-serif; font-size: 0.875rem; color: rgba(247,244,239,0.4); margin-top: 0.75rem; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .cta-btn svg { width: 16px; height: 16px; }
 
     /* ================================================
-       SECTION 3 — LEISTUNGEN
+       FOOTER
     ================================================ */
-    .s3-section { background: var(--navy); position: relative; }
-    .s3-inner { max-width: 1400px; margin: 0 auto; padding: 8rem 5rem; }
-    .s3-header { margin-bottom: 5rem; }
-    .s3-header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 6rem; }
-    .s3-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .s3-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2rem, 2.8vw, 2.8rem); color: #F7F4EF; line-height: 1.2; }
-    .s3-subline { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; color: rgba(200,195,185,0.9); line-height: 1.85; max-width: 480px; flex-shrink: 0; padding-top: 0.5rem; }
-    .s3-divider { width: 100%; height: 0.5px; background: rgba(184,149,90,0.2); margin-top: 4rem; }
-    .s3-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      border: 0.5px solid rgba(184,149,90,0.18); border-radius: 4px;
-      overflow: hidden; margin-top: 4rem;
-    }
-    .s3-card {
-      padding: 2.5rem 2rem; border-right: 0.5px solid rgba(184,149,90,0.18);
-      display: flex; flex-direction: column; position: relative; overflow: hidden;
-      transition: background 0.3s; opacity: 0; transform: translateY(25px);
-      background: rgba(255,255,255,0.02);
-    }
-    .s3-card:last-child { border-right: none; }
-    .s3-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s; }
-    .s3-card:hover { background: rgba(184,149,90,0.07); }
-    .s3-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: var(--gold); transform: scaleX(0); transform-origin: left;
-      transition: transform 0.35s ease;
-    }
-    .s3-card:hover::before { transform: scaleX(1); }
-    .s3-card-icon { width: 44px; height: 44px; margin-bottom: 1.75rem; flex-shrink: 0; }
-    .s3-card-title { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: #F7F4EF; margin-bottom: 1rem; line-height: 1.4; }
-    .s3-card-text { font-family: Syne, sans-serif; font-size: 0.8rem; font-weight: 400; line-height: 1.85; color: rgba(160,155,145,0.9); flex: 1; }
-    .s3-card-link {
-      display: inline-block; margin-top: 1.75rem; flex-shrink: 0;
-      font-family: Syne, sans-serif; font-size: 0.7rem; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--gold); text-decoration: none; transition: opacity 0.3s;
-    }
-    .s3-card-link:hover { opacity: 0.65; }
+    .site-footer { background: var(--navy); padding: 0 5rem 3rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 2.5rem; }
+    .footer-name { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: rgba(247,244,239,0.4); }
+    .footer-links { display: flex; gap: 2.5rem; }
+    .footer-link { font-family: Syne, sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(247,244,239,0.25); text-decoration: none; transition: color 0.3s; }
+    .footer-link:hover { color: rgba(247,244,239,0.6); }
 
     /* ================================================
-       SECTION 4 — WARUM WIR
+       FADE UTILITY
     ================================================ */
-    .s4-section { background: var(--offwhite); position: relative; }
-    .s4-inner { max-width: 1200px; margin: 0 auto; padding: 8rem 5rem; }
-    .s4-header { display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: start; margin-bottom: 5rem; }
-    .s4-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .s4-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2rem, 2.8vw, 2.8rem); color: var(--navy); line-height: 1.2; }
-    .s4-headline em { font-style: italic; color: var(--gold); }
-    .s4-intro { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.9; color: #5F5E5A; margin-top: 1.5rem; }
-    .s4-header-image { position: relative; }
-    .s4-img-wrap { position: relative; border-radius: 4px; overflow: hidden; }
-    .s4-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; display: block; }
-    .s4-photo-placeholder {
-      width: 100%; aspect-ratio: 4/5;
-      background: rgba(13,27,42,0.05); border: 1.5px dashed rgba(13,27,42,0.15);
-      border-radius: 4px; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 1rem; color: var(--warm-gray);
-    }
-    .s4-photo-placeholder svg { width: 48px; height: 48px; opacity: 0.3; }
-    .s4-photo-placeholder span { font-family: Syne, sans-serif; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.4; }
-    .s4-img-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 2rem 1.5rem 1.25rem;
-      background: linear-gradient(to top, rgba(13,27,42,0.7), transparent);
-      font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 500;
-      letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,239,0.8);
-    }
-    .s4-list { display: flex; flex-direction: column; gap: 1rem; }
-    .s4-item {
-      background: #fff; padding: 2.5rem 2.75rem;
-      display: flex; gap: 1.75rem; align-items: flex-start;
-      border: 0.5px solid var(--border-dark); border-radius: 3px;
-      opacity: 0; transform: translateY(20px); transition: background 0.3s;
-    }
-    .s4-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s; }
-    .s4-item:hover { background: #fdfcfa; }
-    .s4-item-line { width: 2px; min-height: 100%; align-self: stretch; background: var(--gold); flex-shrink: 0; border-radius: 2px; opacity: 0.4; transition: opacity 0.3s; }
-    .s4-item:hover .s4-item-line { opacity: 1; }
-    .s4-item-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.3; }
-    .s4-item-text { font-family: Syne, sans-serif; font-size: 0.875rem; font-weight: 400; line-height: 1.9; color: #5F5E5A; }
-    .s4-item-icon { width: 52px; height: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(184,149,90,0.1); border-radius: 10px; align-self: center; }
-    .s4-item-icon svg { width: 26px; height: 26px; color: var(--gold); }
-    .s4-institutions { margin-top: 5rem; padding-top: 3.5rem; border-top: 0.5px solid rgba(13,27,42,0.1); }
-    .s4-inst-label { font-family: Syne, sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; color: var(--warm-gray); text-transform: uppercase; margin-bottom: 2.5rem; text-align: center; }
-    .s4-inst-logos { display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap; }
-    .s4-inst-logo { font-family: Spectral, serif; font-size: 1.05rem; font-weight: 600; color: rgba(13,27,42,0.28); text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.3s; cursor: default; }
-    .s4-inst-logo:hover { color: rgba(13,27,42,0.7); }
-    .s4-logo-slot { display: flex; align-items: center; height: 32px; }
-    .s4-logo-img { height: 28px; width: auto; opacity: 0.35; filter: grayscale(100%); transition: opacity 0.3s; object-fit: contain; }
-    .s4-logo-img:hover { opacity: 0.7; }
-    .s4-logo-fallback { display: none; }
-    .s4-inst-divider { width: 1px; height: 20px; background: rgba(13,27,42,0.12); }
+    .fade-up { opacity: 0; transform: translateY(20px); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
 
-    /* ================================================
-       SECTION 5 — DER PROZESS
-    ================================================ */
-    .s5-section { background: var(--navy); position: relative; overflow: hidden; }
-    .s5-inner { max-width: 1200px; margin: 0 auto; padding: 8rem 5rem; position: relative; z-index: 1; }
-    .s5-header { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: end; margin-bottom: 6rem; }
-    .s5-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .s5-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2rem, 2.8vw, 2.8rem); color: #F7F4EF; line-height: 1.2; }
-    .s5-headline em { font-style: italic; color: var(--gold); }
-    .s5-intro { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.55); }
-    .s5-steps { display: flex; flex-direction: column; position: relative; }
-    .s5-steps::before {
-      content: ''; position: absolute; left: 25px; top: 52px; bottom: 52px; width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(184,149,90,0.3) 10%, rgba(184,149,90,0.3) 90%, transparent);
-    }
-    .s5-step { display: grid; grid-template-columns: 52px 1fr; gap: 2.5rem; align-items: start; padding: 2.25rem 0; opacity: 0; transform: translateX(-20px); }
-    .s5-step.visible { opacity: 1; transform: translateX(0); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .s5-step-dot {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: rgba(184,149,90,0.12); border: 1px solid rgba(184,149,90,0.35);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; position: relative; z-index: 1;
-      transition: background 0.3s, border-color 0.3s;
-    }
-    .s5-step:hover .s5-step-dot { background: rgba(184,149,90,0.22); border-color: rgba(184,149,90,0.7); }
-    .s5-step-dot svg { width: 22px; height: 22px; color: var(--gold); }
-    .s5-step-body { padding-top: 0.9rem; }
-    .s5-step-label { font-family: Syne, sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; color: rgba(184,149,90,0.7); text-transform: uppercase; margin-bottom: 0.5rem; }
-    .s5-step-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.15rem; color: #F7F4EF; margin-bottom: 0.65rem; line-height: 1.3; }
-    .s5-step-text { font-family: Syne, sans-serif; font-size: 0.875rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.5); }
-    .s5-step-duration { display: inline-block; margin-top: 0.75rem; font-family: Syne, sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; color: rgba(184,149,90,0.6); border: 0.5px solid rgba(184,149,90,0.3); border-radius: 20px; padding: 0.25rem 0.85rem; }
-    .s5-bg-orb { position: absolute; right: -200px; top: 50%; transform: translateY(-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(184,149,90,0.04) 0%, transparent 70%); pointer-events: none; }
+    /* FILTER BAR */
+    .filter-bar { background: var(--offwhite); padding: 2.5rem 5rem; border-bottom: 0.5px solid var(--border-dark); position: sticky; top: 72px; z-index: 50; }
+    .filter-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .filter-btn { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.25rem; border-radius: 20px; border: 0.5px solid rgba(13,27,42,0.15); background: transparent; color: var(--warm-gray); cursor: pointer; transition: all 0.25s; }
+    .filter-btn:hover { border-color: rgba(184,149,90,0.4); color: var(--gold); }
+    .filter-btn.active { background: var(--navy); border-color: var(--navy); color: var(--offwhite); }
 
-    /* ================================================
-       SECTION 6 — REFERENZEN
-    ================================================ */
-    .s6-section { background: var(--offwhite); position: relative; overflow: hidden; }
-    .s6-inner { max-width: 1200px; margin: 0 auto; padding: 8rem 5rem; }
-    .s6-header { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: end; margin-bottom: 5rem; }
-    .s6-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .s6-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2rem, 2.8vw, 2.8rem); color: var(--navy); line-height: 1.2; }
-    .s6-headline em { font-style: italic; color: var(--gold); }
-    .s6-intro { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.9; color: #5F5E5A; }
-    .s6-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .s6-card {
-      background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px;
-      padding: 2.75rem 3rem; position: relative; overflow: hidden;
-      opacity: 0; transform: translateY(20px); transition: box-shadow 0.3s;
-    }
-    .s6-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s; }
-    .s6-card:hover { box-shadow: 0 8px 40px rgba(13,27,42,0.07); }
-    .s6-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2)); }
-    .s6-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.75rem; }
-    .s6-card-company { font-family: Spectral, serif; font-weight: 600; font-size: 1.3rem; color: var(--navy); line-height: 1.2; }
-    .s6-card-year { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--gold); background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.25); border-radius: 20px; padding: 0.3rem 0.9rem; white-space: nowrap; }
-    .s6-card-sector { font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; color: var(--warm-gray); text-transform: uppercase; margin-bottom: 1rem; }
-    .s6-card-desc { font-family: Syne, sans-serif; font-size: 0.875rem; font-weight: 400; line-height: 1.85; color: #5F5E5A; margin-bottom: 1.75rem; }
-    .s6-card-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .s6-tag { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; color: var(--navy); background: rgba(13,27,42,0.05); border-radius: 3px; padding: 0.3rem 0.7rem; }
-    .s6-disclaimer { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 0.5px solid var(--border-dark); }
-    .s6-disclaimer p { font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 400; line-height: 1.8; color: var(--warm-gray); font-style: italic; }
-
-    /* ================================================
-       SECTION 7 — WISSEN TEASER
-    ================================================ */
-    .s7-section { background: var(--navy); position: relative; overflow: hidden; }
-    .s7-inner { max-width: 1200px; margin: 0 auto; padding: 7rem 5rem; position: relative; z-index: 1; }
-    .s7-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
-    .s7-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .s7-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.25; margin-bottom: 1.5rem; }
-    .s7-headline em { font-style: italic; color: var(--gold); }
-    .s7-text { font-family: Syne, sans-serif; font-size: 0.95rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.55); margin-bottom: 2.5rem; }
-    .s7-cta { display: inline-flex; align-items: center; gap: 0.75rem; font-family: Syne, sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,149,90,0.35); padding-bottom: 0.4rem; transition: border-color 0.3s, gap 0.3s; }
-    .s7-cta:hover { border-color: var(--gold); gap: 1.1rem; }
-    .s7-cta svg { width: 16px; height: 16px; transition: transform 0.3s; }
-    .s7-cta:hover svg { transform: translateX(4px); }
-    .s7-articles { display: flex; flex-direction: column; }
-    .s7-article { display: flex; align-items: flex-start; gap: 1.75rem; padding: 1.75rem 0; border-bottom: 0.5px solid rgba(247,244,239,0.07); text-decoration: none; transition: opacity 0.3s; opacity: 0; transform: translateX(20px); }
-    .s7-article:first-child { border-top: 0.5px solid rgba(247,244,239,0.07); }
-    .s7-article.visible { opacity: 1; transform: translateX(0); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .s7-article:hover { opacity: 0.75; }
-    .s7-article-icon { width: 44px; height: 44px; flex-shrink: 0; background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-    .s7-article-icon svg { width: 20px; height: 20px; color: var(--gold); }
-    .s7-article-body { flex: 1; padding-top: 0.1rem; }
-    .s7-article-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.4rem; }
-    .s7-article-title { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: #F7F4EF; line-height: 1.35; }
-    .s7-article-arrow { flex-shrink: 0; color: rgba(184,149,90,0.4); align-self: center; transition: transform 0.3s, color 0.3s; }
-    .s7-article:hover .s7-article-arrow { transform: translateX(4px); color: var(--gold); }
-    .s7-bg-line { position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(184,149,90,0.06), transparent); pointer-events: none; }
-
-    /* ================================================
-       SECTION 8 — EXIT READINESS CTA
-    ================================================ */
-    .s8-section { background: var(--offwhite); position: relative; overflow: hidden; }
-    .s8-inner { max-width: 1200px; margin: 0 auto; padding: 7rem 5rem; position: relative; z-index: 1; }
-    .s8-wrap {
-      background: var(--navy); border-radius: 6px; padding: 5rem 6rem;
-      display: grid; grid-template-columns: 1fr auto; gap: 5rem;
-      align-items: center; position: relative; overflow: hidden;
-    }
-    .s8-wrap::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(184,149,90,0.07), transparent 60%); pointer-events: none; }
-    .s8-wrap::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
-    .s8-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .s8-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.4vw, 2.4rem); color: #F7F4EF; line-height: 1.25; margin-bottom: 1.5rem; }
-    .s8-headline em { font-style: italic; color: var(--gold); }
-    .s8-text { font-family: Syne, sans-serif; font-size: 0.95rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.5); max-width: 520px; }
-    .s8-checklist { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
-    .s8-check { display: flex; align-items: center; gap: 0.85rem; font-family: Syne, sans-serif; font-size: 0.85rem; font-weight: 400; color: rgba(247,244,239,0.65); }
-    .s8-check svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
-    .s8-actions { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; flex-shrink: 0; }
-    .s8-btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; }
-    .s8-btn-primary:hover { background: #c9a96b; transform: translateY(-1px); }
-    .s8-btn-primary svg { width: 16px; height: 16px; }
-    .s8-btn-secondary { font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 400; color: rgba(247,244,239,0.4); text-decoration: none; border-bottom: 0.5px solid rgba(247,244,239,0.15); padding-bottom: 0.2rem; transition: color 0.3s, border-color 0.3s; white-space: nowrap; }
-    .s8-btn-secondary:hover { color: rgba(247,244,239,0.7); border-color: rgba(247,244,239,0.4); }
-
-    /* ================================================
-       SECTION 9 — KONTAKT / FOOTER
-    ================================================ */
-    .s9-section { background: var(--navy); position: relative; overflow: hidden; }
-    .s9-inner { max-width: 1200px; margin: 0 auto; padding: 8rem 5rem; position: relative; z-index: 1; }
-    .s9-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
-    .s9-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .s9-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2rem, 2.8vw, 2.8rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 1.5rem; }
-    .s9-headline em { font-style: italic; color: var(--gold); }
-    .s9-text { font-family: Syne, sans-serif; font-size: 0.95rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.5); margin-bottom: 3rem; }
-    .s9-contact-items { display: flex; flex-direction: column; gap: 1.25rem; }
-    .s9-contact-item { display: flex; align-items: center; gap: 1.25rem; text-decoration: none; }
-    .s9-contact-icon { width: 44px; height: 44px; flex-shrink: 0; background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
-    .s9-contact-item:hover .s9-contact-icon { background: rgba(184,149,90,0.2); }
-    .s9-contact-icon svg { width: 18px; height: 18px; color: var(--gold); }
-    .s9-contact-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(184,149,90,0.6); margin-bottom: 0.2rem; }
-    .s9-contact-value { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: #F7F4EF; transition: color 0.3s; }
-    .s9-contact-item:hover .s9-contact-value { color: var(--gold); }
-    .s9-calendar { background: rgba(247,244,239,0.04); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 6px; padding: 3rem; position: relative; overflow: hidden; }
-    .s9-calendar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.15), transparent); }
-    .s9-cal-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.3rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
-    .s9-cal-text { font-family: Syne, sans-serif; font-size: 0.875rem; font-weight: 400; line-height: 1.85; color: rgba(247,244,239,0.45); margin-bottom: 2.25rem; }
-    .s9-cal-features { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2.5rem; }
-    .s9-cal-feature { display: flex; align-items: center; gap: 0.75rem; font-family: Syne, sans-serif; font-size: 0.82rem; color: rgba(247,244,239,0.5); }
-    .s9-cal-feature svg { width: 14px; height: 14px; color: var(--gold); flex-shrink: 0; }
-    .s9-cal-btn { display: flex; align-items: center; justify-content: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2rem; border-radius: 3px; text-decoration: none; width: 100%; transition: background 0.25s, transform 0.2s; }
-    .s9-cal-btn:hover { background: #c9a96b; transform: translateY(-1px); }
-    .s9-cal-btn svg { width: 16px; height: 16px; }
-    .s9-cal-note { font-family: Syne, sans-serif; font-size: 0.72rem; color: rgba(247,244,239,0.25); text-align: center; margin-top: 1rem; }
-    .s9-footer { margin-top: 6rem; padding-top: 3rem; border-top: 0.5px solid rgba(247,244,239,0.07); display: flex; justify-content: space-between; align-items: center; }
-    .s9-footer-name { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: rgba(247,244,239,0.4); letter-spacing: 0.02em; }
-    .s9-footer-links { display: flex; gap: 2.5rem; }
-    .s9-footer-link { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em; color: rgba(247,244,239,0.25); text-decoration: none; transition: color 0.3s; }
-    .s9-footer-link:hover { color: rgba(247,244,239,0.6); }
-    .s9-bg-orb { position: absolute; left: -300px; bottom: -200px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(184,149,90,0.04), transparent 65%); pointer-events: none; }
-
-    /* ================================================
-       KEYFRAME ANIMATIONS
-    ================================================ */
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { to { opacity: 1; } }
-    @keyframes lineGrow { to { opacity: 1; transform: scaleX(1); } }
+    /* FAQ BODY */
+    .faq-body { background: var(--offwhite); padding: 5rem; }
+    .faq-inner { max-width: 900px; margin: 0 auto; }
+    .faq-sections { display: flex; flex-direction: column; gap: 4rem; }
+    .faq-section { transition: opacity 0.3s; }
+    .faq-section.hidden { display: none; }
+    .section-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.4rem; color: var(--navy); margin-bottom: 1.75rem; padding-bottom: 1rem; border-bottom: 1.5px solid rgba(184,149,90,0.3); }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 0.5px solid var(--border-dark); }
+    .faq-item:first-child { border-top: 0.5px solid var(--border-dark); }
+    .faq-trigger { width: 100%; background: none; border: none; cursor: pointer; padding: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; text-align: left; }
+    .faq-trigger:hover .faq-q { color: var(--gold); }
+    .faq-q { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: var(--navy); line-height: 1.4; transition: color 0.3s; }
+    .faq-icon { width: 28px; height: 28px; flex-shrink: 0; background: rgba(13,27,42,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
+    .faq-icon svg { width: 14px; height: 14px; color: var(--warm-gray); transition: transform 0.3s, color 0.3s; }
+    .faq-item.open .faq-icon { background: rgba(184,149,90,0.12); }
+    .faq-item.open .faq-icon svg { transform: rotate(45deg); color: var(--gold); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-answer-inner { padding-bottom: 1.5rem; }
+    .faq-answer p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: #5F5E5A; margin-bottom: 0.75rem; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer a { color: var(--gold); }
 
   </style>
 </head>
@@ -470,7 +126,6 @@
 <nav id="mainNav">
   <a href="./index.html" class="nav-logo">[Beratung]</a>
   <div class="nav-links">
-
     <div class="nav-dropdown">
       <button class="nav-dropdown-toggle">
         Leistungen
@@ -484,560 +139,319 @@
         <div class="nav-divider"></div>
         <a href="./unternehmensverkauf.html">Unternehmensverkauf</a>
         <a href="./nachfolgeberatung.html">Nachfolgeberatung</a>
-        <a href="./buyside.html">Buy-Side & Akquisition</a>
-        <a href="./eigenkapital.html">Eigenkapital & Wachstum</a>
+        <a href="./buyside.html">Buy-Side &amp; Akquisition</a>
+        <a href="./eigenkapital.html">Eigenkapital &amp; Wachstum</a>
         <a href="./exitreadiness.html">Exit Readiness</a>
       </div>
     </div>
-
     <a href="./ueber-uns.html">Über uns</a>
     <a href="./referenzen.html">Referenzen</a>
-    <a href="./wissen.html">Wissen</a>
-    <a href="./faq.html">FAQ</a>
+    <a href="./wissen.html" >Wissen</a>
+    <a href="./faq.html" class="active">FAQ</a>
     <a href="./kontakt.html" class="nav-cta">Termin vereinbaren</a>
-
   </div>
 </nav>
 
-<!-- SECTION 1: HERO -->
-<div class="hero-wrap">
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-label">Unternehmensverkauf · Nachfolge · DACH</div>
-      <h1 class="hero-title">
-        Für Unternehmer,<br>
-        die ihrem Lebenswerk<br>
-        <em>gerecht werden wollen.</em>
-      </h1>
-      <div class="hero-line"></div>
-      <p class="hero-sub">
-        Der Verkauf eines Unternehmens ist kein gewöhnlicher Deal — er ist der Abschluss eines Lebenswerks. Wir bringen unsere jahrelange Erfahrung aus führenden Investmentinstitutionen in Ihren entscheidenden Moment — diskret, partnerschaftlich, mit dem Einsatz den Ihr Lebenswerk verdient.
-      </p>
-      <div class="hero-kpis">
-        <div class="hero-kpi">
-          <span class="hero-kpi-num" data-target="20" data-suffix="+">0+</span>
-          <span class="hero-kpi-label">Transaktionen</span>
-        </div>
-        <div class="hero-kpi-divider"></div>
-        <div class="hero-kpi">
-          <span class="hero-kpi-num" data-target="10" data-suffix="">0</span>
-          <span class="hero-kpi-label">Jahre Erfahrung</span>
-        </div>
-        <div class="hero-kpi-divider"></div>
-        <div class="hero-kpi">
-          <span class="hero-kpi-num" data-target="500" data-suffix="+">0+</span>
-          <span class="hero-kpi-label">Investorenkontakte</span>
-        </div>
-        <div class="hero-kpi-divider"></div>
-        <div class="hero-kpi">
-          <span class="hero-kpi-num">DACH</span>
-          <span class="hero-kpi-label">+ Europa</span>
-        </div>
-      </div>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">Häufige Fragen</p>
+    <h1 class="page-headline">Die Fragen die<br>Unternehmer uns<br><em>am häufigsten stellen.</em></h1>
+    <div class="hero-line"></div>
+    <p class="page-sub">Wir beantworten die wichtigsten Fragen rund um Unternehmensverkauf, Nachfolge und M&A — offen, direkt und ohne Berater-Prosa.</p>
+  </div>
+</section>
 
-      <div class="hero-ctas">
-        <a href="./kontakt.html" class="btn-primary">Vertrauliches Erstgespräch</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <canvas id="particleCanvas"></canvas>
-    </div>
-  </section>
-
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterSection('all', this)">Alle</button>
+    <button class="filter-btn" onclick="filterSection('prozess', this)">Prozess</button>
+    <button class="filter-btn" onclick="filterSection('bewertung', this)">Bewertung</button>
+    <button class="filter-btn" onclick="filterSection('nachfolge', this)">Nachfolge</button>
+    <button class="filter-btn" onclick="filterSection('kosten', this)">Kosten & Ablauf</button>
+    <button class="filter-btn" onclick="filterSection('kaeuferfrage', this)">Käuferfragen</button>
+    <button class="filter-btn" onclick="filterSection('vorbereitung', this)">Vorbereitung</button>
+  </div>
 </div>
 
-<!-- SECTION 2: PROBLEM / KONTEXT -->
-<section class="s2-section">
-  <div class="s2-inner">
-    <div class="s2-top">
-      <div>
-        <p class="s2-eyebrow">Der Moment der zählt</p>
-        <h2 class="s2-headline">Der wichtigste Deal<br>Ihres Lebens verdient<br>mehr als einen<br><em>Standardprozess.</em></h2>
-        <div class="s2-line"></div>
-      </div>
-      <div>
-        <p class="s2-body">Sie haben Jahrzehnte investiert — in Ihr Unternehmen, Ihre Mitarbeiter, Ihre Kunden. Jetzt stehen Sie vor einer Entscheidung, die die meisten nur einmal im Leben treffen.</p>
-        <br>
-        <p class="s2-body">Der Unternehmensverkauf ist komplex, emotional und oft undurchsichtig. Käufer kennen den Markt — Sie kennen Ihr Unternehmen. Unsere Aufgabe ist es, diese Asymmetrie zu Ihrem Vorteil zu nutzen: mit institutioneller Erfahrung, echtem Netzwerk und dem Einsatz den dieser Moment verdient.</p>
-      </div>
-    </div>
-    <div class="s2-cards">
-      <div class="s2-card">
-        <h3 class="s2-card-title">Vorbereitung die sich auszahlt</h3>
-        <p class="s2-card-text">Das beste Ergebnis entsteht selten unter Zeitdruck. Wir begleiten Sie langfristig — und stellen gemeinsam die Weichen, lange bevor ein Prozess beginnt. Als ehemalige Investoren wissen wir genau welche Hebel den Unterschied machen.</p>
-      </div>
-      <div class="s2-card">
-        <h3 class="s2-card-title">Der richtige Käufer, nicht der Höchstbietende</h3>
-        <p class="s2-card-text">Persönlichkeit und Passung entscheiden langfristig mehr als der Kaufpreis. Wir finden den Käufer der Ihr Lebenswerk in Ihrem Sinne weiterführt — nicht nur den der am meisten bietet.</p>
-      </div>
-      <div class="s2-card">
-        <h3 class="s2-card-title">Wenige Mandate, voller Einsatz</h3>
-        <p class="s2-card-text">Ihr Ergebnis ist unser Ergebnis — eine Interessengleichheit die in dieser Branche selten ist und die Sie in jeder Phase spüren werden.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="faq-body">
+  <div class="faq-inner">
 
-<!-- SECTION 3: LEISTUNGEN -->
-<section class="s3-section">
-  <div class="s3-inner">
-    <div class="s3-header">
-      <div class="s3-header-top">
-        <div>
-          <p class="s3-eyebrow">Was wir für Sie tun</p>
-          <h2 class="s3-headline">Wir begleiten Sie, Ihren<br>Lebensweg und Ihr Unternehmen.</h2>
-        </div>
-        <p class="s3-subline">Fünf Leistungsbereiche — ein Anspruch: das bestmögliche Ergebnis für alles was Sie aufgebaut haben. In jeder Phase, mit dem gleichen Einsatz.</p>
-      </div>
-      <div class="s3-divider"></div>
-    </div>
-    <div class="s3-grid">
-      <div class="s3-card">
-        <svg class="s3-card-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 39L17 27L25 35L39 17" stroke="#B8955A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="39" cy="17" r="2.5" fill="#B8955A"/>
-          <circle cx="5" cy="39" r="2.5" fill="#B8955A"/>
-        </svg>
-        <h3 class="s3-card-title">Unternehmens­verkauf</h3>
-        <p class="s3-card-text">Strukturiert, diskret, wertoptimal. Von der Vorbereitung bis zum Closing — mit dem Ziel den richtigen Käufer zu finden.</p>
-        <a href="./unternehmensverkauf.html" class="s3-card-link">Mehr erfahren →</a>
-      </div>
-      <div class="s3-card">
-        <svg class="s3-card-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 34C10 34 13 22 22 22C31 22 34 10 34 10" stroke="#B8955A" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="10" cy="34" r="2.5" fill="#B8955A"/>
-          <circle cx="34" cy="10" r="2.5" fill="#B8955A"/>
-        </svg>
-        <h3 class="s3-card-title">Nachfolge­beratung</h3>
-        <p class="s3-card-text">Nachfolge braucht Zeit und den richtigen Partner. Wir begleiten Sie langfristig — lange bevor ein formeller Prozess beginnt.</p>
-        <a href="./nachfolgeberatung.html" class="s3-card-link">Mehr erfahren →</a>
-      </div>
-      <div class="s3-card">
-        <svg class="s3-card-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="14" cy="30" r="5.5" stroke="#B8955A" stroke-width="1.5"/>
-          <circle cx="30" cy="14" r="5.5" stroke="#B8955A" stroke-width="1.5"/>
-          <path d="M19 25L25 19" stroke="#B8955A" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <h3 class="s3-card-title">Buy-Side / Akquisition</h3>
-        <p class="s3-card-text">Für Unternehmer die wachsen wollen. Targets identifizieren, diskret ansprechen, bis zum Abschluss begleiten.</p>
-        <a href="./buyside.html" class="s3-card-link">Mehr erfahren →</a>
-      </div>
-      <div class="s3-card">
-        <svg class="s3-card-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="20" width="8" height="18" rx="1" stroke="#B8955A" stroke-width="1.5"/>
-          <rect x="17" y="13" width="8" height="25" rx="1" stroke="#B8955A" stroke-width="1.5"/>
-          <rect x="29" y="6" width="8" height="32" rx="1" stroke="#B8955A" stroke-width="1.5"/>
-        </svg>
-        <h3 class="s3-card-title">Eigenkapital & Wachstums­finanzierung</h3>
-        <p class="s3-card-text">Den richtigen Kapitalgeber finden — nicht nur den der am schnellsten zusagt. Wir begleiten den gesamten Prozess.</p>
-        <a href="./eigenkapital.html" class="s3-card-link">Mehr erfahren →</a>
-      </div>
-      <div class="s3-card">
-        <svg class="s3-card-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="22" cy="22" r="14" stroke="#B8955A" stroke-width="1.5"/>
-          <path d="M22 11V22L28 28" stroke="#B8955A" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="22" cy="22" r="2" fill="#B8955A"/>
-        </svg>
-        <h3 class="s3-card-title">Langfristige Wert­optimierung</h3>
-        <p class="s3-card-text">Als strategischer Sparringspartner begleiten wir Sie Jahre vor dem Exit — und schließen Lücken die Käufer später sehen.</p>
-        <a href="./exitreadiness.html" class="s3-card-link">Mehr erfahren →</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="faq-sections">
 
-<!-- SECTION 4: WARUM WIR -->
-<section class="s4-section">
-  <div class="s4-inner">
-    <div class="s4-header">
-      <div class="s4-header-text">
-        <p class="s4-eyebrow">Was uns unterscheidet</p>
-        <h2 class="s4-headline">Erfahrung die in diesem<br>Segment <em>selten ist.</em></h2>
-        <p class="s4-intro">Viele Berater begleiten Transaktionen. Wir haben sie selbst durchgeführt — als Investoren, auf der anderen Seite des Tisches. Diese Erfahrung prägt wie wir Prozesse führen, Käufer einschätzen und für unsere Mandanten verhandeln.</p>
-      </div>
-      <div class="s4-header-image">
-        <!-- BILD-SLOT: src ersetzen z.B. "./images/julian-mick.jpg" -->
-        <div class="s4-img-wrap">
-          <img src="PHOTO_JULIAN" alt="Julian Mick" class="s4-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="s4-photo-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-            </svg>
-            <span>Foto folgt</span>
+      <!-- PROZESS -->
+      <div class="faq-section" id="prozess" data-cat="prozess">
+        <h2 class="section-title">Prozess & Ablauf</h2>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Wie lange dauert ein Unternehmensverkauf?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Ein strukturierter M&A-Prozess dauert typischerweise 6–12 Monate vom Erstgespräch bis zum Closing. Die Varianz ist groß: Gut vorbereitete Unternehmen mit klarem Profil und einem aktiven Käuferfeld können schneller abschließen. Komplexe Strukturen, schwache Vorbereitung oder ein schwieriges Marktumfeld verlängern den Prozess erheblich.</p>
+              <p>Die wichtigste Erkenntnis: Jeder Monat Vorbereitung vor dem Prozessstart spart erfahrungsgemäß zwei Monate im Prozess — und schützt die Verhandlungsposition.</p>
+            </div></div>
           </div>
-          <div class="s4-img-caption">Julian Mick</div>
-        </div>
-      </div>
-    </div>
 
-    <div class="s4-list">
-      <div class="s4-item">
-        <div class="s4-item-line"></div>
-        <div class="s4-item-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <div class="s4-item-content">
-          <div class="s4-item-title">Qualität die überzeugt</div>
-          <p class="s4-item-text">Unser Team bringt Erfahrung aus führenden Investmentinstitutionen mit — und hat Transaktionen selbst als Käufer durchgeführt. Eine Kombination die im deutschen Mittelstand kaum zu finden ist: in der Qualität der Unterlagen, im Verständnis für Geschäftsmodelle und in der Käuferdenke die wir aktiv für Sie einsetzen.</p>
-        </div>
-      </div>
-      <div class="s4-item">
-        <div class="s4-item-line"></div>
-        <div class="s4-item-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
-          </svg>
-        </div>
-        <div class="s4-item-content">
-          <div class="s4-item-title">Zugang zu den richtigen Käufern</div>
-          <p class="s4-item-text">Wir sprechen täglich mit Private Equity Fonds, Family Offices und strategischen Käufern in DACH und Europa. Dieses Netzwerk ist kein Versprechen — es ist das Ergebnis jahrelanger Investorentätigkeit.</p>
-        </div>
-      </div>
-      <div class="s4-item">
-        <div class="s4-item-line"></div>
-        <div class="s4-item-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <div class="s4-item-content">
-          <div class="s4-item-title">Der richtige Käufer, nicht der Höchstbietende</div>
-          <p class="s4-item-text">Persönlichkeit und Passung entscheiden langfristig mehr als der Kaufpreis. Wir kennen beide Seiten — und finden den Käufer der Ihr Lebenswerk in Ihrem Sinne weiterführt.</p>
-        </div>
-      </div>
-      <div class="s4-item">
-        <div class="s4-item-line"></div>
-        <div class="s4-item-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <div class="s4-item-content">
-          <div class="s4-item-title">Vollständig unabhängig</div>
-          <p class="s4-item-text">Wir haben keine Interessenkonflikte, keine Doppelmandate, keine versteckten Abhängigkeiten. Unsere einzige Verpflichtung gilt Ihnen.</p>
-        </div>
-      </div>
-      <div class="s4-item">
-        <div class="s4-item-line"></div>
-        <div class="s4-item-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-        </div>
-        <div class="s4-item-content">
-          <div class="s4-item-title">Ihr Erfolg ist unser Erfolg</div>
-          <p class="s4-item-text">Wenige Mandate, voller Einsatz. Jede Transaktion entscheidet direkt über unseren eigenen Erfolg — eine Interessengleichheit die Sie in jeder Phase spüren werden.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="s4-institutions">
-      <p class="s4-inst-label">Erfahrung aus führenden Institutionen</p>
-      <div class="s4-inst-logos">
-        <div class="s4-logo-slot" title="EY">
-          <img src="LOGO_EY" alt="EY" class="s4-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="s4-inst-logo s4-logo-fallback">EY</span>
-        </div>
-        <div class="s4-inst-divider"></div>
-        <div class="s4-logo-slot" title="Barclays">
-          <img src="LOGO_BARCLAYS" alt="Barclays" class="s4-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="s4-inst-logo s4-logo-fallback">Barclays</span>
-        </div>
-        <div class="s4-inst-divider"></div>
-        <div class="s4-logo-slot" title="Drake Star">
-          <img src="LOGO_DRAKESTAR" alt="Drake Star" class="s4-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="s4-inst-logo s4-logo-fallback">Drake Star</span>
-        </div>
-        <div class="s4-inst-divider"></div>
-        <div class="s4-logo-slot" title="Maxburg Capital">
-          <img src="LOGO_MAXBURG" alt="Maxburg Capital" class="s4-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="s4-inst-logo s4-logo-fallback">Maxburg Capital</span>
-        </div>
-        <div class="s4-inst-divider"></div>
-        <div class="s4-logo-slot" title="Banyan Software">
-          <img src="LOGO_BANYAN" alt="Banyan Software" class="s4-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="s4-inst-logo s4-logo-fallback">Banyan Software</span>
-        </div>
-        <div class="s4-inst-divider"></div>
-        <div class="s4-logo-slot" title="THI Investments">
-          <img src="LOGO_THI" alt="THI Investments" class="s4-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="s4-inst-logo s4-logo-fallback">THI Investments</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 5: DER PROZESS -->
-<section class="s5-section">
-  <div class="s5-bg-orb"></div>
-  <div class="s5-inner">
-    <div class="s5-header">
-      <div>
-        <p class="s5-eyebrow">Wie wir arbeiten</p>
-        <h2 class="s5-headline">Struktur die<br><em>Vertrauen schafft.</em></h2>
-      </div>
-      <p class="s5-intro">Ein Unternehmensverkauf ist kein Projekt — er ist ein Prozess. Wir begleiten Sie von der ersten vertraulichen Analyse bis zum erfolgreichen Abschluss. Transparent, strukturiert und mit klaren Verantwortlichkeiten in jeder Phase.</p>
-    </div>
-    <div class="s5-steps">
-      <div class="s5-step">
-        <div class="s5-step-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
-        <div class="s5-step-body">
-          <p class="s5-step-label">Phase 1</p>
-          <h3 class="s5-step-title">Erstkontakt & Situationsanalyse</h3>
-          <p class="s5-step-text">Vertrauliches Erstgespräch ohne Verpflichtung. Wir verstehen Ihr Unternehmen, Ihre Ziele und Ihre persönliche Situation — bevor wir irgendetwas empfehlen. Anschließend erstellen wir eine erste Einschätzung zu Wert, Marktpositionierung und möglichen Käuferprofilen.</p>
-          <span class="s5-step-duration">2–4 Wochen</span>
-        </div>
-      </div>
-      <div class="s5-step">
-        <div class="s5-step-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <div class="s5-step-body">
-          <p class="s5-step-label">Phase 2</p>
-          <h3 class="s5-step-title">Vorbereitung & Positionierung</h3>
-          <p class="s5-step-text">Erstellung aller Transaktionsunterlagen: Teaser, Information Memorandum, Finanzmodell. Wir positionieren Ihr Unternehmen so, wie wir es selbst als Investor sehen würden — mit dem Anspruch institutioneller Qualität.</p>
-          <span class="s5-step-duration">4–8 Wochen</span>
-        </div>
-      </div>
-      <div class="s5-step">
-        <div class="s5-step-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.45 5.45l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div class="s5-step-body">
-          <p class="s5-step-label">Phase 3</p>
-          <h3 class="s5-step-title">Käuferansprache & Prozessmanagement</h3>
-          <p class="s5-step-text">Gezielter, diskreter Outreach an vorab qualifizierte Käufer — individuell formuliert, nicht serienversandt. Wir managen den gesamten Prozess: NDA-Handling, Managementpräsentationen, Q&A, Datenraum.</p>
-          <span class="s5-step-duration">8–16 Wochen</span>
-        </div>
-      </div>
-      <div class="s5-step">
-        <div class="s5-step-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.51 0 2.93.37 4.18 1.03"/></svg></div>
-        <div class="s5-step-body">
-          <p class="s5-step-label">Phase 4</p>
-          <h3 class="s5-step-title">Indikative Angebote & Shortlist</h3>
-          <p class="s5-step-text">Auswertung eingehender Angebote — nicht nur nach Preis, sondern nach Gesamtpaket: Struktur, Zeitplan, Käuferprofil und kulturelle Passung. Gemeinsam entscheiden wir, mit wem wir in exklusive Verhandlungen gehen.</p>
-          <span class="s5-step-duration">2–4 Wochen</span>
-        </div>
-      </div>
-      <div class="s5-step">
-        <div class="s5-step-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11l-4 4-2-2"/></svg></div>
-        <div class="s5-step-body">
-          <p class="s5-step-label">Phase 5</p>
-          <h3 class="s5-step-title">Due Diligence & Verhandlung</h3>
-          <p class="s5-step-text">Begleitung durch die Due Diligence — wir kennen die Perspektive des Käufers und wissen, worauf es ankommt. Verhandlung des SPA mit Ihren rechtlichen und steuerlichen Beratern bis zum finalen Abschluss.</p>
-          <span class="s5-step-duration">8–12 Wochen</span>
-        </div>
-      </div>
-      <div class="s5-step">
-        <div class="s5-step-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <div class="s5-step-body">
-          <p class="s5-step-label">Phase 6</p>
-          <h3 class="s5-step-title">Closing & Post-Closing Begleitung</h3>
-          <p class="s5-step-text">Signing, Closing, Übergabe. Und wenn gewünscht: Begleitung in der Übergangsphase. Wir sind so lange an Ihrer Seite, wie Sie uns brauchen.</p>
-          <span class="s5-step-duration">bis Abschluss</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 6: REFERENZEN -->
-<section class="s6-section" id="referenzen">
-  <div class="s6-inner">
-    <div class="s6-header">
-      <div>
-        <p class="s6-eyebrow">Ausgewählte Transaktionen</p>
-        <h2 class="s6-headline">Erfahrung die<br><em>für sich spricht.</em></h2>
-      </div>
-      <p class="s6-intro">Jede Transaktion ist anders. Was bleibt, ist der Anspruch: das beste Ergebnis für alle Beteiligten — nicht nur auf dem Papier, sondern langfristig.</p>
-    </div>
-    <div class="s6-grid">
-      <div class="s6-card">
-        <div class="s6-card-accent"></div>
-        <div class="s6-card-top">
-          <div class="s6-card-company">Saracus Consulting</div>
-          <span class="s6-card-year">2020</span>
-        </div>
-        <p class="s6-card-sector">IT Services · Data & Analytics</p>
-        <p class="s6-card-desc">Akquisition eines spezialisierten Beratungshauses im Bereich Datenarchitektur und Analytics. Starke Kundenbasis im DACH-Mittelstand, wiederkehrender Umsatz durch langfristige Projektbeziehungen.</p>
-        <div class="s6-card-tags"><span class="s6-tag">Buy-Side</span><span class="s6-tag">Mittelstand</span><span class="s6-tag">DACH</span></div>
-      </div>
-      <div class="s6-card">
-        <div class="s6-card-accent"></div>
-        <div class="s6-card-top">
-          <div class="s6-card-company">Neo Cos Service</div>
-          <span class="s6-card-year">2021</span>
-        </div>
-        <p class="s6-card-sector">Kosmetik · Lohnherstellung</p>
-        <p class="s6-card-desc">Erwerb eines Lohnherstellers im Bereich Kosmetik und Körperpflege. Spezialisierte Produktionskapazitäten, etablierte Kundenbeziehungen zu nationalen und internationalen Marken.</p>
-        <div class="s6-card-tags"><span class="s6-tag">Buy-Side</span><span class="s6-tag">Produktion</span><span class="s6-tag">DACH</span></div>
-      </div>
-      <div class="s6-card">
-        <div class="s6-card-accent"></div>
-        <div class="s6-card-top">
-          <div class="s6-card-company">Immo Office</div>
-          <span class="s6-card-year">2023</span>
-        </div>
-        <p class="s6-card-sector">Immobilien · Verwaltung & Services</p>
-        <p class="s6-card-desc">Akquisition eines regionalen Immobiliendienstleisters mit verwalteten Beständen und stabiler Ertragsbasis. Attraktives Plattform-Asset für weiteres Buy-and-Build im fragmentierten Markt.</p>
-        <div class="s6-card-tags"><span class="s6-tag">Buy-Side</span><span class="s6-tag">Plattform</span><span class="s6-tag">DACH</span></div>
-      </div>
-      <div class="s6-card">
-        <div class="s6-card-accent"></div>
-        <div class="s6-card-top">
-          <div class="s6-card-company">Logicheck</div>
-          <span class="s6-card-year">2026</span>
-        </div>
-        <p class="s6-card-sector">InsurTech · Schadenmanagement & SaaS</p>
-        <p class="s6-card-desc">Investition in einen spezialisierten Anbieter digitaler Schadenmanagement-Lösungen für die Versicherungsbranche. Proprietäre SaaS-Plattform, wiederkehrender Umsatz, starke Positionierung im DACH-Versicherungsmarkt.</p>
-        <div class="s6-card-tags"><span class="s6-tag">Buy-Side</span><span class="s6-tag">SaaS</span><span class="s6-tag">InsurTech</span><span class="s6-tag">DACH</span></div>
-      </div>
-    </div>
-    <div class="s6-disclaimer">
-      <p>Alle aufgeführten Transaktionen wurden als Investor auf der Käuferseite durchgeführt. Aus Gründen der Vertraulichkeit werden keine weiteren Details zu Transaktionsvolumen oder Bewertungen veröffentlicht.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 7: WISSEN TEASER -->
-<section class="s7-section">
-  <div class="s7-bg-line"></div>
-  <div class="s7-inner">
-    <div class="s7-wrap">
-      <div>
-        <p class="s7-eyebrow">Wissen & Perspektiven</p>
-        <h2 class="s7-headline">Was einen guten<br>M&A-Berater<br><em>wirklich ausmacht.</em></h2>
-        <p class="s7-text">Der Verkauf eines Unternehmens ist eine der komplexesten Entscheidungen im Leben eines Unternehmers. Wir teilen unser Wissen — damit Sie informiert in den Prozess gehen.</p>
-        <a href="./wissen.html" class="s7-cta">
-          Alle Artikel lesen
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <div class="s7-articles">
-        <a href="./wissen/was-macht-einen-guten-ma-berater-aus.html" class="s7-article">
-          <div class="s7-article-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
-          <div class="s7-article-body">
-            <p class="s7-article-label">Leitfaden</p>
-            <p class="s7-article-title">Was macht einen guten M&A-Berater aus? 10 Kriterien die entscheiden.</p>
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Wie läuft ein typischer M&A-Prozess ab?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Ein strukturierter Prozess gliedert sich in sechs Phasen: (1) Situationsanalyse & Bewertung, (2) Vorbereitung der Transaktionsunterlagen, (3) diskreter Käufer-Outreach, (4) Angebote & Shortlist, (5) Due Diligence & Verhandlung, (6) Signing, Closing & Übergabe.</p>
+              <p>Wir begleiten alle sechs Phasen — von der ersten Analyse bis zum Tag nach dem Closing.</p>
+            </div></div>
           </div>
-          <svg class="s7-article-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="./wissen/unternehmen-verkaufen-vorbereitung.html" class="s7-article">
-          <div class="s7-article-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-          <div class="s7-article-body">
-            <p class="s7-article-label">Ratgeber</p>
-            <p class="s7-article-title">Unternehmen verkaufen: Die 5 wichtigsten Vorbereitungsschritte.</p>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Muss ich aktiv am Prozess beteiligt sein?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Ja — aber wir minimieren den Zeitaufwand. Die wichtigsten Momente Ihrer persönlichen Beteiligung sind die Managementpräsentationen vor qualifizierten Käufern und die Abschlussverhandlungen. Alles andere — Outreach, Datenraum, Q&A, Koordination — übernehmen wir.</p>
+              <p>Unser Ziel: Sie führen Ihr Unternehmen weiter, während wir den Verkauf vorbereiten. Ein unkontrollierter Prozess der Ihre operative Leistung beeinträchtigt schadet dem Ergebnis.</p>
+            </div></div>
           </div>
-          <svg class="s7-article-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="./wissen/unternehmensbewertung-mittelstand.html" class="s7-article">
-          <div class="s7-article-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <div class="s7-article-body">
-            <p class="s7-article-label">Grundlagen</p>
-            <p class="s7-article-title">Wie wird mein Unternehmen bewertet? Methoden und Einflussfaktoren.</p>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Was ist ein Letter of Intent (LOI) und wie verbindlich ist er?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Ein LOI ist eine unverbindliche Absichtserklärung des Käufers — mit indikativer Bewertung, Transaktionsstruktur und Zeitplan. Er ist rechtlich größtenteils nicht bindend, aber ein wichtiger Meilenstein: Er begründet die Exklusivität für eine Due Diligence und signalisiert ernsthaftes Kaufinteresse.</p>
+              <p>Nicht jeder LOI führt zum Abschluss — aber wir verhandeln jeden LOI so als ob er bindend wäre. Wesentliche Punkte die im LOI nicht geregelt sind, tauchen im SPA als Problem wieder auf.</p>
+            </div></div>
           </div>
-          <svg class="s7-article-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+
+        </div>
       </div>
+
+      <!-- BEWERTUNG -->
+      <div class="faq-section" id="bewertung" data-cat="bewertung">
+        <h2 class="section-title">Bewertung</h2>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Wie wird mein Unternehmen bewertet?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Im Mittelstand ist das EBITDA-Multiple die gängigste Bewertungsmethode. Abhängig von Sektor, Wachstumsrate, Marktposition und Qualität der Ertragsbasis liegen die Multiples typischerweise zwischen 4x und 12x EBITDA — mit erheblicher Varianz.</p>
+              <p>Darüber hinaus spielen Faktoren wie Kundendiversifikation, Managementunabhängigkeit, Wachstumspotenzial und Marktpositionierung eine erhebliche Rolle. Eine erste Einschätzung liefern wir im Erstgespräch — kostenlos und unverbindlich.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Was beeinflusst den Kaufpreis am stärksten?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Die wichtigsten Werttreiber sind: Ertragskraft und -qualität (normalisiertes EBITDA), Wachstumsrate und -potenzial, Kundenbindung und Umsatzqualität (wiederkehrender vs. projektbasierter Umsatz), Unabhängigkeit vom Inhaber und Stärke des Management-Teams.</p>
+              <p>Auf der anderen Seite drücken folgende Faktoren den Preis: Inhaberabhängigkeit, Kundenkonzentration (ein Kunde &gt;20% Umsatz), rechtliche Unsicherheiten, schwache Dokumentation und negative Wachstumstrends.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Was ist der Unterschied zwischen Enterprise Value und Kaufpreis?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Der Enterprise Value (EV) ist der Gesamtwert des Unternehmens. Was Sie als Verkäufer tatsächlich erhalten (Equity Value) ist der EV minus Nettofinanzverbindlichkeiten und etwaige Anpassungen für Nettoumlaufvermögen oder sonstige Verbindlichkeiten.</p>
+              <p>Viele Verkäufer werden vom EV überrascht — und sind dann enttäuscht wenn der tatsächliche Auszahlungsbetrag deutlich darunter liegt. Wir erklären diese Zusammenhänge frühzeitig und transparent.</p>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NACHFOLGE -->
+      <div class="faq-section" id="nachfolge" data-cat="nachfolge">
+        <h2 class="section-title">Nachfolge</h2>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Wann sollte ich mit der Nachfolgeplanung beginnen?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Idealerweise 3–5 Jahre vor dem geplanten Übergabezeitpunkt. Wer früh plant hat mehr Optionen, mehr Zeit für Wertoptimierung und gerät nicht unter Druck — sei es durch gesundheitliche, familiäre oder wirtschaftliche Ereignisse.</p>
+              <p>Es gibt keinen falschen Zeitpunkt um sich mit dem Thema zu beschäftigen. Das erste Gespräch ist immer kostenlos und unverbindlich.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Was passiert mit meinen Mitarbeitern nach dem Verkauf?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Das ist eine der ersten Fragen die wir in der Käuferqualifizierung stellen. Wir machen Ihre Erwartungen und Werte zur Grundlage des Prozesses — und prüfen aktiv ob Interessenten diese teilen.</p>
+              <p>Rechtlich gilt: Alle Arbeitsverhältnisse gehen beim Asset Deal oder Share Deal auf den Käufer über (§613a BGB). Entlassungen kurz nach dem Verkauf sind möglich — aber wir sorgen dafür dass Sie mit jemandem abschließen der Ihrem Unternehmen und Ihren Mitarbeitern gegenüber respektvoll ist.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Kann ich nach dem Verkauf noch im Unternehmen tätig sein?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Ja — das ist häufig sogar gewünscht. Viele Käufer legen Wert auf eine Übergangsphase von 12–24 Monaten, in der der Gründer als Geschäftsführer oder Berater tätig bleibt und Kunden- sowie Mitarbeiterbeziehungen übergibt.</p>
+              <p>Manche Unternehmer bleiben auch langfristig in beratender oder Gesellschafterfunktion aktiv. Wir strukturieren die Übergangsphase nach Ihren Wünschen — und achten darauf dass die Vereinbarungen für beide Seiten tragfähig sind.</p>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- KOSTEN -->
+      <div class="faq-section" id="kosten" data-cat="kosten">
+        <h2 class="section-title">Kosten & Zusammenarbeit</h2>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Was kostet Ihre Beratung?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Unsere Vergütung ist erfolgsbasiert — wir verdienen eine Success Fee wenn die Transaktion erfolgreich abgeschlossen wird. In manchen Fällen kombinieren wir das mit einem kleinen monatlichen Retainer für laufende Kosten und aufwändige Vorbereitungsphasen.</p>
+              <p>Die genaue Struktur besprechen wir transparent im Erstgespräch. Grundsatz: Wir haben kein Interesse daran, einen Deal zu forcieren der nicht gut für Sie ist — denn unser Ruf hängt von Ihrem Ergebnis ab.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Ab welcher Unternehmensgröße arbeiten Sie?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Wir begleiten Transaktionen typischerweise ab ca. 2 Mio. EUR EBITDA — entsprechend einem Transaktionsvolumen von 8–25 Mio. EUR aufwärts. Darunter ist der Aufwand für einen professionellen Prozess für beide Seiten oft nicht verhältnismäßig.</p>
+              <p>Bei strategisch interessanten Situationen oder besonderen Konstellationen können wir im Einzelfall abweichen. Sprechen Sie uns an.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Brauche ich zusätzlich einen Anwalt und Steuerberater?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Ja — für die finale Vertragsgestaltung (SPA) und die steuerliche Strukturierung der Transaktion sind spezialisierte Rechts- und Steuerberater unverzichtbar. Das ist kein Widerspruch zu unserer Beratung, sondern eine Ergänzung.</p>
+              <p>Wir koordinieren die Zusammenarbeit und können auf Wunsch Empfehlungen für M&A-erfahrene Kanzleien geben. Unsere Rolle ist die M&A-Prozessführung — die rechtliche und steuerliche Umsetzung liegt bei spezialisierten Beratern.</p>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- KÄUFERFRAGEN -->
+      <div class="faq-section" id="kaeuferfrage" data-cat="kaeuferfrage">
+        <h2 class="section-title">Käufer & Markt</h2>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Wer kauft Unternehmen wie meines?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Im deutschen Mittelstand gibt es vier Hauptkäuferkategorien: (1) Private Equity Fonds, die Plattformen aufbauen oder Add-ons suchen. (2) Family Offices, die langfristig in stabile Unternehmen investieren. (3) Strategische Käufer — Wettbewerber oder Unternehmen aus benachbarten Branchen. (4) Management-Teams (MBO) oder Einzelpersonen als Nachfolger.</p>
+              <p>Welcher Käufertyp für Ihr Unternehmen am besten passt, hängt von Ihren Zielen, dem Geschäftsmodell und der Transaktionsgröße ab. Das besprechen wir früh im Prozess.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Wie diskreet läuft die Käuferansprache ab?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Kein Käufer erfährt ohne Ihre Zustimmung wer Sie sind. Die Ansprache erfolgt zunächst über einen anonymen Teaser der das Unternehmen beschreibt ohne es zu benennen. Erst nach Unterzeichnung einer NDA und expliziter Freigabe durch Sie erhalten Interessenten das vollständige Information Memorandum.</p>
+              <p>Wir sprechen außerdem keine Wettbewerber an ohne Ihre ausdrückliche Genehmigung — auch wenn strategische Käufer in manchen Fällen die besten Preise zahlen.</p>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- VORBEREITUNG -->
+      <div class="faq-section" id="vorbereitung" data-cat="vorbereitung">
+        <h2 class="section-title">Vorbereitung</h2>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Was sollte ich vor dem Erstgespräch vorbereiten?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Nichts — das Erstgespräch ist ein offenes Kennenlerngespräch. Sie müssen keine Zahlen mitbringen und keine Unterlagen vorbereiten. Es reicht, wenn Sie uns erzählen was Sie antreibt und was Sie sich für Ihre Situation wünschen.</p>
+              <p>Falls Sie möchten: Ein grober Überblick über Umsatz, EBITDA und das Geschäftsmodell hilft uns für eine erste Einschätzung.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Wie kann ich heute den Wert meines Unternehmens steigern?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Die wirkungsvollsten Hebel: Managementunabhängigkeit aufbauen (Ihr Unternehmen muss ohne Sie funktionieren können), Kundenbindung verbessern (langfristige Verträge statt Projektgeschäft), Finanzkennzahlen bereinigen und dokumentieren, und Wachstumsinitiativen sichtbar machen.</p>
+              <p>Auf unserer <a href="./exitreadiness.html" style="color:#B8955A;">Exit Readiness Seite</a> finden Sie eine detaillierte Übersicht. Wir bieten auch eine kostenlose Ersteinschätzung Ihrer aktuellen Situation an.</p>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" onclick="toggleFaq(this)">
+              <span class="faq-q">Was ist eine Vendor Due Diligence — und brauche ich sie?</span>
+              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Eine Vendor Due Diligence (VDD) ist eine vom Verkäufer beauftragte Prüfung des eigenen Unternehmens — bevor Käufer in den Prozess einsteigen. Sie hilft, Probleme frühzeitig zu identifizieren, Transparenz zu signalisieren und den Prozess zu beschleunigen.</p>
+              <p>Für Transaktionen ab ca. 20 Mio. EUR Transaktionswert empfehlen wir sie regelmäßig. Darunter ist sie oft nicht verhältnismäßig — aber eine interne Selbstprüfung immer sinnvoll.</p>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- SECTION 8: EXIT READINESS CTA -->
-<section class="s8-section">
-  <div class="s8-inner">
-    <div class="s8-wrap">
-      <div>
-        <p class="s8-eyebrow">Exit Readiness</p>
-        <h2 class="s8-headline">Sind Sie bereit für<br><em>den nächsten Schritt?</em></h2>
-        <p class="s8-text">Ein erfolgreicher Unternehmensverkauf beginnt lange vor dem ersten Käufergespräch. Wir zeigen Ihnen wo Sie heute stehen — und was Sie tun können, um den maximalen Wert aus Ihrem Unternehmen herauszuholen.</p>
-        <div class="s8-checklist">
-          <div class="s8-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kostenlose Ersteinschätzung Ihrer Verkaufsbereitschaft</div>
-          <div class="s8-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Identifikation von Werttreibern und Optimierungspotenzialen</div>
-          <div class="s8-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Vertraulich, unverbindlich, ohne Verpflichtung</div>
-        </div>
-      </div>
-      <div class="s8-actions">
-        <a href="./kontakt.html" class="s8-btn-primary">
-          Jetzt prüfen lassen
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="./exitreadiness.html" class="s8-btn-secondary">Mehr erfahren</a>
-      </div>
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-text">
+      <h3>Ihre Frage ist<br><em>nicht dabei?</em></h3>
+      <p>Sprechen Sie uns direkt an — wir antworten schnell und vertraulich.</p>
     </div>
+    <a href="./kontakt.html" class="cta-btn">Frage stellen<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 </section>
 
-<!-- SECTION 9: KONTAKT / FOOTER -->
-<section class="s9-section">
-  <div class="s9-bg-orb"></div>
-  <div class="s9-inner">
-    <div class="s9-wrap">
-      <div>
-        <p class="s9-eyebrow">Kontakt</p>
-        <h2 class="s9-headline">Sprechen wir<br><em>miteinander.</em></h2>
-        <p class="s9-text">Jedes Gespräch beginnt vertraulich und ohne Verpflichtung. Erzählen Sie mir von Ihrem Unternehmen — ich höre zu.</p>
-        <div class="s9-contact-items">
-          <!-- KONTAKT-SLOT: E-Mail eintragen -->
-          <a href="/cdn-cgi/l/email-protection#462c332a2f2728682b2f252d0602090b070f08682223" class="s9-contact-item">
-            <div class="s9-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div>
-              <p class="s9-contact-label">E-Mail</p>
-              <p class="s9-contact-value"><span class="__cf_email__" data-cfemail="cfa5baa3a6aea1e1a2a6aca48f8b80828e8681e1abaa">[email&#160;protected]</span></p>
-            </div>
-          </a>
-          <!-- KONTAKT-SLOT: Telefon eintragen -->
-          <a href="tel:+49XXXXXXXXXX" class="s9-contact-item">
-            <div class="s9-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.45 5.45l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <div>
-              <p class="s9-contact-label">Telefon</p>
-              <p class="s9-contact-value">+49 (0) XX XXXX XXXX</p>
-            </div>
-          </a>
-          <a href="https://linkedin.com/in/julian-mick" target="_blank" rel="noopener" class="s9-contact-item">
-            <div class="s9-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
-            <div>
-              <p class="s9-contact-label">LinkedIn</p>
-              <p class="s9-contact-value">Julian Mick</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="s9-calendar">
-        <h3 class="s9-cal-title">Termin direkt vereinbaren</h3>
-        <p class="s9-cal-text">Wählen Sie einen Termin der Ihnen passt — ich bestätige innerhalb von 24 Stunden.</p>
-        <div class="s9-cal-features">
-          <div class="s9-cal-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>30 Minuten, kostenlos & unverbindlich</div>
-          <div class="s9-cal-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Per Telefon oder Videocall</div>
-          <div class="s9-cal-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Streng vertraulich</div>
-        </div>
-        <!-- KALENDER-SLOT: Calendly-Link eintragen -->
-        <a href="CALENDLY_LINK" class="s9-cal-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Erstgespräch vereinbaren
-        </a>
-        <p class="s9-cal-note">Alternativ: Direkt per E-Mail oder Telefon melden</p>
-      </div>
-    </div>
-
-    <div class="s9-footer">
-      <!-- FOOTER-SLOT: Firmenname nach Namensentscheidung ersetzen -->
-      <span class="s9-footer-name">Julian Mick M&A Advisory</span>
-      <div class="s9-footer-links">
-        <a href="./impressum.html" class="s9-footer-link">Impressum</a>
-        <a href="./datenschutz.html" class="s9-footer-link">Datenschutz</a>
-        <a href="./kontakt.html" class="s9-footer-link">Kontakt</a>
-      </div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-name">Julian Mick M&A Advisory</span>
+    <div class="footer-links">
+      <a href="./impressum.html" class="footer-link">Impressum</a>
+      <a href="./datenschutz.html" class="footer-link">Datenschutz</a>
+      <a href="./kontakt.html" class="footer-link">Kontakt</a>
     </div>
   </div>
-</section>
+</footer>
 
-<!-- ================================================
-     SCRIPTS — alle am Ende, einmalig
-================================================ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function() {
-
-  // NAV: scroll shrink + dropdown
   var nav = document.getElementById('mainNav');
   window.addEventListener('scroll', function() {
     nav.classList.toggle('scrolled', window.scrollY > 60);
@@ -1045,246 +459,44 @@
   var dd = document.querySelector('.nav-dropdown');
   if (dd) {
     dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
-      e.stopPropagation();
-      dd.classList.toggle('open');
+      e.stopPropagation(); dd.classList.toggle('open');
     });
     document.addEventListener('click', function() { dd.classList.remove('open'); });
   }
-
-  // COUNT UP animation for stats bar
-  function runCountUp() {
-    document.querySelectorAll('[data-target]').forEach(function(el) {
-      var target = parseInt(el.dataset.target);
-      var suffix = el.dataset.suffix || '';
-      if (!target) return;
-      var duration = 1800;
-      var start = performance.now();
-      function tick(now) {
-        var p = Math.min((now - start) / duration, 1);
-        var ease = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.floor(ease * target) + suffix;
-        if (p < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    });
-  }
-  if (document.readyState === 'complete') {
-    setTimeout(runCountUp, 400);
-  } else {
-    window.addEventListener('load', function() { setTimeout(runCountUp, 400); });
-  }
-
-  // PARTICLE CANVAS — network animation
-  (function() {
-    var canvas = document.getElementById('particleCanvas');
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var W, H, nodes = [], pulses = [], t = 0;
-
-    function resize() {
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    }
-
-    function createNodes() {
-      nodes = [];
-      for (var i = 0; i < 13; i++) {
-        nodes.push({ x: W*0.04+Math.random()*W*0.24, y: H*0.06+Math.random()*H*0.88, vx: (Math.random()-0.5)*0.45, vy: (Math.random()-0.5)*0.45, r: 3.5+Math.random()*3, type: 'sell', alpha: 0.65+Math.random()*0.35, pulse: Math.random()*Math.PI*2 });
-      }
-      for (var j = 0; j < 13; j++) {
-        nodes.push({ x: W*0.72+Math.random()*W*0.24, y: H*0.06+Math.random()*H*0.88, vx: (Math.random()-0.5)*0.45, vy: (Math.random()-0.5)*0.45, r: 3.5+Math.random()*3, type: 'buy', alpha: 0.4+Math.random()*0.4, pulse: Math.random()*Math.PI*2 });
-      }
-      nodes.push({ x: W*0.5, y: H*0.5, vx: 0, vy: 0, r: 208, type: 'bridge', alpha: 1, pulse: 0 });
-    }
-
-    function spawnPulse(from, to) {
-      pulses.push({ ox: from.x, oy: from.y, tx: to.x, ty: to.y, progress: 0, speed: 0.006+Math.random()*0.007, gold: from.type==='sell'||from.type==='bridge', size: 2.5+Math.random()*2 });
-    }
-
-    function drawCompass(cx, cy, r, angle) {
-      for (var ring = 4; ring >= 1; ring--) {
-        ctx.beginPath();
-        ctx.arc(cx, cy, r*(ring/4), 0, Math.PI*2);
-        ctx.strokeStyle = 'rgba(184,149,90,'+(0.03+ring*0.015)+')';
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      }
-      var ticks = 72;
-      for (var k = 0; k < ticks; k++) {
-        var a = (k/ticks)*Math.PI*2 + angle;
-        var len = k % 9 === 0 ? 14 : (k % 3 === 0 ? 8 : 4);
-        var inner = r - len, outer = r;
-        ctx.beginPath();
-        ctx.moveTo(cx + Math.cos(a)*inner, cy + Math.sin(a)*inner);
-        ctx.lineTo(cx + Math.cos(a)*outer, cy + Math.sin(a)*outer);
-        ctx.strokeStyle = k % 9 === 0 ? 'rgba(184,149,90,0.5)' : 'rgba(184,149,90,0.2)';
-        ctx.lineWidth = k % 9 === 0 ? 1 : 0.5;
-        ctx.stroke();
-      }
-      var dirs = [0, Math.PI/2, Math.PI, 3*Math.PI/2];
-      var labels = ['N','O','S','W'];
-      ctx.font = '600 10px Syne,sans-serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      for (var d = 0; d < dirs.length; d++) {
-        var da = dirs[d] + angle;
-        var lx = cx + Math.cos(da)*(r-22);
-        var ly = cy + Math.sin(da)*(r-22);
-        ctx.fillStyle = d===0 ? 'rgba(184,149,90,0.9)' : 'rgba(184,149,90,0.4)';
-        ctx.fillText(labels[d], lx, ly);
-      }
-      // Needle
-      var n1x = cx + Math.cos(angle-Math.PI/2)*r*0.55;
-      var n1y = cy + Math.sin(angle-Math.PI/2)*r*0.55;
-      var n2x = cx + Math.cos(angle+Math.PI/2)*r*0.45;
-      var n2y = cy + Math.sin(angle+Math.PI/2)*r*0.45;
-      ctx.beginPath();
-      ctx.moveTo(n1x, n1y);
-      ctx.lineTo(cx + Math.cos(angle-Math.PI/2+0.2)*r*0.08, cy + Math.sin(angle-Math.PI/2+0.2)*r*0.08);
-      ctx.lineTo(n2x, n2y);
-      ctx.lineTo(cx + Math.cos(angle-Math.PI/2-0.2)*r*0.08, cy + Math.sin(angle-Math.PI/2-0.2)*r*0.08);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(184,149,90,0.85)';
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(cx, cy, 5, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(184,149,90,0.6)';
-      ctx.fill();
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, W, H);
-      t += 0.008;
-      var bridge = nodes[nodes.length-1];
-      bridge.x = W*0.5; bridge.y = H*0.5;
-      drawCompass(bridge.x, bridge.y, bridge.r, t*0.12);
-
-      nodes.slice(0,-1).forEach(function(n) {
-        n.x += n.vx; n.y += n.vy;
-        if (n.x < 0||n.x > W) n.vx *= -1;
-        if (n.y < 0||n.y > H) n.vy *= -1;
-        n.pulse += 0.04;
-        var pa = 0.55 + 0.15*Math.sin(n.pulse);
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
-        ctx.fillStyle = n.type==='sell' ? 'rgba(184,149,90,'+pa+')' : 'rgba(247,244,239,'+(pa*0.45)+')';
-        ctx.fill();
-        var dx = n.x-bridge.x, dy = n.y-bridge.y;
-        var dist = Math.sqrt(dx*dx+dy*dy);
-        if (dist < bridge.r+80) {
-          var grd = ctx.createLinearGradient(n.x, n.y, bridge.x, bridge.y);
-          grd.addColorStop(0, n.type==='sell' ? 'rgba(184,149,90,0.18)' : 'rgba(247,244,239,0.07)');
-          grd.addColorStop(1, 'transparent');
-          ctx.beginPath();
-          ctx.moveTo(n.x, n.y);
-          ctx.lineTo(bridge.x + dx/dist*bridge.r, bridge.y + dy/dist*bridge.r);
-          ctx.strokeStyle = grd;
-          ctx.lineWidth = 0.75;
-          ctx.stroke();
-        }
-      });
-
-      if (Math.random() < 0.025) {
-        var sells = nodes.filter(function(n){return n.type==='sell';});
-        var buys = nodes.filter(function(n){return n.type==='buy';});
-        if (sells.length && buys.length) {
-          var from = sells[Math.floor(Math.random()*sells.length)];
-          spawnPulse(from, bridge);
-          spawnPulse(bridge, buys[Math.floor(Math.random()*buys.length)]);
-        }
-      }
-
-      pulses = pulses.filter(function(p) {
-        p.progress += p.speed;
-        if (p.progress >= 1) return false;
-        var px2 = p.ox + (p.tx - p.ox)*p.progress;
-        var py2 = p.oy + (p.ty - p.oy)*p.progress;
-        var alpha = Math.sin(p.progress*Math.PI)*0.9;
-        ctx.beginPath();
-        ctx.arc(px2, py2, p.size, 0, Math.PI*2);
-        ctx.fillStyle = p.gold ? 'rgba(184,149,90,'+alpha+')' : 'rgba(247,244,239,'+(alpha*0.6)+')';
-        ctx.fill();
-        return true;
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    resize();
-    createNodes();
-    animate();
-    window.addEventListener('resize', function() { resize(); createNodes(); });
-  })();
-
-  // INTERSECTION OBSERVERS for scroll animations
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-
-  // S2 cards
-  document.querySelectorAll('.s2-card').forEach(function(el, i) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { setTimeout(function(){e.target.classList.add('visible');}, i*180); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-    obs.observe(el);
-  });
-
-  // S3 cards
-  document.querySelectorAll('.s3-card').forEach(function(el, i) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { setTimeout(function(){e.target.classList.add('visible');}, i*100); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-    obs.observe(el);
-  });
-
-  // S4 items
-  document.querySelectorAll('.s4-item').forEach(function(el, i) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { setTimeout(function(){e.target.classList.add('visible');}, i*100); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-    obs.observe(el);
-  });
-
-  // S5 steps
-  document.querySelectorAll('.s5-step').forEach(function(el, i) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { setTimeout(function(){e.target.classList.add('visible');}, i*120); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-    obs.observe(el);
-  });
-
-  // S6 cards
-  document.querySelectorAll('.s6-card').forEach(function(el, i) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { setTimeout(function(){e.target.classList.add('visible');}, i*130); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
-    obs.observe(el);
-  });
-
-  // S7 articles
-  document.querySelectorAll('.s7-article').forEach(function(el, i) {
+  // Animate fade-up elements
+  document.querySelectorAll('.fade-up').forEach(function(el, i) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting) {
-          setTimeout(function() { e.target.classList.add('visible'); }, i * 120);
+          setTimeout(function() { e.target.classList.add('visible'); }, i * 60);
           obs.unobserve(e.target);
         }
       });
     }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
     obs.observe(el);
   });
+  
+  // FAQ accordion
+  document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+  // Filter tabs
+  window.filterSection = function(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.faq-section').forEach(function(s) {
+      if (cat === 'all' || s.dataset.cat === cat) {
+        s.classList.remove('hidden');
+      } else {
+        s.classList.add('hidden');
+      }
+    });
+  };
 
 })();
 </script>

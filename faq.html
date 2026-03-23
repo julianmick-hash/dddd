@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Häufige Fragen zum Unternehmensverkauf, Nachfolge und M&A-Beratung — offen, direkt und ohne Berater-Prosa.">
-  <title>FAQ — Julian Mick M&A Advisory</title>
+  <meta name="description" content="Exit Readiness und Wertoptimierung für Mittelständler. Vorbereitung auf den Unternehmensverkauf mit institutioneller Qualität.">
+  <title>Exit Readiness & Wertoptimierung — Julian Mick M&A Advisory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+
     /* ================================================
        RESET & ROOT
     ================================================ */
@@ -50,26 +51,215 @@
     /* ================================================
        PAGE HERO
     ================================================ */
-    .page-hero { background: var(--navy); padding: 10rem 5rem 6rem; position: relative; overflow: hidden; }
-    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(184,149,90,0.06), transparent 55%); pointer-events: none; }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-hero { background: var(--navy); min-height: 500px; position: relative; overflow: hidden; display: flex; align-items: center; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(184,149,90,0.07), transparent 55%); pointer-events: none; }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; padding: 10rem 5rem 7rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; z-index: 1; }
     .page-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
-    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.5rem, 4vw, 4rem); color: #F7F4EF; line-height: 1.15; max-width: 700px; }
+    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.2rem, 3.5vw, 3.5rem); color: #F7F4EF; line-height: 1.15; margin-bottom: 2rem; }
     .page-headline em { font-style: italic; color: var(--gold); }
-    .hero-line { width: 60px; height: 1.5px; background: var(--gold); margin: 2.5rem 0; }
-    .page-sub { font-family: Syne, sans-serif; font-size: 1rem; line-height: 1.9; color: rgba(247,244,239,0.5); max-width: 520px; }
+    .page-hero-sub { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.55); max-width: 460px; }
+    .hero-visual { display: flex; align-items: center; justify-content: center; }
+
+    /* ================================================
+       INTRO SECTION
+    ================================================ */
+    .intro { background: var(--offwhite); padding: 7rem 5rem; }
+    .intro-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .intro-left h2 { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.4vw, 2.4rem); color: var(--navy); line-height: 1.25; margin-bottom: 1.75rem; }
+    .intro-left h2 em { font-style: italic; color: var(--gold); }
+    .intro-left p { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: #5F5E5A; margin-bottom: 1.25rem; }
+    .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-dark); border: 0.5px solid var(--border-dark); border-radius: 4px; overflow: hidden; margin-bottom: 2rem; }
+    .kpi-item { background: #fff; padding: 2rem; text-align: center; }
+    .kpi-number { font-family: Spectral, serif; font-weight: 600; font-size: 2rem; color: var(--navy); line-height: 1; }
+    .kpi-label { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-top: 0.5rem; }
+    .kpi-gold { color: var(--gold); }
+    .intro-note { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.8; color: var(--warm-gray); font-style: italic; padding: 1.5rem; border-left: 2px solid rgba(184,149,90,0.3); background: rgba(184,149,90,0.04); border-radius: 0 4px 4px 0; }
+    /* Reality cards (Nachfolge) */
+    .reality-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .reality-card { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 1.75rem 2rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+    .reality-icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .reality-icon svg { width: 18px; height: 18px; color: var(--gold); }
+    .reality-card h4 { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.35rem; }
+    .reality-card p { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.75; color: var(--warm-gray); }
+    /* Stat highlights (Buy-Side) */
+    .stat-highlight { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.5rem; margin-bottom: 1.25rem; position: relative; overflow: hidden; }
+    .stat-highlight::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--gold); }
+    .stat-num { font-family: Spectral, serif; font-weight: 600; font-size: 2.5rem; color: var(--gold); line-height: 1; }
+    .stat-label { font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); margin-top: 0.5rem; }
+    .stat-sub { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.75; color: #5F5E5A; margin-top: 0.75rem; }
+    /* Use cases (Eigenkapital) */
+    .usecases { display: flex; flex-direction: column; gap: 1rem; }
+    .uc-item { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.25rem 2.75rem; display: flex; gap: 1.75rem; align-items: flex-start; transition: box-shadow 0.3s; opacity: 0; transform: translateY(14px); }
+    .uc-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .uc-item:hover { box-shadow: 0 6px 24px rgba(13,27,42,0.06); }
+    .uc-icon { width: 46px; height: 46px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .uc-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .uc-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+    .uc-text { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: #5F5E5A; }
+
+    /* ================================================
+       DARK SECTIONS (leistungen, wege, prozess)
+    ================================================ */
+    .leistungen, .dark, .wege, .stations-section { background: var(--navy); padding: 7rem 5rem; position: relative; overflow: hidden; }
+    .leistungen-bg, .wege-bg, .stations-bg { position: absolute; right: -150px; top: 50%; transform: translateY(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(184,149,90,0.04), transparent 70%); pointer-events: none; }
+    .leistungen-inner, .wege-inner, .dark .section-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .section-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
+    .section-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline em { font-style: italic; color: var(--gold); }
+    .section-headline-dark { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline-dark em { font-style: italic; color: var(--gold); }
+    /* List items (dark bg) */
+    .leistungen-list, .item-list { display: flex; flex-direction: column; gap: 1rem; }
+    .l-item, .list-item { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.07); border-radius: 3px; padding: 2.5rem 3rem; display: flex; gap: 2rem; align-items: flex-start; transition: background 0.3s; opacity: 0; transform: translateY(16px); }
+    .l-item.visible, .list-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s; }
+    .l-item:hover, .list-item:hover { background: rgba(247,244,239,0.05); }
+    .l-icon, .li-icon { width: 48px; height: 48px; flex-shrink: 0; background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .l-icon svg, .li-icon svg { width: 22px; height: 22px; color: var(--gold); }
+    .l-content h3, .li-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: #F7F4EF; margin-bottom: 0.6rem; line-height: 1.3; }
+    .l-content p, .li-text { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: rgba(247,244,239,0.45); }
+    /* Outreach box */
+    .outreach-box { background: rgba(184,149,90,0.08); border: 1px solid rgba(184,149,90,0.25); border-radius: 6px; padding: 3rem; margin-top: 3rem; position: relative; }
+    .outreach-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2)); }
+    .outreach-box h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.2rem; color: #F7F4EF; margin-bottom: 0.75rem; }
+    .outreach-box p { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: rgba(247,244,239,0.55); }
+    /* Wege cards (Nachfolge) */
+    .wege-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .weg-card { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(16px); }
+    .weg-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .weg-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .weg-card:hover { background: rgba(247,244,239,0.05); }
+    .weg-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .weg-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.15rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .weg-text { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.85; color: rgba(247,244,239,0.45); margin-bottom: 1.5rem; }
+    .weg-pros { display: flex; flex-direction: column; gap: 0.5rem; }
+    .weg-pro { display: flex; align-items: flex-start; gap: 0.6rem; font-family: Syne, sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.4); }
+    .weg-pro svg { width: 13px; height: 13px; color: var(--gold); flex-shrink: 0; margin-top: 0.15rem; }
+    /* Instruments grid (Eigenkapital) */
+    .instruments { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .instr-card { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(14px); }
+    .instr-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .instr-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .instr-card:hover { background: rgba(247,244,239,0.05); }
+    .instr-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .instr-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .instr-text { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.85; color: rgba(247,244,239,0.45); }
+    /* Two-col layout */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .body-text { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: #5F5E5A; margin-bottom: 1.25rem; }
+    .body-text-dark { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: rgba(247,244,239,0.5); margin-bottom: 1.25rem; }
+
+    /* ================================================
+       LIGHT SECTIONS
+    ================================================ */
+    .unterschied, .light, .prozess { background: var(--offwhite); padding: 7rem 5rem; }
+    .unterschied-inner, .prozess-inner, .light .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-headline-light { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: var(--navy); line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline-light em { font-style: italic; color: var(--gold); }
+    /* Unterschied / u-cards */
+    .unterschied-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 4rem; }
+    .u-card { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.5rem; opacity: 0; transform: translateY(16px); transition: box-shadow 0.3s; }
+    .u-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .u-card:hover { box-shadow: 0 6px 30px rgba(13,27,42,0.06); }
+    .u-card-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .u-icon { width: 44px; height: 44px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .u-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .u-card h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); line-height: 1.3; }
+    .u-card p { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.85; color: #5F5E5A; }
+    /* Light list items */
+    .light-list { display: flex; flex-direction: column; gap: 1rem; }
+    .light-item { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 3px; padding: 2.25rem 2.75rem; display: flex; gap: 1.75rem; align-items: flex-start; transition: box-shadow 0.3s; opacity: 0; transform: translateY(14px); }
+    .light-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .light-item:hover { box-shadow: 0 6px 24px rgba(13,27,42,0.06); }
+    .li-icon-light { width: 46px; height: 46px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .li-icon-light svg { width: 20px; height: 20px; color: var(--gold); }
+    .li-title-light { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+    .li-text-light { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: #5F5E5A; }
+    /* Prozess steps (Nachfolge) */
+    .prozess-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+    .prozess-steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(184,149,90,0.2) 20%, rgba(184,149,90,0.2) 80%, transparent); }
+    .p-step { text-align: center; padding: 0 1.5rem; opacity: 0; transform: translateY(16px); }
+    .p-step.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .p-dot { width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 1px solid rgba(184,149,90,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+    .p-dot svg { width: 22px; height: 22px; color: var(--gold); }
+    .p-title { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.3; }
+    .p-text { font-family: Syne, sans-serif; font-size: 0.78rem; line-height: 1.8; color: var(--warm-gray); }
+    /* Checklist (Exit Readiness) */
+    .checklist { display: flex; flex-direction: column; border-top: 0.5px solid var(--border-dark); }
+    .check-item { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border-dark); opacity: 0; transform: translateX(-12px); }
+    .check-item.visible { opacity: 1; transform: translateX(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .check-num { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: rgba(184,149,90,0.4); min-width: 2rem; }
+    .check-label { font-family: Syne, sans-serif; font-size: 0.9rem; font-weight: 500; color: var(--navy); }
+    .check-status { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 20px; }
+    .status-key { background: rgba(184,149,90,0.12); color: var(--gold); border: 0.5px solid rgba(184,149,90,0.3); }
+    .status-often { background: rgba(13,27,42,0.05); color: var(--warm-gray); border: 0.5px solid var(--border-dark); }
+    /* Optim steps (Exit Readiness) */
+    .optim-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+    .opt-step { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(14px); }
+    .opt-step.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .opt-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .opt-step:hover { background: rgba(247,244,239,0.05); }
+    .opt-horizon { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .opt-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .opt-items { display: flex; flex-direction: column; gap: 0.5rem; }
+    .opt-item { display: flex; align-items: flex-start; gap: 0.6rem; font-family: Syne, sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.45); }
+    .opt-item svg { width: 12px; height: 12px; color: var(--gold); flex-shrink: 0; margin-top: 0.2rem; }
+
+    /* ================================================
+       QUOTE SECTION
+    ================================================ */
+    .quote-section { background: var(--navy); padding: 6rem 5rem; }
+    .quote-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .quote-text { font-family: Spectral, serif; font-style: italic; font-size: clamp(1.2rem, 1.8vw, 1.8rem); color: #F7F4EF; line-height: 1.7; margin-bottom: 2rem; }
+    .quote-text em { color: var(--gold); font-style: normal; }
+    .quote-author { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(184,149,90,0.6); }
+
+    /* ================================================
+       FAQ STRIP
+    ================================================ */
+    .faq-strip { background: var(--navy); padding: 5rem; }
+    .faq-strip-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .faq-left h2 { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.6rem, 2.2vw, 2.2rem); color: #F7F4EF; line-height: 1.3; margin-bottom: 1rem; }
+    .faq-left h2 em { font-style: italic; color: var(--gold); }
+    .faq-left p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: rgba(247,244,239,0.45); margin-bottom: 2rem; }
+    .faq-link { display: inline-flex; align-items: center; gap: 0.75rem; font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,149,90,0.3); padding-bottom: 0.35rem; transition: gap 0.3s, border-color 0.3s; }
+    .faq-link:hover { gap: 1.1rem; border-color: var(--gold); }
+    .faq-link svg { width: 14px; height: 14px; }
+    .faq-items { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 0.5px solid rgba(247,244,239,0.07); padding: 1.5rem 0; }
+    .faq-item:first-child { border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .faq-q { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: #F7F4EF; margin-bottom: 0.6rem; line-height: 1.4; }
+    .faq-a { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.85; color: rgba(247,244,239,0.4); }
+    /* Light FAQ variant */
+    .faq-strip.light-faq { background: var(--offwhite); }
+    .faq-strip.light-faq .faq-left h2 { color: var(--navy); }
+    .faq-strip.light-faq .faq-left p { color: var(--warm-gray); }
+    .faq-strip.light-faq .faq-item { border-color: var(--border-dark); }
+    .faq-strip.light-faq .faq-q { color: var(--navy); }
+    .faq-strip.light-faq .faq-a { color: var(--warm-gray); }
 
     /* ================================================
        CTA STRIP
     ================================================ */
-    .cta-strip { background: var(--navy); padding: 5rem; }
-    .cta-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
+    .cta-strip { background: var(--offwhite); padding: 5rem; }
+    .cta-strip-inner { max-width: 1200px; margin: 0 auto; background: var(--navy); border-radius: 6px; padding: 4.5rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 4rem; position: relative; overflow: hidden; }
+    .cta-strip-inner::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
+    /* Dark cta variant */
+    .cta-strip.dark-cta { background: var(--navy); padding: 5rem; }
+    .cta-strip.dark-cta .cta-strip-inner { background: none; border-radius: 0; padding: 0; max-width: 1200px; }
     .cta-text h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.8rem; color: #F7F4EF; line-height: 1.3; }
     .cta-text h3 em { font-style: italic; color: var(--gold); }
     .cta-text p { font-family: Syne, sans-serif; font-size: 0.875rem; color: rgba(247,244,239,0.4); margin-top: 0.75rem; }
     .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; flex-shrink: 0; }
     .cta-btn:hover { background: #c9a96b; transform: translateY(-1px); }
     .cta-btn svg { width: 16px; height: 16px; }
+    /* CTA box (Exit Readiness) */
+    .cta-box { background: rgba(184,149,90,0.08); border: 1px solid rgba(184,149,90,0.2); border-radius: 6px; padding: 3.5rem; margin-top: 4rem; text-align: center; position: relative; }
+    .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .cta-box h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.5rem; color: #F7F4EF; margin-bottom: 0.75rem; }
+    .cta-box p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.8; color: rgba(247,244,239,0.5); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-box-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; transition: background 0.25s, transform 0.2s; }
+    .cta-box-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .cta-box-btn svg { width: 16px; height: 16px; }
 
     /* ================================================
        FOOTER
@@ -82,41 +272,19 @@
     .footer-link:hover { color: rgba(247,244,239,0.6); }
 
     /* ================================================
-       FADE UTILITY
+       FADE-UP UTILITY
     ================================================ */
     .fade-up { opacity: 0; transform: translateY(20px); }
     .fade-up.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
 
-    /* FILTER BAR */
-    .filter-bar { background: var(--offwhite); padding: 2.5rem 5rem; border-bottom: 0.5px solid var(--border-dark); position: sticky; top: 72px; z-index: 50; }
-    .filter-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .filter-btn { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.25rem; border-radius: 20px; border: 0.5px solid rgba(13,27,42,0.15); background: transparent; color: var(--warm-gray); cursor: pointer; transition: all 0.25s; }
-    .filter-btn:hover { border-color: rgba(184,149,90,0.4); color: var(--gold); }
-    .filter-btn.active { background: var(--navy); border-color: var(--navy); color: var(--offwhite); }
-
-    /* FAQ BODY */
-    .faq-body { background: var(--offwhite); padding: 5rem; }
-    .faq-inner { max-width: 900px; margin: 0 auto; }
-    .faq-sections { display: flex; flex-direction: column; gap: 4rem; }
-    .faq-section { transition: opacity 0.3s; }
-    .faq-section.hidden { display: none; }
-    .section-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.4rem; color: var(--navy); margin-bottom: 1.75rem; padding-bottom: 1rem; border-bottom: 1.5px solid rgba(184,149,90,0.3); }
-    .faq-list { display: flex; flex-direction: column; }
-    .faq-item { border-bottom: 0.5px solid var(--border-dark); }
-    .faq-item:first-child { border-top: 0.5px solid var(--border-dark); }
-    .faq-trigger { width: 100%; background: none; border: none; cursor: pointer; padding: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; text-align: left; }
-    .faq-trigger:hover .faq-q { color: var(--gold); }
-    .faq-q { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: var(--navy); line-height: 1.4; transition: color 0.3s; }
-    .faq-icon { width: 28px; height: 28px; flex-shrink: 0; background: rgba(13,27,42,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
-    .faq-icon svg { width: 14px; height: 14px; color: var(--warm-gray); transition: transform 0.3s, color 0.3s; }
-    .faq-item.open .faq-icon { background: rgba(184,149,90,0.12); }
-    .faq-item.open .faq-icon svg { transform: rotate(45deg); color: var(--gold); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
-    .faq-item.open .faq-answer { max-height: 500px; }
-    .faq-answer-inner { padding-bottom: 1.5rem; }
-    .faq-answer p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: #5F5E5A; margin-bottom: 0.75rem; }
-    .faq-answer p:last-child { margin-bottom: 0; }
-    .faq-answer a { color: var(--gold); }
+    /* ================================================
+       SVG ANIMATIONS (Unternehmensverkauf / Nachfolge etc.)
+    ================================================ */
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin2 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin3 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin4 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin5 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
   </style>
 </head>
@@ -139,302 +307,126 @@
         <div class="nav-divider"></div>
         <a href="./unternehmensverkauf.html">Unternehmensverkauf</a>
         <a href="./nachfolgeberatung.html">Nachfolgeberatung</a>
-        <a href="./buyside.html">Buy-Side &amp; Akquisition</a>
-        <a href="./eigenkapital.html">Eigenkapital &amp; Wachstum</a>
+        <a href="./buyside.html">Buy-Side & Akquisition</a>
+        <a href="./eigenkapital.html">Eigenkapital & Wachstum</a>
         <a href="./exitreadiness.html">Exit Readiness</a>
       </div>
     </div>
     <a href="./ueber-uns.html">Über uns</a>
     <a href="./referenzen.html">Referenzen</a>
-    <a href="./wissen.html" >Wissen</a>
-    <a href="./faq.html" class="active">FAQ</a>
+    <a href="./wissen.html">Wissen</a>
+    <a href="./faq.html">FAQ</a>
     <a href="./kontakt.html" class="nav-cta">Termin vereinbaren</a>
   </div>
 </nav>
 
 <section class="page-hero">
   <div class="page-hero-inner">
-    <p class="page-eyebrow">Häufige Fragen</p>
-    <h1 class="page-headline">Die Fragen die<br>Unternehmer uns<br><em>am häufigsten stellen.</em></h1>
-    <div class="hero-line"></div>
-    <p class="page-sub">Wir beantworten die wichtigsten Fragen rund um Unternehmensverkauf, Nachfolge und M&A — offen, direkt und ohne Berater-Prosa.</p>
-  </div>
-</section>
-
-<div class="filter-bar">
-  <div class="filter-inner">
-    <button class="filter-btn active" onclick="filterSection('all', this)">Alle</button>
-    <button class="filter-btn" onclick="filterSection('prozess', this)">Prozess</button>
-    <button class="filter-btn" onclick="filterSection('bewertung', this)">Bewertung</button>
-    <button class="filter-btn" onclick="filterSection('nachfolge', this)">Nachfolge</button>
-    <button class="filter-btn" onclick="filterSection('kosten', this)">Kosten & Ablauf</button>
-    <button class="filter-btn" onclick="filterSection('kaeuferfrage', this)">Käuferfragen</button>
-    <button class="filter-btn" onclick="filterSection('vorbereitung', this)">Vorbereitung</button>
-  </div>
-</div>
-
-<section class="faq-body">
-  <div class="faq-inner">
-
-    <div class="faq-sections">
-
-      <!-- PROZESS -->
-      <div class="faq-section" id="prozess" data-cat="prozess">
-        <h2 class="section-title">Prozess & Ablauf</h2>
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Wie lange dauert ein Unternehmensverkauf?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Ein strukturierter M&A-Prozess dauert typischerweise 6–12 Monate vom Erstgespräch bis zum Closing. Die Varianz ist groß: Gut vorbereitete Unternehmen mit klarem Profil und einem aktiven Käuferfeld können schneller abschließen. Komplexe Strukturen, schwache Vorbereitung oder ein schwieriges Marktumfeld verlängern den Prozess erheblich.</p>
-              <p>Die wichtigste Erkenntnis: Jeder Monat Vorbereitung vor dem Prozessstart spart erfahrungsgemäß zwei Monate im Prozess — und schützt die Verhandlungsposition.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Wie läuft ein typischer M&A-Prozess ab?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Ein strukturierter Prozess gliedert sich in sechs Phasen: (1) Situationsanalyse & Bewertung, (2) Vorbereitung der Transaktionsunterlagen, (3) diskreter Käufer-Outreach, (4) Angebote & Shortlist, (5) Due Diligence & Verhandlung, (6) Signing, Closing & Übergabe.</p>
-              <p>Wir begleiten alle sechs Phasen — von der ersten Analyse bis zum Tag nach dem Closing.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Muss ich aktiv am Prozess beteiligt sein?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Ja — aber wir minimieren den Zeitaufwand. Die wichtigsten Momente Ihrer persönlichen Beteiligung sind die Managementpräsentationen vor qualifizierten Käufern und die Abschlussverhandlungen. Alles andere — Outreach, Datenraum, Q&A, Koordination — übernehmen wir.</p>
-              <p>Unser Ziel: Sie führen Ihr Unternehmen weiter, während wir den Verkauf vorbereiten. Ein unkontrollierter Prozess der Ihre operative Leistung beeinträchtigt schadet dem Ergebnis.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Was ist ein Letter of Intent (LOI) und wie verbindlich ist er?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Ein LOI ist eine unverbindliche Absichtserklärung des Käufers — mit indikativer Bewertung, Transaktionsstruktur und Zeitplan. Er ist rechtlich größtenteils nicht bindend, aber ein wichtiger Meilenstein: Er begründet die Exklusivität für eine Due Diligence und signalisiert ernsthaftes Kaufinteresse.</p>
-              <p>Nicht jeder LOI führt zum Abschluss — aber wir verhandeln jeden LOI so als ob er bindend wäre. Wesentliche Punkte die im LOI nicht geregelt sind, tauchen im SPA als Problem wieder auf.</p>
-            </div></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- BEWERTUNG -->
-      <div class="faq-section" id="bewertung" data-cat="bewertung">
-        <h2 class="section-title">Bewertung</h2>
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Wie wird mein Unternehmen bewertet?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Im Mittelstand ist das EBITDA-Multiple die gängigste Bewertungsmethode. Abhängig von Sektor, Wachstumsrate, Marktposition und Qualität der Ertragsbasis liegen die Multiples typischerweise zwischen 4x und 12x EBITDA — mit erheblicher Varianz.</p>
-              <p>Darüber hinaus spielen Faktoren wie Kundendiversifikation, Managementunabhängigkeit, Wachstumspotenzial und Marktpositionierung eine erhebliche Rolle. Eine erste Einschätzung liefern wir im Erstgespräch — kostenlos und unverbindlich.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Was beeinflusst den Kaufpreis am stärksten?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Die wichtigsten Werttreiber sind: Ertragskraft und -qualität (normalisiertes EBITDA), Wachstumsrate und -potenzial, Kundenbindung und Umsatzqualität (wiederkehrender vs. projektbasierter Umsatz), Unabhängigkeit vom Inhaber und Stärke des Management-Teams.</p>
-              <p>Auf der anderen Seite drücken folgende Faktoren den Preis: Inhaberabhängigkeit, Kundenkonzentration (ein Kunde &gt;20% Umsatz), rechtliche Unsicherheiten, schwache Dokumentation und negative Wachstumstrends.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Was ist der Unterschied zwischen Enterprise Value und Kaufpreis?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Der Enterprise Value (EV) ist der Gesamtwert des Unternehmens. Was Sie als Verkäufer tatsächlich erhalten (Equity Value) ist der EV minus Nettofinanzverbindlichkeiten und etwaige Anpassungen für Nettoumlaufvermögen oder sonstige Verbindlichkeiten.</p>
-              <p>Viele Verkäufer werden vom EV überrascht — und sind dann enttäuscht wenn der tatsächliche Auszahlungsbetrag deutlich darunter liegt. Wir erklären diese Zusammenhänge frühzeitig und transparent.</p>
-            </div></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- NACHFOLGE -->
-      <div class="faq-section" id="nachfolge" data-cat="nachfolge">
-        <h2 class="section-title">Nachfolge</h2>
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Wann sollte ich mit der Nachfolgeplanung beginnen?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Idealerweise 3–5 Jahre vor dem geplanten Übergabezeitpunkt. Wer früh plant hat mehr Optionen, mehr Zeit für Wertoptimierung und gerät nicht unter Druck — sei es durch gesundheitliche, familiäre oder wirtschaftliche Ereignisse.</p>
-              <p>Es gibt keinen falschen Zeitpunkt um sich mit dem Thema zu beschäftigen. Das erste Gespräch ist immer kostenlos und unverbindlich.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Was passiert mit meinen Mitarbeitern nach dem Verkauf?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Das ist eine der ersten Fragen die wir in der Käuferqualifizierung stellen. Wir machen Ihre Erwartungen und Werte zur Grundlage des Prozesses — und prüfen aktiv ob Interessenten diese teilen.</p>
-              <p>Rechtlich gilt: Alle Arbeitsverhältnisse gehen beim Asset Deal oder Share Deal auf den Käufer über (§613a BGB). Entlassungen kurz nach dem Verkauf sind möglich — aber wir sorgen dafür dass Sie mit jemandem abschließen der Ihrem Unternehmen und Ihren Mitarbeitern gegenüber respektvoll ist.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Kann ich nach dem Verkauf noch im Unternehmen tätig sein?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Ja — das ist häufig sogar gewünscht. Viele Käufer legen Wert auf eine Übergangsphase von 12–24 Monaten, in der der Gründer als Geschäftsführer oder Berater tätig bleibt und Kunden- sowie Mitarbeiterbeziehungen übergibt.</p>
-              <p>Manche Unternehmer bleiben auch langfristig in beratender oder Gesellschafterfunktion aktiv. Wir strukturieren die Übergangsphase nach Ihren Wünschen — und achten darauf dass die Vereinbarungen für beide Seiten tragfähig sind.</p>
-            </div></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- KOSTEN -->
-      <div class="faq-section" id="kosten" data-cat="kosten">
-        <h2 class="section-title">Kosten & Zusammenarbeit</h2>
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Was kostet Ihre Beratung?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Unsere Vergütung ist erfolgsbasiert — wir verdienen eine Success Fee wenn die Transaktion erfolgreich abgeschlossen wird. In manchen Fällen kombinieren wir das mit einem kleinen monatlichen Retainer für laufende Kosten und aufwändige Vorbereitungsphasen.</p>
-              <p>Die genaue Struktur besprechen wir transparent im Erstgespräch. Grundsatz: Wir haben kein Interesse daran, einen Deal zu forcieren der nicht gut für Sie ist — denn unser Ruf hängt von Ihrem Ergebnis ab.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Ab welcher Unternehmensgröße arbeiten Sie?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Wir begleiten Transaktionen typischerweise ab ca. 2 Mio. EUR EBITDA — entsprechend einem Transaktionsvolumen von 8–25 Mio. EUR aufwärts. Darunter ist der Aufwand für einen professionellen Prozess für beide Seiten oft nicht verhältnismäßig.</p>
-              <p>Bei strategisch interessanten Situationen oder besonderen Konstellationen können wir im Einzelfall abweichen. Sprechen Sie uns an.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Brauche ich zusätzlich einen Anwalt und Steuerberater?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Ja — für die finale Vertragsgestaltung (SPA) und die steuerliche Strukturierung der Transaktion sind spezialisierte Rechts- und Steuerberater unverzichtbar. Das ist kein Widerspruch zu unserer Beratung, sondern eine Ergänzung.</p>
-              <p>Wir koordinieren die Zusammenarbeit und können auf Wunsch Empfehlungen für M&A-erfahrene Kanzleien geben. Unsere Rolle ist die M&A-Prozessführung — die rechtliche und steuerliche Umsetzung liegt bei spezialisierten Beratern.</p>
-            </div></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- KÄUFERFRAGEN -->
-      <div class="faq-section" id="kaeuferfrage" data-cat="kaeuferfrage">
-        <h2 class="section-title">Käufer & Markt</h2>
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Wer kauft Unternehmen wie meines?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Im deutschen Mittelstand gibt es vier Hauptkäuferkategorien: (1) Private Equity Fonds, die Plattformen aufbauen oder Add-ons suchen. (2) Family Offices, die langfristig in stabile Unternehmen investieren. (3) Strategische Käufer — Wettbewerber oder Unternehmen aus benachbarten Branchen. (4) Management-Teams (MBO) oder Einzelpersonen als Nachfolger.</p>
-              <p>Welcher Käufertyp für Ihr Unternehmen am besten passt, hängt von Ihren Zielen, dem Geschäftsmodell und der Transaktionsgröße ab. Das besprechen wir früh im Prozess.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Wie diskreet läuft die Käuferansprache ab?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Kein Käufer erfährt ohne Ihre Zustimmung wer Sie sind. Die Ansprache erfolgt zunächst über einen anonymen Teaser der das Unternehmen beschreibt ohne es zu benennen. Erst nach Unterzeichnung einer NDA und expliziter Freigabe durch Sie erhalten Interessenten das vollständige Information Memorandum.</p>
-              <p>Wir sprechen außerdem keine Wettbewerber an ohne Ihre ausdrückliche Genehmigung — auch wenn strategische Käufer in manchen Fällen die besten Preise zahlen.</p>
-            </div></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- VORBEREITUNG -->
-      <div class="faq-section" id="vorbereitung" data-cat="vorbereitung">
-        <h2 class="section-title">Vorbereitung</h2>
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Was sollte ich vor dem Erstgespräch vorbereiten?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Nichts — das Erstgespräch ist ein offenes Kennenlerngespräch. Sie müssen keine Zahlen mitbringen und keine Unterlagen vorbereiten. Es reicht, wenn Sie uns erzählen was Sie antreibt und was Sie sich für Ihre Situation wünschen.</p>
-              <p>Falls Sie möchten: Ein grober Überblick über Umsatz, EBITDA und das Geschäftsmodell hilft uns für eine erste Einschätzung.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Wie kann ich heute den Wert meines Unternehmens steigern?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Die wirkungsvollsten Hebel: Managementunabhängigkeit aufbauen (Ihr Unternehmen muss ohne Sie funktionieren können), Kundenbindung verbessern (langfristige Verträge statt Projektgeschäft), Finanzkennzahlen bereinigen und dokumentieren, und Wachstumsinitiativen sichtbar machen.</p>
-              <p>Auf unserer <a href="./exitreadiness.html" style="color:#B8955A;">Exit Readiness Seite</a> finden Sie eine detaillierte Übersicht. Wir bieten auch eine kostenlose Ersteinschätzung Ihrer aktuellen Situation an.</p>
-            </div></div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-trigger" onclick="toggleFaq(this)">
-              <span class="faq-q">Was ist eine Vendor Due Diligence — und brauche ich sie?</span>
-              <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-            </button>
-            <div class="faq-answer"><div class="faq-answer-inner">
-              <p>Eine Vendor Due Diligence (VDD) ist eine vom Verkäufer beauftragte Prüfung des eigenen Unternehmens — bevor Käufer in den Prozess einsteigen. Sie hilft, Probleme frühzeitig zu identifizieren, Transparenz zu signalisieren und den Prozess zu beschleunigen.</p>
-              <p>Für Transaktionen ab ca. 20 Mio. EUR Transaktionswert empfehlen wir sie regelmäßig. Darunter ist sie oft nicht verhältnismäßig — aber eine interne Selbstprüfung immer sinnvoll.</p>
-            </div></div>
-          </div>
-
-        </div>
-      </div>
-
+    <div>
+      <p class="page-eyebrow">Leistungen · Exit Readiness & Wertoptimierung</p>
+      <h1 class="page-headline">Vorbereitung die<br>den Unterschied<br><em>macht.</em></h1>
+      <p class="page-hero-sub">Ein erfolgreicher Exit beginnt nicht beim ersten Käufergespräch. Wer heute anfängt, verkauft morgen besser — zu einem höheren Preis, mit weniger Risiken und mehr Kontrolle über den Prozess.</p>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 400 400" width="360" height="360" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="hg5" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#B8955A" stop-opacity="0.1"/><stop offset="100%" stop-color="#B8955A" stop-opacity="0"/></radialGradient></defs>
+        <circle cx="200" cy="200" r="180" fill="url(#hg5)"/>
+        <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(184,149,90,0.08)" stroke-width="0.75"/>
+        <!-- Diamond / gem shape -->
+        <polygon points="200,80 280,180 200,310 120,180" fill="none" stroke="#B8955A" stroke-width="1.5" opacity="0.4"/>
+        <polygon points="200,80 280,180 200,195 120,180" fill="#B8955A" opacity="0.12"/>
+        <polygon points="200,195 280,180 200,310 120,180" fill="#B8955A" opacity="0.07"/>
+        <!-- Inner facets -->
+        <line x1="200" y1="80" x2="200" y2="195" stroke="#B8955A" stroke-width="0.75" opacity="0.3"/>
+        <line x1="120" y1="180" x2="280" y2="180" stroke="#B8955A" stroke-width="0.75" opacity="0.3"/>
+        <line x1="120" y1="180" x2="200" y2="195" stroke="#B8955A" stroke-width="0.5" opacity="0.2"/>
+        <line x1="280" y1="180" x2="200" y2="195" stroke="#B8955A" stroke-width="0.5" opacity="0.2"/>
+        <!-- Gleam dots -->
+        <circle cx="200" cy="80" r="5" fill="#B8955A" opacity="0.7"/>
+        <circle cx="200" cy="80" r="10" fill="none" stroke="#B8955A" stroke-width="0.75" opacity="0.3"/>
+        <circle cx="280" cy="180" r="4" fill="rgba(247,244,239,0.3)"/>
+        <circle cx="120" cy="180" r="4" fill="#B8955A" opacity="0.4"/>
+        <!-- Sparkles -->
+        <line x1="320" y1="100" x2="328" y2="92" stroke="#B8955A" stroke-width="1" opacity="0.4"/>
+        <line x1="324" y1="96" x2="316" y2="96" stroke="#B8955A" stroke-width="1" opacity="0.4"/>
+        <line x1="80" y1="130" x2="88" y2="122" stroke="#B8955A" stroke-width="1" opacity="0.3"/>
+        <line x1="84" y1="126" x2="76" y2="126" stroke="#B8955A" stroke-width="1" opacity="0.3"/>
+        <g style="transform-origin:200px 200px;animation:spin5 30s linear infinite">
+          <circle cx="200" cy="200" r="168" fill="none" stroke="rgba(184,149,90,0.05)" stroke-width="0.75" stroke-dasharray="3 10"/>
+        </g>
+      </svg>
     </div>
   </div>
 </section>
 
-<section class="cta-strip">
-  <div class="cta-strip-inner">
-    <div class="cta-text">
-      <h3>Ihre Frage ist<br><em>nicht dabei?</em></h3>
-      <p>Sprechen Sie uns direkt an — wir antworten schnell und vertraulich.</p>
+
+<section class="light">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="fade-up">
+        <p class="eyebrow">Warum es wichtig ist</p>
+        <h2 class="headline-light">Gut vorbereitet ist<br><em>halb gewonnen.</em></h2>
+        <p class="body-text">Die meisten Unternehmer unterschätzen wie viel Einfluss die Vorbereitung auf den erzielten Preis hat. Käufer zahlen Premium-Bewertungen für Unternehmen die professionell aufgestellt, transparent dokumentiert und strategisch positioniert sind.</p>
+        <p class="body-text">Wir helfen Ihnen, dieses Bild zu schaffen — nicht durch Kosmetik, sondern durch substanzielle Optimierung. Und wir wissen genau worauf Käufer achten, weil wir selbst welche waren.</p>
+      </div>
+      <div class="fade-up">
+        <p class="eyebrow" style="margin-bottom:2rem;">Die wichtigsten Readiness-Kriterien</p>
+        <div class="checklist">
+          <div class="check-item"><span class="check-num">01</span><span class="check-label">Saubere, auditierbare Finanzbuchhaltung</span><span class="check-status status-key">Entscheidend</span></div>
+          <div class="check-item"><span class="check-num">02</span><span class="check-label">Unabhängigkeit vom Gründer / Inhaber</span><span class="check-status status-key">Entscheidend</span></div>
+          <div class="check-item"><span class="check-num">03</span><span class="check-label">Dokumentierte Prozesse & Strukturen</span><span class="check-status status-key">Entscheidend</span></div>
+          <div class="check-item"><span class="check-num">04</span><span class="check-label">Starke Kundenbindung & niedrige Churn-Rate</span><span class="check-status status-key">Entscheidend</span></div>
+          <div class="check-item"><span class="check-num">05</span><span class="check-label">Klare Wachstumsstory & Marktpositionierung</span><span class="check-status status-often">Oft unterschätzt</span></div>
+          <div class="check-item"><span class="check-num">06</span><span class="check-label">Keine offenen Rechtstreitigkeiten / Risiken</span><span class="check-status status-often">Oft unterschätzt</span></div>
+          <div class="check-item"><span class="check-num">07</span><span class="check-label">Motiviertes, stabiles Management-Team</span><span class="check-status status-often">Oft unterschätzt</span></div>
+        </div>
+      </div>
     </div>
-    <a href="./kontakt.html" class="cta-btn">Frage stellen<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+</section>
+
+<section class="dark">
+  <div style="position:absolute;left:-150px;bottom:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(184,149,90,0.04),transparent 70%);pointer-events:none;"></div>
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <p class="eyebrow fade-up">Unser Optimierungsplan</p>
+    <h2 class="headline-dark fade-up">Was wir gemeinsam<br><em>anpacken.</em></h2>
+    <div class="optim-steps">
+      <div class="opt-step">
+        <p class="opt-horizon">Kurzfristig · 0–6 Monate</p>
+        <h3 class="opt-title">Klarheit schaffen</h3>
+        <div class="opt-items">
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Finanzkennzahlen bereinigen & normalisieren</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Rechtliche Struktur prüfen & bereinigen</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Erste Bewertungseinschätzung</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Käuferprofil entwickeln</div>
+        </div>
+      </div>
+      <div class="opt-step">
+        <p class="opt-horizon">Mittelfristig · 6–18 Monate</p>
+        <h3 class="opt-title">Wert aufbauen</h3>
+        <div class="opt-items">
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Managementunabhängigkeit stärken</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kundenbindung & Vertragsbasis verbessern</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Wachstumsinitiativen dokumentieren</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Prozesse & Dokumentation aufbauen</div>
+        </div>
+      </div>
+      <div class="opt-step">
+        <p class="opt-horizon">Prozessvorbereitung · 3–6 Monate vor Exit</p>
+        <h3 class="opt-title">Bereit machen</h3>
+        <div class="opt-items">
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Vendor Due Diligence vorbereiten</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Datenraum aufbauen</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Information Memorandum erstellen</div>
+          <div class="opt-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Longlist Käufer finalisieren</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-box fade-up">
+      <h3>Wo stehen Sie heute?</h3>
+      <p>Eine kostenlose Ersteinschätzung Ihrer Exit Readiness — vertraulich, unverbindlich, ohne Druck.</p>
+      <a href="./kontakt.html" class="cta-box-btn">Jetzt einschätzen lassen<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -450,6 +442,7 @@
   </div>
 </footer>
 
+<!-- SCRIPT -->
 <script>
 (function() {
   var nav = document.getElementById('mainNav');
@@ -463,8 +456,9 @@
     });
     document.addEventListener('click', function() { dd.classList.remove('open'); });
   }
-  // Animate fade-up elements
-  document.querySelectorAll('.fade-up').forEach(function(el, i) {
+  // Animate all fade/visible elements
+  var allAnimated = document.querySelectorAll('.fade-up, .l-item, .list-item, .u-card, .weg-card, .instr-card, .light-item, .uc-item, .opt-step, .p-step, .check-item');
+  allAnimated.forEach(function(el, i) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting) {
@@ -475,29 +469,6 @@
     }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
     obs.observe(el);
   });
-  
-  // FAQ accordion
-  document.querySelectorAll('.faq-trigger').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var item = btn.closest('.faq-item');
-      var wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-  // Filter tabs
-  window.filterSection = function(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    document.querySelectorAll('.faq-section').forEach(function(s) {
-      if (cat === 'all' || s.dataset.cat === cat) {
-        s.classList.remove('hidden');
-      } else {
-        s.classList.add('hidden');
-      }
-    });
-  };
-
 })();
 </script>
 

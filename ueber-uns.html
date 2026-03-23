@@ -3,30 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Über Julian Mick — M&A-Berater mit Erfahrung aus Investment Banking, Private Equity und Corporate Development. Erfahrung von beiden Seiten des Tisches.">
-  <title>Über uns — Julian Mick M&A Advisory</title>
+  <meta name="description" content="Ausgewählte Transaktionen und Referenzen — Buy-Side M&A im deutschen Mittelstand. Saracus, Neo Cos, Immo Office, Logicheck.">
+  <title>Referenzen — Julian Mick M&A Advisory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
 
-    /* ================================================
-       RESET & ROOT
-    ================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:      #0D1B2A;
-      --gold:      #B8955A;
-      --offwhite:  #F7F4EF;
-      --warm-gray: #8C8880;
-      --border-dark: rgba(13,27,42,0.08);
-      --border-gold: rgba(184,149,90,0.2);
+      --navy: #0D1B2A; --gold: #B8955A; --offwhite: #F7F4EF;
+      --warm-gray: #8C8880; --border-dark: rgba(13,27,42,0.08);
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Syne', sans-serif; background: var(--offwhite); color: var(--navy); overflow-x: hidden; }
 
-    /* ================================================
-       NAV
-    ================================================ */
+    /* NAV */
     #mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(240,228,204,0.97); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border-dark); transition: padding 0.3s; }
     #mainNav.scrolled { padding: 0.875rem 4rem; }
     .nav-logo { font-family: 'Spectral', serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); text-decoration: none; }
@@ -48,89 +39,89 @@
     .nav-dropdown-menu a:hover svg { opacity: 0.7; }
     .nav-divider { height: 0.5px; background: rgba(247,244,239,0.07); margin: 0.4rem 1.5rem; }
 
-    /* ================================================
-       PAGE HERO
-    ================================================ */
-    .page-hero { background: var(--navy); padding: 0; min-height: 520px; position: relative; overflow: hidden; }
-    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(184,149,90,0.07), transparent 55%); pointer-events: none; }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 520px; }
-    .page-hero-text { padding: 10rem 4rem 7rem 5rem; }
+    /* PAGE HERO */
+    .page-hero { background: var(--navy); padding: 10rem 5rem 7rem; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 75% 50%, rgba(184,149,90,0.06), transparent 55%); pointer-events: none; }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: end; }
     .page-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
-    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.2rem, 3.5vw, 3.5rem); color: #F7F4EF; line-height: 1.15; }
+    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.5rem, 4vw, 4rem); color: #F7F4EF; line-height: 1.15; }
     .page-headline em { font-style: italic; color: var(--gold); }
-    .page-hero-line { width: 60px; height: 1.5px; background: var(--gold); margin: 2.5rem 0; }
-    .page-hero-sub { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.55); max-width: 460px; }
-    .page-hero-visual { display: flex; align-items: center; justify-content: center; height: 100%; padding: 4rem 5rem 4rem 2rem; }
+    .hero-line { width: 60px; height: 1.5px; background: var(--gold); margin: 2.5rem 0; }
+    .page-sub { font-family: Syne, sans-serif; font-size: 1rem; line-height: 1.9; color: rgba(247,244,239,0.5); }
+    .hero-note { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.85; color: rgba(247,244,239,0.35); font-style: italic; padding: 1.5rem 2rem; border-left: 2px solid rgba(184,149,90,0.25); background: rgba(184,149,90,0.04); border-radius: 0 4px 4px 0; }
 
-    /* ================================================
-       INTRO SECTION
-    ================================================ */
-    .intro-section { background: var(--offwhite); padding: 7rem 5rem; }
-    .intro-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 420px 1fr; gap: 6rem; align-items: start; }
-    .intro-img-wrap { position: relative; border-radius: 4px; overflow: hidden; }
-    .intro-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; display: block; }
-    .intro-photo-placeholder { width: 100%; aspect-ratio: 4/5; background: rgba(13,27,42,0.05); border: 1.5px dashed rgba(13,27,42,0.15); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; color: var(--warm-gray); }
-    .intro-photo-placeholder svg { width: 56px; height: 56px; opacity: 0.25; }
-    .intro-photo-placeholder span { font-family: Syne, sans-serif; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.4; }
-    .intro-img-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1.5rem 1.25rem; background: linear-gradient(to top, rgba(13,27,42,0.7), transparent); font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,239,0.8); }
-    .intro-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .intro-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.4vw, 2.4rem); color: var(--navy); line-height: 1.25; margin-bottom: 2rem; }
-    .intro-headline em { font-style: italic; color: var(--gold); }
-    .intro-text { font-family: Syne, sans-serif; font-size: 0.95rem; font-weight: 400; line-height: 1.95; color: #5F5E5A; margin-bottom: 1.5rem; }
-    .intro-quote { margin: 2.5rem 0; padding: 2rem 2.5rem; border-left: 2px solid var(--gold); background: rgba(184,149,90,0.05); border-radius: 0 4px 4px 0; }
-    .intro-quote p { font-family: Spectral, serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: var(--navy); }
+    /* DEALS GRID */
+    .deals-section { background: var(--offwhite); padding: 7rem 5rem; }
+    .deals-inner { max-width: 1200px; margin: 0 auto; }
+    .deals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
-    /* ================================================
-       STATIONEN TIMELINE
-    ================================================ */
-    .stations-section { background: var(--navy); padding: 7rem 5rem; position: relative; overflow: hidden; }
-    .stations-bg { position: absolute; right: -200px; top: 50%; transform: translateY(-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(184,149,90,0.04), transparent 70%); pointer-events: none; }
-    .stations-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-    .stations-header { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: end; margin-bottom: 5rem; }
-    .stations-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .stations-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2rem, 2.8vw, 2.8rem); color: #F7F4EF; line-height: 1.2; }
-    .stations-headline em { font-style: italic; color: var(--gold); }
-    .stations-intro { font-family: Syne, sans-serif; font-size: 0.95rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.5); }
-    .timeline { display: flex; flex-direction: column; position: relative; }
-    .timeline::before { content: ''; position: absolute; left: 25px; top: 52px; bottom: 52px; width: 1px; background: linear-gradient(to bottom, transparent, rgba(184,149,90,0.25) 10%, rgba(184,149,90,0.25) 90%, transparent); }
-    .tl-item { display: grid; grid-template-columns: 52px 1fr; gap: 2.5rem; align-items: start; padding: 2rem 0; opacity: 0; transform: translateX(-20px); }
-    .tl-item.visible { opacity: 1; transform: translateX(0); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .tl-dot { width: 52px; height: 52px; border-radius: 50%; background: rgba(184,149,90,0.1); border: 1px solid rgba(184,149,90,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
-    .tl-dot svg { width: 20px; height: 20px; color: var(--gold); }
-    .tl-body { padding-top: 0.85rem; }
-    .tl-period { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.4rem; }
-    .tl-company { font-family: Spectral, serif; font-weight: 600; font-size: 1.15rem; color: #F7F4EF; margin-bottom: 0.3rem; line-height: 1.3; }
-    .tl-role { font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 500; color: rgba(184,149,90,0.8); margin-bottom: 0.65rem; }
-    .tl-text { font-family: Syne, sans-serif; font-size: 0.85rem; font-weight: 400; line-height: 1.85; color: rgba(247,244,239,0.45); }
+    /* DEAL CARD — clickable, opens detail panel */
+    .deal-card {
+      background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px;
+      overflow: hidden; cursor: pointer;
+      transition: box-shadow 0.3s, transform 0.3s;
+      opacity: 0; transform: translateY(16px);
+    }
+    .deal-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .deal-card:hover { box-shadow: 0 8px 40px rgba(13,27,42,0.1); transform: translateY(-3px); }
+    .deal-card-accent { height: 3px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.15)); }
+    .deal-card-body { padding: 2.75rem 3rem; }
+    .deal-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; }
+    .deal-company { font-family: Spectral, serif; font-weight: 600; font-size: 1.5rem; color: var(--navy); line-height: 1.2; }
+    .deal-year { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--gold); background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.25); border-radius: 20px; padding: 0.3rem 0.9rem; white-space: nowrap; }
+    .deal-sector { font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; color: var(--warm-gray); text-transform: uppercase; margin-bottom: 1rem; }
+    .deal-desc { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.85; color: #5F5E5A; margin-bottom: 1.75rem; }
+    .deal-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+    .deal-tag { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; color: var(--navy); background: rgba(13,27,42,0.05); border-radius: 3px; padding: 0.3rem 0.7rem; }
+    .deal-expand { display: flex; align-items: center; justify-content: space-between; padding-top: 1.25rem; border-top: 0.5px solid var(--border-dark); }
+    .deal-expand-label { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .deal-expand-icon { width: 28px; height: 28px; background: rgba(184,149,90,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s, transform 0.3s; }
+    .deal-expand-icon svg { width: 14px; height: 14px; color: var(--gold); transition: transform 0.3s; }
+    .deal-card.open .deal-expand-icon { background: rgba(184,149,90,0.2); }
+    .deal-card.open .deal-expand-icon svg { transform: rotate(45deg); }
 
-    /* ================================================
-       PERSPEKTIVE
-    ================================================ */
-    .perspektive-section { background: var(--offwhite); padding: 7rem 5rem; }
-    .perspektive-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-    .perspektive-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
-    .perspektive-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: var(--navy); line-height: 1.25; margin-bottom: 3rem; }
-    .perspektive-headline em { font-style: italic; color: var(--gold); }
-    .perspektive-text { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; line-height: 2; color: #5F5E5A; margin-bottom: 1.5rem; }
-    .perspektive-quote { margin: 3rem auto; padding: 3rem 4rem; border-left: 2px solid var(--gold); background: #fff; border-radius: 0 6px 6px 0; text-align: left; }
-    .perspektive-quote p { font-family: Spectral, serif; font-style: italic; font-size: 1.1rem; line-height: 1.8; color: var(--navy); }
-    .perspektive-quote cite { display: block; margin-top: 1.25rem; font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+    /* DEAL DETAIL PANEL */
+    .deal-detail { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; background: rgba(13,27,42,0.02); border-top: 0.5px solid var(--border-dark); }
+    .deal-card.open .deal-detail { max-height: 600px; }
+    .deal-detail-inner { padding: 2.5rem 3rem; }
+    .detail-section { margin-bottom: 2rem; }
+    .detail-section:last-child { margin-bottom: 0; }
+    .detail-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(184,149,90,0.7); margin-bottom: 0.75rem; }
+    .detail-text { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: #5F5E5A; }
+    .detail-points { display: flex; flex-direction: column; gap: 0.5rem; }
+    .detail-point { display: flex; align-items: flex-start; gap: 0.75rem; font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.75; color: #5F5E5A; }
+    .detail-point::before { content: '—'; color: var(--gold); flex-shrink: 0; font-weight: 600; }
 
-    /* ================================================
-       CTA STRIP
-    ================================================ */
-    .cta-strip { background: var(--navy); padding: 5rem; }
-    .cta-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
-    .cta-strip-text h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.8rem; color: #F7F4EF; line-height: 1.3; }
-    .cta-strip-text h3 em { font-style: italic; color: var(--gold); }
-    .cta-strip-text p { font-family: Syne, sans-serif; font-size: 0.875rem; color: rgba(247,244,239,0.4); margin-top: 0.75rem; }
-    .cta-strip-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; flex-shrink: 0; }
-    .cta-strip-btn:hover { background: #c9a96b; transform: translateY(-1px); }
-    .cta-strip-btn svg { width: 16px; height: 16px; }
+    /* DISCLAIMER */
+    .disclaimer { max-width: 1200px; margin: 3rem auto 0; padding: 0 0; }
+    .disclaimer p { font-family: Syne, sans-serif; font-size: 0.78rem; line-height: 1.8; color: var(--warm-gray); font-style: italic; padding-top: 2rem; border-top: 0.5px solid var(--border-dark); }
 
-    /* ================================================
-       FOOTER
-    ================================================ */
+    /* ANSATZ SECTION */
+    .ansatz-section { background: var(--navy); padding: 7rem 5rem; }
+    .ansatz-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .ansatz-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
+    .ansatz-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 2rem; }
+    .ansatz-headline em { font-style: italic; color: var(--gold); }
+    .ansatz-text { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.9; color: rgba(247,244,239,0.5); margin-bottom: 1.25rem; }
+    .ansatz-items { display: flex; flex-direction: column; gap: 1rem; }
+    .ansatz-item { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.07); border-radius: 3px; padding: 2rem 2.5rem; display: flex; gap: 1.5rem; align-items: flex-start; }
+    .ansatz-icon { width: 44px; height: 44px; flex-shrink: 0; background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .ansatz-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .ansatz-item-title { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: #F7F4EF; margin-bottom: 0.4rem; line-height: 1.3; }
+    .ansatz-item-text { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.8; color: rgba(247,244,239,0.45); }
+
+    /* CTA */
+    .cta-strip { background: var(--offwhite); padding: 5rem; }
+    .cta-strip-inner { max-width: 1200px; margin: 0 auto; background: var(--navy); border-radius: 6px; padding: 4.5rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 4rem; position: relative; overflow: hidden; }
+    .cta-strip-inner::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
+    .cta-text h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.8rem; color: #F7F4EF; line-height: 1.3; }
+    .cta-text h3 em { font-style: italic; color: var(--gold); }
+    .cta-text p { font-family: Syne, sans-serif; font-size: 0.875rem; color: rgba(247,244,239,0.4); margin-top: 0.75rem; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; flex-shrink: 0; }
+    .cta-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .cta-btn svg { width: 16px; height: 16px; }
+
+    /* FOOTER */
     .site-footer { background: var(--navy); padding: 0 5rem 3rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 2.5rem; }
     .footer-name { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: rgba(247,244,239,0.4); }
@@ -138,14 +129,6 @@
     .footer-link { font-family: Syne, sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(247,244,239,0.25); text-decoration: none; transition: color 0.3s; }
     .footer-link:hover { color: rgba(247,244,239,0.6); }
 
-    /* ================================================
-       ANIMATIONS
-    ================================================ */
-    @keyframes spinCompass { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-    /* ================================================
-       FADE UTILITY
-    ================================================ */
     .fade-up { opacity: 0; transform: translateY(20px); }
     .fade-up.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
 
@@ -153,7 +136,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="mainNav">
   <a href="./index.html" class="nav-logo">[Beratung]</a>
   <div class="nav-links">
@@ -163,10 +145,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="nav-dropdown-menu">
-        <a href="./leistungen.html">
-          Alle Leistungen
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <a href="./leistungen.html">Alle Leistungen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <div class="nav-divider"></div>
         <a href="./unternehmensverkauf.html">Unternehmensverkauf</a>
         <a href="./nachfolgeberatung.html">Nachfolgeberatung</a>
@@ -175,236 +154,248 @@
         <a href="./exitreadiness.html">Exit Readiness</a>
       </div>
     </div>
-    <a href="./ueber-uns.html" class="active">Über uns</a>
-    <a href="./referenzen.html">Referenzen</a>
+    <a href="./ueber-uns.html">Über uns</a>
+    <a href="./referenzen.html" class="active">Referenzen</a>
     <a href="./wissen.html">Wissen</a>
     <a href="./faq.html">FAQ</a>
     <a href="./kontakt.html" class="nav-cta">Termin vereinbaren</a>
   </div>
 </nav>
 
-<!-- PAGE HERO -->
+<!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-hero-text">
-      <p class="page-eyebrow">Über uns</p>
-      <h1 class="page-headline">Erfahrung auf<br>beiden Seiten<br><em>des Tisches.</em></h1>
-      <div class="page-hero-line"></div>
-      <p class="page-hero-sub">Wir sind kein klassisches Beratungshaus. Wir sind Investoren, die beraten — mit allem was das bedeutet.</p>
+    <div>
+      <p class="page-eyebrow">Ausgewählte Transaktionen</p>
+      <h1 class="page-headline">Erfahrung die<br><em>für sich spricht.</em></h1>
+      <div class="hero-line"></div>
+      <p class="page-sub">Jede Transaktion ist anders. Was bleibt, ist der Anspruch: das beste Ergebnis für alle Beteiligten — nicht nur auf dem Papier, sondern langfristig.</p>
     </div>
-    <div class="page-hero-visual">
-      <svg viewBox="0 0 480 480" width="420" height="420" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
-        <defs>
-          <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#B8955A" stop-opacity="0.15"/>
-            <stop offset="100%" stop-color="#B8955A" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#B8955A" stop-opacity="0.08"/>
-            <stop offset="100%" stop-color="#B8955A" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <circle cx="240" cy="240" r="220" fill="url(#glow2)"/>
-        <circle cx="240" cy="240" r="200" fill="none" stroke="rgba(184,149,90,0.12)" stroke-width="0.75"/>
-        <circle cx="240" cy="240" r="150" fill="none" stroke="rgba(184,149,90,0.1)" stroke-width="0.75"/>
-        <circle cx="240" cy="240" r="90" fill="none" stroke="rgba(184,149,90,0.15)" stroke-width="1"/>
-        <line x1="240" y1="40" x2="240" y2="440" stroke="rgba(184,149,90,0.08)" stroke-width="0.75"/>
-        <line x1="40" y1="240" x2="440" y2="240" stroke="rgba(184,149,90,0.08)" stroke-width="0.75"/>
-        <line x1="98" y1="98" x2="382" y2="382" stroke="rgba(184,149,90,0.05)" stroke-width="0.75"/>
-        <line x1="382" y1="98" x2="98" y2="382" stroke="rgba(184,149,90,0.05)" stroke-width="0.75"/>
-        <polygon points="240,100 233,220 240,240 247,220" fill="#B8955A" opacity="0.9"/>
-        <polygon points="240,380 233,260 240,240 247,260" fill="rgba(247,244,239,0.15)" opacity="0.9"/>
-        <polygon points="380,240 260,233 240,240 260,247" fill="rgba(247,244,239,0.1)"/>
-        <polygon points="100,240 220,233 240,240 220,247" fill="rgba(247,244,239,0.1)"/>
-        <circle cx="240" cy="240" r="10" fill="none" stroke="#B8955A" stroke-width="1.5" opacity="0.8"/>
-        <circle cx="240" cy="240" r="3" fill="#B8955A" opacity="0.9"/>
-        <g stroke="rgba(184,149,90,0.3)" stroke-width="1">
-          <line x1="240" y1="42" x2="240" y2="56"/><line x1="340" y1="67" x2="333" y2="79"/>
-          <line x1="413" y1="140" x2="401" y2="147"/><line x1="438" y1="240" x2="424" y2="240"/>
-          <line x1="413" y1="340" x2="401" y2="333"/><line x1="340" y1="413" x2="333" y2="401"/>
-          <line x1="240" y1="438" x2="240" y2="424"/><line x1="140" y1="413" x2="147" y2="401"/>
-          <line x1="67" y1="340" x2="79" y2="333"/><line x1="42" y1="240" x2="56" y2="240"/>
-          <line x1="67" y1="140" x2="79" y2="147"/><line x1="140" y1="67" x2="147" y2="79"/>
-        </g>
-        <text x="240" y="34" text-anchor="middle" font-family="Syne, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#B8955A" opacity="0.8">N</text>
-        <text x="240" y="458" text-anchor="middle" font-family="Syne, sans-serif" font-size="11" font-weight="600" fill="rgba(247,244,239,0.2)">S</text>
-        <text x="458" y="244" text-anchor="middle" font-family="Syne, sans-serif" font-size="11" font-weight="600" fill="rgba(247,244,239,0.2)">O</text>
-        <text x="22" y="244" text-anchor="middle" font-family="Syne, sans-serif" font-size="11" font-weight="600" fill="rgba(247,244,239,0.2)">W</text>
-        <g style="transform-origin:240px 240px;animation:spinCompass 30s linear infinite">
-          <circle cx="240" cy="240" r="170" fill="none" stroke="rgba(184,149,90,0.07)" stroke-width="0.75" stroke-dasharray="4 12"/>
-        </g>
-        <circle cx="90" cy="200" r="5" fill="#B8955A" opacity="0.7"/>
-        <circle cx="90" cy="200" r="10" fill="none" stroke="#B8955A" stroke-width="0.75" opacity="0.3"/>
-        <circle cx="130" cy="300" r="4" fill="#B8955A" opacity="0.5"/>
-        <circle cx="75" cy="310" r="3.5" fill="#B8955A" opacity="0.4"/>
-        <circle cx="390" cy="200" r="5" fill="rgba(247,244,239,0.4)"/>
-        <circle cx="390" cy="200" r="10" fill="none" stroke="rgba(247,244,239,0.1)" stroke-width="0.75"/>
-        <circle cx="370" cy="310" r="4" fill="rgba(247,244,239,0.25)"/>
-        <circle cx="400" cy="320" r="3.5" fill="rgba(247,244,239,0.2)"/>
-        <line x1="90" y1="200" x2="195" y2="240" stroke="rgba(184,149,90,0.2)" stroke-width="0.75"/>
-        <line x1="130" y1="300" x2="195" y2="255" stroke="rgba(184,149,90,0.15)" stroke-width="0.75"/>
-        <line x1="390" y1="200" x2="285" y2="240" stroke="rgba(247,244,239,0.1)" stroke-width="0.75"/>
-        <line x1="370" y1="310" x2="285" y2="255" stroke="rgba(247,244,239,0.08)" stroke-width="0.75"/>
-        <circle r="4" fill="#B8955A" opacity="0.9">
-          <animateMotion dur="4s" repeatCount="indefinite" path="M90,200 Q240,180 390,200"/>
-          <animate attributeName="opacity" values="0;0.9;0" dur="4s" repeatCount="indefinite"/>
-        </circle>
-        <circle r="3" fill="#B8955A" opacity="0.7">
-          <animateMotion dur="5.5s" repeatCount="indefinite" begin="2s" path="M130,300 Q240,260 370,310"/>
-          <animate attributeName="opacity" values="0;0.7;0" dur="5.5s" repeatCount="indefinite" begin="2s"/>
-        </circle>
-      </svg>
+    <div>
+      <p class="hero-note">Alle aufgeführten Transaktionen wurden als Investor auf der Käuferseite durchgeführt. Aus Gründen der Vertraulichkeit werden keine Details zu Transaktionsvolumen oder Bewertungen veröffentlicht.</p>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="intro-section">
-  <div class="intro-inner">
-    <div class="intro-img-wrap">
-      <!-- BILD-SLOT: src ersetzen z.B. "./images/julian-mick.jpg" -->
-      <img src="PHOTO_JULIAN" alt="Julian Mick" class="intro-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="intro-photo-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-        </svg>
-        <span>Foto folgt</span>
+<!-- DEALS -->
+<section class="deals-section">
+  <div class="deals-inner">
+    <div class="deals-grid">
+
+      <!-- SARACUS -->
+      <div class="deal-card" onclick="toggleDeal(this)">
+        <div class="deal-card-accent"></div>
+        <div class="deal-card-body">
+          <div class="deal-card-top">
+            <div class="deal-company">Saracus Consulting</div>
+            <span class="deal-year">2020</span>
+          </div>
+          <p class="deal-sector">IT Services · Data & Analytics</p>
+          <p class="deal-desc">Akquisition eines spezialisierten Beratungshauses im Bereich Datenarchitektur und Analytics. Starke Kundenbasis im DACH-Mittelstand, wiederkehrender Umsatz durch langfristige Projektbeziehungen.</p>
+          <div class="deal-tags">
+            <span class="deal-tag">Buy-Side</span>
+            <span class="deal-tag">Mittelstand</span>
+            <span class="deal-tag">DACH</span>
+          </div>
+          <div class="deal-expand">
+            <span class="deal-expand-label">Details ansehen</span>
+            <span class="deal-expand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </div>
+        </div>
+        <div class="deal-detail">
+          <div class="deal-detail-inner">
+            <div class="detail-section">
+              <p class="detail-label">Transaktionsprofil</p>
+              <div class="detail-points">
+                <p class="detail-point">Vollständige Akquisition eines spezialisierten IT-Beratungshauses</p>
+                <p class="detail-point">Schwerpunkt: Datenarchitektur, BI und Analytics für Mittelstandskunden</p>
+                <p class="detail-point">Hoher Anteil wiederkehrender Projektumsätze mit langfristigen Kundenbeziehungen</p>
+                <p class="detail-point">Plattform-Investment mit Add-on-Potenzial im fragmentierten DACH-Markt</p>
+              </div>
+            </div>
+            <div class="detail-section">
+              <p class="detail-label">Unsere Rolle</p>
+              <p class="detail-text">Deal Sourcing, Erstansprache, Financial Modelling, Due Diligence Koordination und Verhandlungsführung bis Closing.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="intro-img-caption">Julian Mick — Gründer & Managing Partner</div>
+
+      <!-- NEO COS -->
+      <div class="deal-card" onclick="toggleDeal(this)">
+        <div class="deal-card-accent"></div>
+        <div class="deal-card-body">
+          <div class="deal-card-top">
+            <div class="deal-company">Neo Cos Service</div>
+            <span class="deal-year">2021</span>
+          </div>
+          <p class="deal-sector">Kosmetik · Lohnherstellung</p>
+          <p class="deal-desc">Erwerb eines Lohnherstellers im Bereich Kosmetik und Körperpflege. Spezialisierte Produktionskapazitäten, etablierte Kundenbeziehungen zu nationalen und internationalen Marken.</p>
+          <div class="deal-tags">
+            <span class="deal-tag">Buy-Side</span>
+            <span class="deal-tag">Produktion</span>
+            <span class="deal-tag">DACH</span>
+          </div>
+          <div class="deal-expand">
+            <span class="deal-expand-label">Details ansehen</span>
+            <span class="deal-expand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </div>
+        </div>
+        <div class="deal-detail">
+          <div class="deal-detail-inner">
+            <div class="detail-section">
+              <p class="detail-label">Transaktionsprofil</p>
+              <div class="detail-points">
+                <p class="detail-point">Erwerb eines etablierten Lohnherstellers für Kosmetik- und Körperpflegeprodukte</p>
+                <p class="detail-point">Spezialisierte Produktionslinien und regulatorische Zertifizierungen als Eintrittsbarriere</p>
+                <p class="detail-point">Langfristige Rahmenverträge mit nationalen und internationalen Markenherstellern</p>
+                <p class="detail-point">Wachstumspotenzial durch Kapazitätserweiterung und Kundenakquise in Nachbarländern</p>
+              </div>
+            </div>
+            <div class="detail-section">
+              <p class="detail-label">Unsere Rolle</p>
+              <p class="detail-text">Eigenständiges Deal Sourcing über proprietären Outreach-Ansatz, vollständige Prozessführung von der Erstansprache bis zum Signing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMMO OFFICE -->
+      <div class="deal-card" onclick="toggleDeal(this)">
+        <div class="deal-card-accent"></div>
+        <div class="deal-card-body">
+          <div class="deal-card-top">
+            <div class="deal-company">Immo Office</div>
+            <span class="deal-year">2023</span>
+          </div>
+          <p class="deal-sector">Immobilien · Verwaltung & Services</p>
+          <p class="deal-desc">Akquisition eines regionalen Immobiliendienstleisters mit verwalteten Beständen und stabiler Ertragsbasis. Attraktives Plattform-Asset für weiteres Buy-and-Build im fragmentierten Markt.</p>
+          <div class="deal-tags">
+            <span class="deal-tag">Buy-Side</span>
+            <span class="deal-tag">Plattform</span>
+            <span class="deal-tag">DACH</span>
+          </div>
+          <div class="deal-expand">
+            <span class="deal-expand-label">Details ansehen</span>
+            <span class="deal-expand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </div>
+        </div>
+        <div class="deal-detail">
+          <div class="deal-detail-inner">
+            <div class="detail-section">
+              <p class="detail-label">Transaktionsprofil</p>
+              <div class="detail-points">
+                <p class="detail-point">Erwerb eines regionalen Immobilienverwalters mit gewerblichem und privatem Verwaltungsbestand</p>
+                <p class="detail-point">Stabile, wiederkehrende Umsätze durch langfristige Verwaltungsverträge</p>
+                <p class="detail-point">Fragmentierter Markt mit signifikantem Konsolidierungspotenzial</p>
+                <p class="detail-point">Plattforminvestment mit definierten Add-on-Kriterien für Buy-and-Build-Strategie</p>
+              </div>
+            </div>
+            <div class="detail-section">
+              <p class="detail-label">Unsere Rolle</p>
+              <p class="detail-text">Marktanalyse, Identifikation und Erstansprache des Targets, vollständige Begleitung durch Due Diligence und Vertragsverhandlung.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGICHECK -->
+      <div class="deal-card" onclick="toggleDeal(this)">
+        <div class="deal-card-accent"></div>
+        <div class="deal-card-body">
+          <div class="deal-card-top">
+            <div class="deal-company">Logicheck</div>
+            <span class="deal-year">2026</span>
+          </div>
+          <p class="deal-sector">InsurTech · Schadenmanagement & SaaS</p>
+          <p class="deal-desc">Investition in einen spezialisierten Anbieter digitaler Schadenmanagement-Lösungen für die Versicherungsbranche. Proprietäre SaaS-Plattform, wiederkehrender Umsatz, starke Positionierung im DACH-Versicherungsmarkt.</p>
+          <div class="deal-tags">
+            <span class="deal-tag">Buy-Side</span>
+            <span class="deal-tag">SaaS</span>
+            <span class="deal-tag">InsurTech</span>
+            <span class="deal-tag">DACH</span>
+          </div>
+          <div class="deal-expand">
+            <span class="deal-expand-label">Details ansehen</span>
+            <span class="deal-expand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </div>
+        </div>
+        <div class="deal-detail">
+          <div class="deal-detail-inner">
+            <div class="detail-section">
+              <p class="detail-label">Transaktionsprofil</p>
+              <div class="detail-points">
+                <p class="detail-point">Investment in proprietäre SaaS-Plattform für digitales Schadenmanagement</p>
+                <p class="detail-point">Wiederkehrender Umsatz durch Subscription-Modell mit etablierten Versicherungskunden</p>
+                <p class="detail-point">Starke Marktposition in der DACH-Versicherungsbranche mit hohen Wechselkosten</p>
+                <p class="detail-point">Wachstumstreiber: Digitalisierungsdruck bei Versicherungen und Expansion ins europäische Ausland</p>
+              </div>
+            </div>
+            <div class="detail-section">
+              <p class="detail-label">Unsere Rolle</p>
+              <p class="detail-text">Identifikation über proprietären Marktansatz, Investitionsanalyse, Strukturierung und vollständige Transaktionsbegleitung bis Closing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="intro-content fade-up">
-      <p class="intro-eyebrow">Julian Mick</p>
-      <h2 class="intro-headline">Zehn Jahre auf beiden<br>Seiten des <em>Deals.</em></h2>
-      <p class="intro-text">Ich habe meine Karriere in der Wirtschaftsprüfung bei EY begonnen, bevor ich in das Investment Banking bei Barclays gewechselt bin. Über Drake Star Partners — einer auf Tech-M&A spezialisierten Boutique — kam ich zu Maxburg Capital Partners, einem DACH-fokussierten Private-Equity-Fonds für den Mittelstand.</p>
-      <p class="intro-text">Danach folgte eine ungewöhnliche Station: Als erster DACH-Mitarbeiter und Director Corporate Development bei Banyan Software, einem kanadischen Serial Acquirer, habe ich den Buy-and-Build-Ansatz von innen kennengelernt — Akquisitionen identifiziert, bewertet, strukturiert und integriert. Zuletzt als Investment Manager bei THI Investments.</p>
-      <div class="intro-quote">
-        <p>„Kein Geschäftsmodell gleicht dem anderen, kein Unternehmer dem nächsten. Man trifft Menschen die zwanzig Jahre lang eine Idee verfolgt haben — in Branchen die man vorher kaum kannte, mit Perspektiven die man sich nicht hätte vorstellen können. Jedes Mandat ist eine neue Geschichte, ein neues Modell, ein neues Stück Welt das man plötzlich besser versteht."</p>
-      </div>
-      <p class="intro-text">Diese Kombination — institutionelle M&A-Erfahrung, Käuferperspektive aus erster Hand, DACH-Netzwerk — ist das Fundament unserer Beratung. Wir wissen wie Käufer denken, weil wir es waren.</p>
+    <div class="disclaimer">
+      <p>Alle aufgeführten Transaktionen wurden als Investor auf der Käuferseite durchgeführt. Aus Gründen der Vertraulichkeit werden keine weiteren Details zu Transaktionsvolumen, Bewertungen oder Käuferidentitäten veröffentlicht.</p>
     </div>
   </div>
 </section>
 
-<!-- STATIONEN -->
-<section class="stations-section">
-  <div class="stations-bg"></div>
-  <div class="stations-inner">
-    <div class="stations-header">
-      <div class="fade-up">
-        <p class="stations-eyebrow">Werdegang</p>
-        <h2 class="stations-headline">Stationen die<br><em>prägen.</em></h2>
-      </div>
-      <p class="stations-intro fade-up">Jede Station hat eine andere Perspektive auf Transaktionen eröffnet — als Banker, Berater, Investor und Käufer. Diese Kombination prägt wie wir heute arbeiten.</p>
+<!-- ANSATZ -->
+<section class="ansatz-section">
+  <div class="ansatz-inner">
+    <div class="fade-up">
+      <p class="ansatz-eyebrow">Was unsere Arbeit prägt</p>
+      <h2 class="ansatz-headline">Erfahrung von<br><em>beiden Seiten</em><br>des Tisches.</h2>
+      <p class="ansatz-text">Alle aufgeführten Transaktionen haben wir als Investoren durchgeführt — nicht als Berater. Diese Perspektive ist der Kern unserer Beratungsarbeit: Wir wissen wie Käufer denken, weil wir es waren.</p>
+      <p class="ansatz-text">Heute nutzen wir diese Erfahrung auf der Verkäuferseite — und helfen Unternehmern genau die Informationsasymmetrie zu überwinden, von der wir früher selbst profitiert haben.</p>
     </div>
-
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div class="tl-dot">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="tl-body">
-          <p class="tl-period">Heute</p>
-          <p class="tl-company">THI Investments & M&A Advisory</p>
-          <p class="tl-role">Investment Manager & Gründer</p>
-          <p class="tl-text">Parallel zur Tätigkeit als Investment Manager bei THI Investments begleite ich ausgewählte Unternehmer bei Verkauf, Nachfolge und Akquisition — mit dem vollen Gewicht meiner Erfahrung auf beiden Seiten des Tisches.</p>
+    <div class="ansatz-items fade-up">
+      <div class="ansatz-item">
+        <div class="ansatz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div>
+          <div class="ansatz-item-title">Eigenständiges Deal Sourcing</div>
+          <p class="ansatz-item-text">Wir haben Targets nicht über Broker gefunden — sondern über eigene Recherche und direkten Outreach. Hohe Antwortquoten durch individuelle, persönliche Ansprache.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="tl-body">
-          <p class="tl-period">Corporate Development</p>
-          <p class="tl-company">Banyan Software</p>
-          <p class="tl-role">Director Corporate Development — Erster DACH-Mitarbeiter</p>
-          <p class="tl-text">Als erster DACH-Mitarbeiter des kanadischen Serial Acquirers den europäischen M&A-Ansatz aufgebaut — von Akquisitionsstrategie über Outreach bis zu Closing und Integration. Buy-and-Build in der Praxis: mehrere Transaktionen eigenverantwortlich geführt.</p>
+      <div class="ansatz-item">
+        <div class="ansatz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.51 0 2.93.37 4.18 1.03"/></svg></div>
+        <div>
+          <div class="ansatz-item-title">Institutionelle Qualität der Analyse</div>
+          <p class="ansatz-item-text">Due Diligence, Finanzmodelle und Bewertungsrahmen auf dem Niveau einer PE-Transaktion — nicht die vereinfachte Version eines Boutique-Beraters.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <div class="tl-body">
-          <p class="tl-period">Private Equity</p>
-          <p class="tl-company">Maxburg Capital Partners</p>
-          <p class="tl-role">Investment Manager</p>
-          <p class="tl-text">Wechsel auf die Käuferseite: Deal Sourcing, Due Diligence, Bewertung und Portfoliomanagement für einen DACH-fokussierten PE-Fonds mit Fokus auf profitable Mittelständler. Direkte Investorenperspektive auf M&A-Prozesse.</p>
+      <div class="ansatz-item">
+        <div class="ansatz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <div class="ansatz-item-title">Netzwerk das wir wirklich kennen</div>
+          <p class="ansatz-item-text">Kein Adressbuch — sondern aktive Beziehungen zu PE-Fonds, Family Offices und strategischen Käufern in DACH und Europa, die wir über Jahre aufgebaut haben.</p>
         </div>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="tl-body">
-          <p class="tl-period">Tech M&A Boutique</p>
-          <p class="tl-company">Drake Star Partners</p>
-          <p class="tl-role">M&A Advisory — Technology</p>
-          <p class="tl-text">Spezialisierung auf Technologie- und Software-Transaktionen im europäischen Mittelstand. Intensive Käufer- und Verkäufermandate mit einem tiefen Fokus auf Geschäftsmodellverständnis.</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-        </div>
-        <div class="tl-body">
-          <p class="tl-period">Investment Banking</p>
-          <p class="tl-company">Barclays</p>
-          <p class="tl-role">Investment Banking Division</p>
-          <p class="tl-text">M&A-Beratung auf institutionellem Niveau — Pitches, Prozessführung, Strukturierung und Verhandlung von Transaktionen. Erfahrung mit komplexen, grenzüberschreitenden Deals in unterschiedlichen Sektoren.</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10l8-6 8 6v10"/></svg>
-        </div>
-        <div class="tl-body">
-          <p class="tl-period">Start der Karriere</p>
-          <p class="tl-company">EY</p>
-          <p class="tl-role">Transaction Advisory Services</p>
-          <p class="tl-text">Einstieg in die Welt der M&A-Transaktionen über Financial Due Diligence und Transaction Advisory. Grundlage für das Verständnis von Unternehmensstrukturen, Bewertungen und Transaktionsprozessen.</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- PERSPEKTIVE -->
-<section class="perspektive-section">
-  <div class="perspektive-inner">
-    <p class="perspektive-eyebrow fade-up">Unsere Haltung</p>
-    <h2 class="perspektive-headline fade-up">Wenige Mandate.<br><em>Voller Einsatz.</em></h2>
-    <div class="perspektive-quote fade-up">
-      <p>„Ich habe als Investor gelernt wie man ein Unternehmen bewertet. Als Berater weiß ich wie man es präsentiert. Der entscheidende Unterschied ist: Ich weiß auch, was ein Käufer wirklich denkt — und was er nie laut sagen würde."</p>
-      <cite>Julian Mick</cite>
-    </div>
-    <p class="perspektive-text fade-up">Wir nehmen bewusst wenige Mandate an. Nicht weil wir wählerisch sein wollen, sondern weil wir jedem Mandat den Einsatz widmen wollen, den es verdient. Jede Transaktion entscheidet über unseren eigenen Ruf — das schafft eine Interessengleichheit die Sie in jeder Phase spüren.</p>
-    <p class="perspektive-text fade-up">Diskretion ist dabei keine Option, sondern Grundvoraussetzung. Wir sprechen nicht über laufende Mandate. Wir nennen keine Namen ohne Erlaubnis. Und wir verhandeln nie auf Kosten einer langfristigen Beziehung.</p>
-  </div>
-</section>
-
-<!-- CTA STRIP -->
+<!-- CTA -->
 <section class="cta-strip">
   <div class="cta-strip-inner">
-    <div class="cta-strip-text">
-      <h3>Bereit für ein<br><em>vertrauliches Gespräch?</em></h3>
-      <p>Kein Pitch, kein Druck — nur ein offenes Gespräch über Ihre Situation.</p>
+    <div class="cta-text">
+      <h3>Ihre Transaktion<br><em>in guten Händen.</em></h3>
+      <p>Vertrauliches Erstgespräch — kostenlos, unverbindlich, ohne Druck.</p>
     </div>
-    <a href="./kontakt.html" class="cta-strip-btn">
+    <a href="./kontakt.html" class="cta-btn">
       Erstgespräch vereinbaren
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <span class="footer-name">Julian Mick M&A Advisory</span>
@@ -416,34 +407,31 @@
   </div>
 </footer>
 
-<!-- SCRIPT -->
 <script>
 (function() {
   var nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', function() {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+  window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 60); });
   var dd = document.querySelector('.nav-dropdown');
   if (dd) {
-    dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
-      e.stopPropagation(); dd.classList.toggle('open');
-    });
+    dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('open'); });
     document.addEventListener('click', function() { dd.classList.remove('open'); });
   }
-  // Animate all elements
-  var allAnimated = document.querySelectorAll('.fade-up, .tl-item');
-  allAnimated.forEach(function(el, i) {
+  var allAnim = document.querySelectorAll('.deal-card, .fade-up, .ansatz-item');
+  allAnim.forEach(function(el, i) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          setTimeout(function() { e.target.classList.add('visible'); }, i * 60);
-          obs.unobserve(e.target);
-        }
+        if (e.isIntersecting) { setTimeout(function() { e.target.classList.add('visible'); }, i * 80); obs.unobserve(e.target); }
       });
     }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
     obs.observe(el);
   });
 })();
+
+window.toggleDeal = function(card) {
+  var isOpen = card.classList.contains('open');
+  document.querySelectorAll('.deal-card.open').forEach(function(c) { c.classList.remove('open'); });
+  if (!isOpen) card.classList.add('open');
+};
 </script>
 
 </body>

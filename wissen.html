@@ -3,21 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="M&A-Wissen für Mittelständler — Leitfäden, Ratgeber und Perspektiven zum Unternehmensverkauf, Nachfolge und Unternehmensbewertung.">
-  <title>Wissen & Perspektiven — Julian Mick M&A Advisory</title>
+  <meta name="description" content="Unternehmensverkauf für den deutschen Mittelstand. Strukturiert, diskret, wertoptimal — von der Vorbereitung bis zum Closing.">
+  <title>Unternehmensverkauf — Julian Mick M&A Advisory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
 
+    /* ================================================
+       RESET & ROOT
+    ================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy: #0D1B2A; --gold: #B8955A; --offwhite: #F7F4EF;
-      --warm-gray: #8C8880; --border-dark: rgba(13,27,42,0.08);
+      --navy:      #0D1B2A;
+      --gold:      #B8955A;
+      --offwhite:  #F7F4EF;
+      --warm-gray: #8C8880;
+      --border-dark: rgba(13,27,42,0.08);
+      --border-gold: rgba(184,149,90,0.2);
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Syne', sans-serif; background: var(--offwhite); color: var(--navy); overflow-x: hidden; }
 
-    /* NAV */
+    /* ================================================
+       NAV
+    ================================================ */
     #mainNav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(240,228,204,0.97); backdrop-filter: blur(16px); border-bottom: 0.5px solid var(--border-dark); transition: padding 0.3s; }
     #mainNav.scrolled { padding: 0.875rem 4rem; }
     .nav-logo { font-family: 'Spectral', serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); text-decoration: none; }
@@ -39,97 +48,222 @@
     .nav-dropdown-menu a:hover svg { opacity: 0.7; }
     .nav-divider { height: 0.5px; background: rgba(247,244,239,0.07); margin: 0.4rem 1.5rem; }
 
-    /* PAGE HERO */
-    .page-hero { background: var(--navy); padding: 10rem 5rem 6rem; position: relative; overflow: hidden; }
-    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(184,149,90,0.06), transparent 55%); pointer-events: none; }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    /* ================================================
+       PAGE HERO
+    ================================================ */
+    .page-hero { background: var(--navy); min-height: 500px; position: relative; overflow: hidden; display: flex; align-items: center; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 60%, rgba(184,149,90,0.07), transparent 55%); pointer-events: none; }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; padding: 10rem 5rem 7rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; z-index: 1; }
     .page-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
-    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.5rem, 4vw, 4rem); color: #F7F4EF; line-height: 1.15; max-width: 700px; }
+    .page-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(2.2rem, 3.5vw, 3.5rem); color: #F7F4EF; line-height: 1.15; margin-bottom: 2rem; }
     .page-headline em { font-style: italic; color: var(--gold); }
-    .hero-line { width: 60px; height: 1.5px; background: var(--gold); margin: 2.5rem 0; }
-    .page-sub { font-family: Syne, sans-serif; font-size: 1rem; line-height: 1.9; color: rgba(247,244,239,0.5); max-width: 520px; }
+    .page-hero-sub { font-family: Syne, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.9; color: rgba(247,244,239,0.55); max-width: 460px; }
+    .hero-visual { display: flex; align-items: center; justify-content: center; }
 
-    /* FEATURED ARTICLE */
-    .featured { background: var(--offwhite); padding: 6rem 5rem 3rem; }
-    .featured-inner { max-width: 1200px; margin: 0 auto; }
-    .featured-label { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; }
-    .featured-card {
-      display: grid; grid-template-columns: 1fr 280px; gap: 5rem; align-items: center;
-      background: var(--navy); border-radius: 6px; padding: 4rem 5rem;
-      text-decoration: none; position: relative; overflow: hidden;
-      transition: box-shadow 0.3s;
-      opacity: 0; transform: translateY(16px);
-    }
-    .featured-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s; }
-    .featured-card:hover { box-shadow: 0 16px 60px rgba(13,27,42,0.2); }
-    .featured-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
-    .fc-category { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.25em; color: rgba(184,149,90,0.7); text-transform: uppercase; margin-bottom: 1.25rem; }
-    .fc-title { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.5rem, 2.2vw, 2rem); color: #F7F4EF; line-height: 1.25; margin-bottom: 1.5rem; }
-    .fc-title em { font-style: italic; color: var(--gold); }
-    .fc-excerpt { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: rgba(247,244,239,0.5); margin-bottom: 2rem; max-width: 520px; }
-    .fc-meta { display: flex; align-items: center; justify-content: space-between; }
-    .fc-author { font-family: Syne, sans-serif; font-size: 0.75rem; color: rgba(184,149,90,0.6); }
-    .fc-read { display: inline-flex; align-items: center; gap: 0.5rem; font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(184,149,90,0.3); padding-bottom: 0.2rem; transition: gap 0.3s, border-color 0.3s; }
-    .featured-card:hover .fc-read { gap: 0.8rem; border-color: var(--gold); }
-    .fc-read svg { width: 14px; height: 14px; }
-    .featured-card-visual { display: flex; align-items: center; justify-content: center; }
+    /* ================================================
+       INTRO SECTION
+    ================================================ */
+    .intro { background: var(--offwhite); padding: 7rem 5rem; }
+    .intro-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .intro-left h2 { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.4vw, 2.4rem); color: var(--navy); line-height: 1.25; margin-bottom: 1.75rem; }
+    .intro-left h2 em { font-style: italic; color: var(--gold); }
+    .intro-left p { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: #5F5E5A; margin-bottom: 1.25rem; }
+    .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-dark); border: 0.5px solid var(--border-dark); border-radius: 4px; overflow: hidden; margin-bottom: 2rem; }
+    .kpi-item { background: #fff; padding: 2rem; text-align: center; }
+    .kpi-number { font-family: Spectral, serif; font-weight: 600; font-size: 2rem; color: var(--navy); line-height: 1; }
+    .kpi-label { font-family: Syne, sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-top: 0.5rem; }
+    .kpi-gold { color: var(--gold); }
+    .intro-note { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.8; color: var(--warm-gray); font-style: italic; padding: 1.5rem; border-left: 2px solid rgba(184,149,90,0.3); background: rgba(184,149,90,0.04); border-radius: 0 4px 4px 0; }
+    /* Reality cards (Nachfolge) */
+    .reality-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .reality-card { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 1.75rem 2rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+    .reality-icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .reality-icon svg { width: 18px; height: 18px; color: var(--gold); }
+    .reality-card h4 { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.35rem; }
+    .reality-card p { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.75; color: var(--warm-gray); }
+    /* Stat highlights (Buy-Side) */
+    .stat-highlight { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.5rem; margin-bottom: 1.25rem; position: relative; overflow: hidden; }
+    .stat-highlight::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--gold); }
+    .stat-num { font-family: Spectral, serif; font-weight: 600; font-size: 2.5rem; color: var(--gold); line-height: 1; }
+    .stat-label { font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); margin-top: 0.5rem; }
+    .stat-sub { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.75; color: #5F5E5A; margin-top: 0.75rem; }
+    /* Use cases (Eigenkapital) */
+    .usecases { display: flex; flex-direction: column; gap: 1rem; }
+    .uc-item { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.25rem 2.75rem; display: flex; gap: 1.75rem; align-items: flex-start; transition: box-shadow 0.3s; opacity: 0; transform: translateY(14px); }
+    .uc-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .uc-item:hover { box-shadow: 0 6px 24px rgba(13,27,42,0.06); }
+    .uc-icon { width: 46px; height: 46px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .uc-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .uc-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+    .uc-text { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: #5F5E5A; }
 
-    /* ARTICLES GRID */
-    .articles { background: var(--offwhite); padding: 3rem 5rem 6rem; }
-    .articles-inner { max-width: 1200px; margin: 0 auto; }
-    .articles-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
-    .articles-header h2 { font-family: Spectral, serif; font-weight: 600; font-size: 1.6rem; color: var(--navy); line-height: 1.2; }
-    .articles-header h2 em { font-style: italic; color: var(--gold); }
-    .articles-count { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; color: var(--warm-gray); text-transform: uppercase; }
-    .articles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-    .article-card {
-      background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px;
-      padding: 2.5rem; text-decoration: none; display: flex; flex-direction: column;
-      position: relative; overflow: hidden;
-      transition: box-shadow 0.3s, transform 0.3s;
-      opacity: 0; transform: translateY(16px);
-    }
-    .article-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
-    .article-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-    .article-card:hover::before { transform: scaleX(1); }
-    .article-card:hover { box-shadow: 0 8px 32px rgba(13,27,42,0.08); transform: translateY(-2px); }
-    .ac-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
-    .ac-category { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: rgba(184,149,90,0.7); text-transform: uppercase; }
-    .ac-reading { font-family: Syne, sans-serif; font-size: 0.68rem; color: var(--warm-gray); }
-    .ac-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); line-height: 1.4; margin-bottom: 1rem; flex: 1; }
-    .ac-excerpt { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.85; color: #5F5E5A; margin-bottom: 1.5rem; flex: 1; }
-    .ac-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1.25rem; border-top: 0.5px solid var(--border-dark); margin-top: auto; }
-    .ac-author { font-family: Syne, sans-serif; font-size: 0.72rem; color: var(--warm-gray); }
-    .ac-arrow { color: var(--gold); transition: transform 0.3s; }
-    .article-card:hover .ac-arrow { transform: translateX(4px); }
+    /* ================================================
+       DARK SECTIONS (leistungen, wege, prozess)
+    ================================================ */
+    .leistungen, .dark, .wege, .stations-section { background: var(--navy); padding: 7rem 5rem; position: relative; overflow: hidden; }
+    .leistungen-bg, .wege-bg, .stations-bg { position: absolute; right: -150px; top: 50%; transform: translateY(-50%); width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(184,149,90,0.04), transparent 70%); pointer-events: none; }
+    .leistungen-inner, .wege-inner, .dark .section-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .section-eyebrow { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.25rem; }
+    .section-headline { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline em { font-style: italic; color: var(--gold); }
+    .section-headline-dark { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline-dark em { font-style: italic; color: var(--gold); }
+    /* List items (dark bg) */
+    .leistungen-list, .item-list { display: flex; flex-direction: column; gap: 1rem; }
+    .l-item, .list-item { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.07); border-radius: 3px; padding: 2.5rem 3rem; display: flex; gap: 2rem; align-items: flex-start; transition: background 0.3s; opacity: 0; transform: translateY(16px); }
+    .l-item.visible, .list-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s; }
+    .l-item:hover, .list-item:hover { background: rgba(247,244,239,0.05); }
+    .l-icon, .li-icon { width: 48px; height: 48px; flex-shrink: 0; background: rgba(184,149,90,0.1); border: 0.5px solid rgba(184,149,90,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .l-icon svg, .li-icon svg { width: 22px; height: 22px; color: var(--gold); }
+    .l-content h3, .li-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: #F7F4EF; margin-bottom: 0.6rem; line-height: 1.3; }
+    .l-content p, .li-text { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: rgba(247,244,239,0.45); }
+    /* Outreach box */
+    .outreach-box { background: rgba(184,149,90,0.08); border: 1px solid rgba(184,149,90,0.25); border-radius: 6px; padding: 3rem; margin-top: 3rem; position: relative; }
+    .outreach-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2)); }
+    .outreach-box h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.2rem; color: #F7F4EF; margin-bottom: 0.75rem; }
+    .outreach-box p { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: rgba(247,244,239,0.55); }
+    /* Wege cards (Nachfolge) */
+    .wege-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .weg-card { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(16px); }
+    .weg-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .weg-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .weg-card:hover { background: rgba(247,244,239,0.05); }
+    .weg-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .weg-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.15rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .weg-text { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.85; color: rgba(247,244,239,0.45); margin-bottom: 1.5rem; }
+    .weg-pros { display: flex; flex-direction: column; gap: 0.5rem; }
+    .weg-pro { display: flex; align-items: flex-start; gap: 0.6rem; font-family: Syne, sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.4); }
+    .weg-pro svg { width: 13px; height: 13px; color: var(--gold); flex-shrink: 0; margin-top: 0.15rem; }
+    /* Instruments grid (Eigenkapital) */
+    .instruments { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .instr-card { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(14px); }
+    .instr-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .instr-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .instr-card:hover { background: rgba(247,244,239,0.05); }
+    .instr-label { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.25em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .instr-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .instr-text { font-family: Syne, sans-serif; font-size: 0.85rem; line-height: 1.85; color: rgba(247,244,239,0.45); }
+    /* Two-col layout */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+    .body-text { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: #5F5E5A; margin-bottom: 1.25rem; }
+    .body-text-dark { font-family: Syne, sans-serif; font-size: 0.95rem; line-height: 1.95; color: rgba(247,244,239,0.5); margin-bottom: 1.25rem; }
 
-    /* PERSPECTIVE SECTION */
-    .perspective { background: var(--navy); padding: 7rem 5rem; }
-    .perspective-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
-    .perspective-left h2 { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: #F7F4EF; line-height: 1.2; margin-bottom: 1.25rem; }
-    .perspective-left h2 em { font-style: italic; color: var(--gold); }
-    .perspective-left p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.85; color: rgba(247,244,239,0.45); margin-bottom: 2rem; }
-    .perspective-cta { display: inline-flex; align-items: center; gap: 0.6rem; font-family: Syne, sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,149,90,0.3); padding-bottom: 0.25rem; transition: gap 0.3s, border-color 0.3s; }
-    .perspective-cta:hover { gap: 0.9rem; border-color: var(--gold); }
-    .perspective-cta svg { width: 14px; height: 14px; }
-    .perspective-right { display: flex; flex-direction: column; gap: 0; }
-    .insight-item { padding: 1.75rem 0; border-bottom: 0.5px solid rgba(247,244,239,0.07); display: flex; gap: 1.5rem; align-items: flex-start; }
-    .insight-item:first-child { border-top: 0.5px solid rgba(247,244,239,0.07); }
-    .insight-num { font-family: Spectral, serif; font-weight: 600; font-size: 1.5rem; color: rgba(184,149,90,0.25); flex-shrink: 0; line-height: 1.2; }
-    .insight-text { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: rgba(247,244,239,0.5); padding-top: 0.2rem; }
-    .insight-text em { color: #F7F4EF; font-style: normal; }
+    /* ================================================
+       LIGHT SECTIONS
+    ================================================ */
+    .unterschied, .light, .prozess { background: var(--offwhite); padding: 7rem 5rem; }
+    .unterschied-inner, .prozess-inner, .light .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-headline-light { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.8rem, 2.5vw, 2.5rem); color: var(--navy); line-height: 1.2; margin-bottom: 4rem; }
+    .section-headline-light em { font-style: italic; color: var(--gold); }
+    /* Unterschied / u-cards */
+    .unterschied-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 4rem; }
+    .u-card { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 4px; padding: 2.5rem; opacity: 0; transform: translateY(16px); transition: box-shadow 0.3s; }
+    .u-card.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .u-card:hover { box-shadow: 0 6px 30px rgba(13,27,42,0.06); }
+    .u-card-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .u-icon { width: 44px; height: 44px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .u-icon svg { width: 20px; height: 20px; color: var(--gold); }
+    .u-card h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); line-height: 1.3; }
+    .u-card p { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.85; color: #5F5E5A; }
+    /* Light list items */
+    .light-list { display: flex; flex-direction: column; gap: 1rem; }
+    .light-item { background: #fff; border: 0.5px solid var(--border-dark); border-radius: 3px; padding: 2.25rem 2.75rem; display: flex; gap: 1.75rem; align-items: flex-start; transition: box-shadow 0.3s; opacity: 0; transform: translateY(14px); }
+    .light-item.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s; }
+    .light-item:hover { box-shadow: 0 6px 24px rgba(13,27,42,0.06); }
+    .li-icon-light { width: 46px; height: 46px; flex-shrink: 0; background: rgba(184,149,90,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .li-icon-light svg { width: 20px; height: 20px; color: var(--gold); }
+    .li-title-light { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+    .li-text-light { font-family: Syne, sans-serif; font-size: 0.875rem; line-height: 1.9; color: #5F5E5A; }
+    /* Prozess steps (Nachfolge) */
+    .prozess-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+    .prozess-steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(184,149,90,0.2) 20%, rgba(184,149,90,0.2) 80%, transparent); }
+    .p-step { text-align: center; padding: 0 1.5rem; opacity: 0; transform: translateY(16px); }
+    .p-step.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .p-dot { width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 1px solid rgba(184,149,90,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+    .p-dot svg { width: 22px; height: 22px; color: var(--gold); }
+    .p-title { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.3; }
+    .p-text { font-family: Syne, sans-serif; font-size: 0.78rem; line-height: 1.8; color: var(--warm-gray); }
+    /* Checklist (Exit Readiness) */
+    .checklist { display: flex; flex-direction: column; border-top: 0.5px solid var(--border-dark); }
+    .check-item { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border-dark); opacity: 0; transform: translateX(-12px); }
+    .check-item.visible { opacity: 1; transform: translateX(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .check-num { font-family: Spectral, serif; font-weight: 600; font-size: 1rem; color: rgba(184,149,90,0.4); min-width: 2rem; }
+    .check-label { font-family: Syne, sans-serif; font-size: 0.9rem; font-weight: 500; color: var(--navy); }
+    .check-status { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 20px; }
+    .status-key { background: rgba(184,149,90,0.12); color: var(--gold); border: 0.5px solid rgba(184,149,90,0.3); }
+    .status-often { background: rgba(13,27,42,0.05); color: var(--warm-gray); border: 0.5px solid var(--border-dark); }
+    /* Optim steps (Exit Readiness) */
+    .optim-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+    .opt-step { background: rgba(247,244,239,0.03); border: 0.5px solid rgba(247,244,239,0.08); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; opacity: 0; transform: translateY(14px); }
+    .opt-step.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .opt-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.1)); }
+    .opt-step:hover { background: rgba(247,244,239,0.05); }
+    .opt-horizon { font-family: Syne, sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: rgba(184,149,90,0.6); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .opt-title { font-family: Spectral, serif; font-weight: 600; font-size: 1.05rem; color: #F7F4EF; margin-bottom: 0.75rem; line-height: 1.3; }
+    .opt-items { display: flex; flex-direction: column; gap: 0.5rem; }
+    .opt-item { display: flex; align-items: flex-start; gap: 0.6rem; font-family: Syne, sans-serif; font-size: 0.78rem; color: rgba(247,244,239,0.45); }
+    .opt-item svg { width: 12px; height: 12px; color: var(--gold); flex-shrink: 0; margin-top: 0.2rem; }
 
-    /* CTA STRIP */
-    .cta-strip { background: var(--navy); padding: 5rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
-    .cta-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
+    /* ================================================
+       QUOTE SECTION
+    ================================================ */
+    .quote-section { background: var(--navy); padding: 6rem 5rem; }
+    .quote-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .quote-text { font-family: Spectral, serif; font-style: italic; font-size: clamp(1.2rem, 1.8vw, 1.8rem); color: #F7F4EF; line-height: 1.7; margin-bottom: 2rem; }
+    .quote-text em { color: var(--gold); font-style: normal; }
+    .quote-author { font-family: Syne, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(184,149,90,0.6); }
+
+    /* ================================================
+       FAQ STRIP
+    ================================================ */
+    .faq-strip { background: var(--navy); padding: 5rem; }
+    .faq-strip-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .faq-left h2 { font-family: Spectral, serif; font-weight: 600; font-size: clamp(1.6rem, 2.2vw, 2.2rem); color: #F7F4EF; line-height: 1.3; margin-bottom: 1rem; }
+    .faq-left h2 em { font-style: italic; color: var(--gold); }
+    .faq-left p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.9; color: rgba(247,244,239,0.45); margin-bottom: 2rem; }
+    .faq-link { display: inline-flex; align-items: center; gap: 0.75rem; font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,149,90,0.3); padding-bottom: 0.35rem; transition: gap 0.3s, border-color 0.3s; }
+    .faq-link:hover { gap: 1.1rem; border-color: var(--gold); }
+    .faq-link svg { width: 14px; height: 14px; }
+    .faq-items { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 0.5px solid rgba(247,244,239,0.07); padding: 1.5rem 0; }
+    .faq-item:first-child { border-top: 0.5px solid rgba(247,244,239,0.07); }
+    .faq-q { font-family: Spectral, serif; font-weight: 600; font-size: 0.95rem; color: #F7F4EF; margin-bottom: 0.6rem; line-height: 1.4; }
+    .faq-a { font-family: Syne, sans-serif; font-size: 0.82rem; line-height: 1.85; color: rgba(247,244,239,0.4); }
+    /* Light FAQ variant */
+    .faq-strip.light-faq { background: var(--offwhite); }
+    .faq-strip.light-faq .faq-left h2 { color: var(--navy); }
+    .faq-strip.light-faq .faq-left p { color: var(--warm-gray); }
+    .faq-strip.light-faq .faq-item { border-color: var(--border-dark); }
+    .faq-strip.light-faq .faq-q { color: var(--navy); }
+    .faq-strip.light-faq .faq-a { color: var(--warm-gray); }
+
+    /* ================================================
+       CTA STRIP
+    ================================================ */
+    .cta-strip { background: var(--offwhite); padding: 5rem; }
+    .cta-strip-inner { max-width: 1200px; margin: 0 auto; background: var(--navy); border-radius: 6px; padding: 4.5rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 4rem; position: relative; overflow: hidden; }
+    .cta-strip-inner::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), rgba(184,149,90,0.2), transparent); }
+    /* Dark cta variant */
+    .cta-strip.dark-cta { background: var(--navy); padding: 5rem; }
+    .cta-strip.dark-cta .cta-strip-inner { background: none; border-radius: 0; padding: 0; max-width: 1200px; }
     .cta-text h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.8rem; color: #F7F4EF; line-height: 1.3; }
     .cta-text h3 em { font-style: italic; color: var(--gold); }
     .cta-text p { font-family: Syne, sans-serif; font-size: 0.875rem; color: rgba(247,244,239,0.4); margin-top: 0.75rem; }
     .cta-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; white-space: nowrap; transition: background 0.25s, transform 0.2s; flex-shrink: 0; }
     .cta-btn:hover { background: #c9a96b; transform: translateY(-1px); }
     .cta-btn svg { width: 16px; height: 16px; }
+    /* CTA box (Exit Readiness) */
+    .cta-box { background: rgba(184,149,90,0.08); border: 1px solid rgba(184,149,90,0.2); border-radius: 6px; padding: 3.5rem; margin-top: 4rem; text-align: center; position: relative; }
+    .cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .cta-box h3 { font-family: Spectral, serif; font-weight: 600; font-size: 1.5rem; color: #F7F4EF; margin-bottom: 0.75rem; }
+    .cta-box p { font-family: Syne, sans-serif; font-size: 0.9rem; line-height: 1.8; color: rgba(247,244,239,0.5); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-box-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--gold); color: var(--navy); font-family: Syne, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.1rem 2.25rem; border-radius: 3px; text-decoration: none; transition: background 0.25s, transform 0.2s; }
+    .cta-box-btn:hover { background: #c9a96b; transform: translateY(-1px); }
+    .cta-box-btn svg { width: 16px; height: 16px; }
 
-    /* FOOTER */
+    /* ================================================
+       FOOTER
+    ================================================ */
     .site-footer { background: var(--navy); padding: 0 5rem 3rem; border-top: 0.5px solid rgba(247,244,239,0.07); }
     .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 2.5rem; }
     .footer-name { font-family: Spectral, serif; font-weight: 600; font-size: 1.1rem; color: rgba(247,244,239,0.4); }
@@ -137,13 +271,26 @@
     .footer-link { font-family: Syne, sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(247,244,239,0.25); text-decoration: none; transition: color 0.3s; }
     .footer-link:hover { color: rgba(247,244,239,0.6); }
 
+    /* ================================================
+       FADE-UP UTILITY
+    ================================================ */
     .fade-up { opacity: 0; transform: translateY(20px); }
     .fade-up.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+    /* ================================================
+       SVG ANIMATIONS (Unternehmensverkauf / Nachfolge etc.)
+    ================================================ */
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin2 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin3 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin4 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin5 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="mainNav">
   <a href="./index.html" class="nav-logo">[Beratung]</a>
   <div class="nav-links">
@@ -153,7 +300,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="nav-dropdown-menu">
-        <a href="./leistungen.html">Alle Leistungen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="./leistungen.html">
+          Alle Leistungen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
         <div class="nav-divider"></div>
         <a href="./unternehmensverkauf.html">Unternehmensverkauf</a>
         <a href="./nachfolgeberatung.html">Nachfolgeberatung</a>
@@ -164,157 +314,240 @@
     </div>
     <a href="./ueber-uns.html">Über uns</a>
     <a href="./referenzen.html">Referenzen</a>
-    <a href="./wissen.html" class="active">Wissen</a>
+    <a href="./wissen.html">Wissen</a>
     <a href="./faq.html">FAQ</a>
     <a href="./kontakt.html" class="nav-cta">Termin vereinbaren</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <p class="page-eyebrow">Wissen & Perspektiven</p>
-    <h1 class="page-headline">Meinungen die ich<br>wirklich habe —<br><em>nicht die ich haben soll.</em></h1>
-    <div class="hero-line"></div>
-    <p class="page-sub">Kein Content-Marketing. Keine SEO-Artikel. Nur Beobachtungen aus zehn Jahren auf beiden Seiten des Tisches — manche unbequem, alle ehrlich.</p>
+    <div>
+      <p class="page-eyebrow">Leistungen · Unternehmensverkauf</p>
+      <h1 class="page-headline">Ihr Lebenswerk<br>verdient den<br><em>richtigen Käufer.</em></h1>
+      <p class="page-hero-sub">Der Verkauf eines Unternehmens ist eine der komplexesten und persönlichsten Entscheidungen im Leben eines Unternehmers. Wir begleiten Sie — mit Erfahrung, Netzwerk und dem Anspruch institutioneller Qualität.</p>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 400 400" width="360" height="360" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#B8955A" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#B8955A" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="200" cy="200" r="180" fill="url(#hg)"/>
+        <circle cx="200" cy="200" r="160" fill="none" stroke="rgba(184,149,90,0.1)" stroke-width="0.75"/>
+        <circle cx="200" cy="200" r="110" fill="none" stroke="rgba(184,149,90,0.08)" stroke-width="0.75"/>
+        <circle cx="200" cy="200" r="60" fill="none" stroke="rgba(184,149,90,0.12)" stroke-width="1"/>
+        <!-- Handshake icon center -->
+        <g transform="translate(160,170)" stroke="#B8955A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7">
+          <path d="M20.5 0H28L40 12h-7l-4-4-8.5 4H12L0 20l8 8 4-4 4 4 12-8"/>
+          <path d="M7 27l6 6"/>
+        </g>
+        <!-- Orbit dots -->
+        <circle cx="200" cy="40" r="5" fill="#B8955A" opacity="0.6"/>
+        <circle cx="360" cy="200" r="4" fill="rgba(247,244,239,0.3)"/>
+        <circle cx="200" cy="360" r="4" fill="rgba(247,244,239,0.2)"/>
+        <circle cx="40" cy="200" r="5" fill="#B8955A" opacity="0.4"/>
+        <circle cx="313" cy="87" r="3.5" fill="#B8955A" opacity="0.35"/>
+        <circle cx="313" cy="313" r="3" fill="rgba(247,244,239,0.2)"/>
+        <circle cx="87" cy="87" r="3" fill="rgba(247,244,239,0.15)"/>
+        <!-- Connecting spokes -->
+        <line x1="200" y1="40" x2="200" y2="140" stroke="rgba(184,149,90,0.15)" stroke-width="0.75"/>
+        <line x1="360" y1="200" x2="260" y2="200" stroke="rgba(184,149,90,0.1)" stroke-width="0.75"/>
+        <line x1="40" y1="200" x2="140" y2="200" stroke="rgba(184,149,90,0.15)" stroke-width="0.75"/>
+        <!-- Animated pulse -->
+        <circle r="4" fill="#B8955A" opacity="0.8">
+          <animateMotion dur="6s" repeatCount="indefinite" path="M200,40 A160,160 0 1,1 199,40"/>
+          <animate attributeName="opacity" values="0.8;0.2;0.8" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Rotating ring -->
+        <g style="transform-origin:200px 200px;animation:spin 25s linear infinite">
+          <circle cx="200" cy="200" r="135" fill="none" stroke="rgba(184,149,90,0.06)" stroke-width="0.75" stroke-dasharray="3 10"/>
+        </g>
+      </svg>
+    </div>
   </div>
 </section>
 
-<section class="featured">
-  <div class="featured-inner">
-    <p class="featured-label">Leitartikel</p>
-    <a href="./wissen/was-macht-einen-guten-ma-berater-aus.html" class="featured-card">
-      <div class="featured-card-text">
-        <p class="fc-category">Grundsatzfrage</p>
-        <h2 class="fc-title">Was macht einen guten<br>M&A-Berater wirklich aus —<br>und was <em>disqualifiziert</em> einen?</h2>
-        <p class="fc-excerpt">Die Antwort die die meisten geben ist falsch. Netzwerk, Erfahrung, Transaktionsvolumen — das sind Hygienefaktoren. Was wirklich entscheidet, ist schwerer zu messen. Und genau deshalb wird es selten gefragt.</p>
-        <div class="fc-meta">
-          <span class="fc-author">Julian Mick · 12 Minuten</span>
-          <span class="fc-read">Lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="intro-left fade-up">
+      <h2>Mehr als ein Verkauf —<br><em>ein Übergang.</em></h2>
+      <p>Für die meisten Unternehmer ist der Verkauf des Unternehmens ein einmaliges Ereignis. Für uns ist es tägliche Arbeit — aber wir haben nie vergessen, was es für Sie bedeutet.</p>
+      <p>Wir begleiten Sie von der ersten vertraulichen Analyse bis zum erfolgreichen Closing. Mit institutioneller Qualität in den Unterlagen, einem tiefen Netzwerk auf der Käuferseite — und dem Verständnis dafür, dass Preis nicht alles ist.</p>
+      <p>Als ehemalige Investoren wissen wir wie Käufer denken, was sie wirklich wollen und wo sie Druck machen. Dieses Wissen setzen wir aktiv für Sie ein.</p>
+    </div>
+    <div class="intro-right fade-up">
+      <div class="kpi-grid">
+        <div class="kpi-item">
+          <div class="kpi-number kpi-gold">20+</div>
+          <div class="kpi-label">Transaktionen</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number kpi-gold">10</div>
+          <div class="kpi-label">Jahre Erfahrung</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number kpi-gold">500+</div>
+          <div class="kpi-label">Investorenkontakte</div>
+        </div>
+        <div class="kpi-item">
+          <div class="kpi-number kpi-gold">DACH</div>
+          <div class="kpi-label">+ Europa</div>
         </div>
       </div>
-      <div class="featured-card-visual">
-        <svg viewBox="0 0 280 280" width="240" height="240" xmlns="http://www.w3.org/2000/svg">
-          <line x1="140" y1="40" x2="140" y2="200" stroke="#B8955A" stroke-width="1.5" opacity="0.5"/>
-          <circle cx="140" cy="40" r="5" fill="#B8955A" opacity="0.7"/>
-          <line x1="60" y1="100" x2="220" y2="100" stroke="#B8955A" stroke-width="1.5" opacity="0.4"/>
-          <path d="M60,100 Q40,115 35,130 Q40,145 60,145 Q80,145 85,130 Q80,115 60,100" fill="rgba(184,149,90,0.1)" stroke="#B8955A" stroke-width="1" opacity="0.5"/>
-          <path d="M220,100 Q240,110 245,125 Q240,140 220,140 Q200,140 195,125 Q200,110 220,100" fill="rgba(184,149,90,0.06)" stroke="rgba(247,244,239,0.2)" stroke-width="1" opacity="0.5"/>
-          <circle cx="52" cy="122" r="6" fill="#B8955A" opacity="0.6"/>
-          <circle cx="65" cy="128" r="4" fill="#B8955A" opacity="0.5"/>
-          <circle cx="58" cy="135" r="5" fill="#B8955A" opacity="0.4"/>
-          <circle cx="215" cy="120" r="4" fill="rgba(247,244,239,0.2)"/>
-          <circle cx="225" cy="127" r="3" fill="rgba(247,244,239,0.15)"/>
-          <line x1="120" y1="200" x2="160" y2="200" stroke="#B8955A" stroke-width="1.5" opacity="0.3"/>
-          <line x1="115" y1="220" x2="165" y2="220" stroke="#B8955A" stroke-width="1" opacity="0.2"/>
-          <circle cx="140" cy="130" r="110" fill="none" stroke="rgba(184,149,90,0.05)" stroke-width="0.75" stroke-dasharray="3 10"/>
-        </svg>
+      <div class="intro-note">
+        Jedes Mandat wird von Julian Mick persönlich geführt — kein Handoff an Juniorberater, keine parallelen Prozesse die Ihre Aufmerksamkeit verdünnen.
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAS WIR ÜBERNEHMEN -->
+<section class="leistungen">
+  <div class="leistungen-bg"></div>
+  <div class="leistungen-inner">
+    <p class="section-eyebrow fade-up">Was wir übernehmen</p>
+    <h2 class="section-headline fade-up">Von der Analyse<br>bis zum <em>Closing.</em></h2>
+    <div class="leistungen-list">
+
+      <div class="l-item">
+        <div class="l-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div class="l-content">
+          <h3>Unternehmensbewertung & Positionierung</h3>
+          <p>Realistische Einschätzung des Marktwerts — nicht der Wunschpreis, sondern der erzielbare Preis. Wir analysieren Ihr Geschäftsmodell, Ihre Ertragskraft und Ihre Wachstumstreiber und übersetzen das in eine überzeugende Käufernarrative.</p>
+        </div>
+      </div>
+
+      <div class="l-item">
+        <div class="l-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="l-content">
+          <h3>Transaktionsunterlagen in institutioneller Qualität</h3>
+          <p>Teaser, Information Memorandum, Finanzmodell — erstellt mit dem Anspruch, den wir selbst als Investor an solche Unterlagen gestellt haben. Professionell, substanzreich und auf die richtigen Käufer zugeschnitten.</p>
+        </div>
+      </div>
+
+      <div class="l-item">
+        <div class="l-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11l-4 4-2-2"/></svg></div>
+        <div class="l-content">
+          <h3>Diskreter Käufer-Outreach</h3>
+          <p>Kein Massenversand, keine öffentlichen Listings. Wir sprechen gezielt und vertraulich mit vorqualifizierten PE-Fonds, Family Offices und strategischen Käufern — individuell formuliert, mit nachweislich hohen Rücklaufquoten.</p>
+        </div>
+      </div>
+
+      <div class="l-item">
+        <div class="l-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></div>
+        <div class="l-content">
+          <h3>Prozessmanagement & Datenraum</h3>
+          <p>NDA-Handling, Q&A-Management, Managementpräsentationen, Datenraumkoordination — wir steuern den gesamten Prozess, damit Sie sich auf Ihr Unternehmen konzentrieren können.</p>
+        </div>
+      </div>
+
+      <div class="l-item">
+        <div class="l-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.51 0 2.93.37 4.18 1.03"/></svg></div>
+        <div class="l-content">
+          <h3>Verhandlung & Abschluss</h3>
+          <p>Auswertung der Angebote nach Preis, Struktur und Käuferprofil. Verhandlung des Letter of Intent und SPA — gemeinsam mit Ihren rechtlichen und steuerlichen Beratern bis zum finalen Signing und Closing.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- UNSER UNTERSCHIED -->
+<section class="unterschied">
+  <div class="unterschied-inner">
+    <p class="section-eyebrow fade-up" style="color:#B8955A;">Unser Unterschied</p>
+    <h2 class="section-headline fade-up" style="color:#0D1B2A;">Warum Unternehmer uns<br><em>wählen.</em></h2>
+    <div class="unterschied-grid">
+
+      <div class="u-card">
+        <div class="u-card-top">
+          <div class="u-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Käuferdenke auf Ihrer Seite</h3>
+        </div>
+        <p>Wir haben selbst als Investoren Unternehmen gekauft. Wir wissen was Käufer überzeugt — und setzen dieses Wissen aktiv für Sie ein.</p>
+      </div>
+
+      <div class="u-card">
+        <div class="u-card-top">
+          <div class="u-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Absolute Diskretion</h3>
+        </div>
+        <p>Kein Mitarbeiter, kein Kunde, kein Wettbewerber erfährt von Ihren Plänen — solange Sie es nicht wollen. Diskretion ist für uns keine Option, sondern Grundvoraussetzung.</p>
+      </div>
+
+      <div class="u-card">
+        <div class="u-card-top">
+          <div class="u-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <h3>Der richtige Käufer</h3>
+        </div>
+        <p>Nicht der Höchstbietende, sondern der Passendste. Wir achten auf Käuferprofil, kulturelle Passung und langfristige Absichten — weil das für den Übergangserfolg entscheidend ist.</p>
+      </div>
+
+      <div class="u-card">
+        <div class="u-card-top">
+          <div class="u-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3>Persönlicher Einsatz</h3>
+        </div>
+        <p>Wenige Mandate, voller Einsatz. Jede Transaktion entscheidet über unseren eigenen Ruf — eine Interessengleichheit die Sie in jeder Phase spüren werden.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SNIPPET -->
+<section class="faq-strip">
+  <div class="faq-strip-inner">
+    <div class="faq-left fade-up">
+      <h2>Häufige Fragen zum<br><em>Unternehmensverkauf.</em></h2>
+      <p>Die meisten Unternehmer stellen uns dieselben Fragen — das ist gut so. Wir beantworten sie gerne.</p>
+      <a href="./faq.html" class="faq-link">
+        Alle FAQ ansehen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="faq-items fade-up">
+      <div class="faq-item">
+        <p class="faq-q">Wie lange dauert ein Unternehmensverkauf?</p>
+        <p class="faq-a">Typischerweise 6–12 Monate vom Erstgespräch bis zum Closing. Gut vorbereitete Prozesse sind schneller — schlechte Vorbereitung kostet oft Monate und Verhandlungsmasse.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Was kostet Ihre Beratung?</p>
+        <p class="faq-a">Unsere Vergütung ist erfolgsbasiert — wir verdienen, wenn Sie erfolgreich verkaufen. Details besprechen wir im Erstgespräch transparent.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Ab welcher Unternehmensgröße arbeiten Sie?</p>
+        <p class="faq-a">Wir begleiten Transaktionen ab ca. 2 Mio. EUR EBITDA aufwärts. Darunter ist der Aufwand für beide Seiten oft nicht verhältnismäßig.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="cta-strip-inner">
+    <div class="cta-text">
+      <h3>Bereit für ein<br><em>erstes Gespräch?</em></h3>
+      <p>Vertraulich, unverbindlich, ohne Druck.</p>
+    </div>
+    <a href="./kontakt.html" class="cta-btn">
+      Erstgespräch vereinbaren
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
 </section>
 
-<section class="articles">
-  <div class="articles-inner">
-    <div class="articles-header fade-up">
-      <h2>Weitere <em>Beiträge</em></h2>
-      <span class="articles-count">4 Artikel</span>
-    </div>
-    <div class="articles-grid">
+<!-- FOOTER -->
 
-      <a href="./wissen/der-preis-ist-nicht-alles.html" class="article-card">
-        <div class="ac-top">
-          <span class="ac-category">Meinung</span>
-          <span class="ac-reading">8 Min.</span>
-        </div>
-        <h3 class="ac-title">Der Preis ist nicht alles — und Berater die das sagen, wollen nur schnell abschließen.</h3>
-        <p class="ac-excerpt">Jeder Berater behauptet, den maximalen Preis zu erzielen. Die Frage die niemand stellt: Maximaler Preis für wen — und zu welchem Preis für Sie?</p>
-        <div class="ac-footer">
-          <span class="ac-author">Julian Mick</span>
-          <svg class="ac-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-      <a href="./wissen/warum-mittelstaendler-zu-spaet-anfangen.html" class="article-card">
-        <div class="ac-top">
-          <span class="ac-category">Beobachtung</span>
-          <span class="ac-reading">6 Min.</span>
-        </div>
-        <h3 class="ac-title">Warum fast jeder Mittelständler zu spät anfängt — und was das wirklich kostet.</h3>
-        <p class="ac-excerpt">Nicht an Geld gemessen. Sondern an Optionen. Die meisten Unternehmer merken erst, wenn es knapp wird, wie viel Verhandlungsmacht rechtzeitige Vorbereitung bedeutet hätte.</p>
-        <div class="ac-footer">
-          <span class="ac-author">Julian Mick</span>
-          <svg class="ac-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-      <a href="./wissen/was-pe-investoren-wirklich-denken.html" class="article-card">
-        <div class="ac-top">
-          <span class="ac-category">Insider</span>
-          <span class="ac-reading">10 Min.</span>
-        </div>
-        <h3 class="ac-title">Was PE-Investoren wirklich denken — aber Ihnen nie sagen werden.</h3>
-        <p class="ac-excerpt">Ich war selbst auf dieser Seite des Tisches. Was in Investoren-Köpfen vorgeht während sie Ihr Unternehmen bewerten, ist selten das was sie kommunizieren.</p>
-        <div class="ac-footer">
-          <span class="ac-author">Julian Mick</span>
-          <svg class="ac-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-      <a href="./wissen/inhaberabhaengigkeit-groesste-werttreiber.html" class="article-card">
-        <div class="ac-top">
-          <span class="ac-category">Werttreiber</span>
-          <span class="ac-reading">7 Min.</span>
-        </div>
-        <h3 class="ac-title">Inhaberabhängigkeit ist das teuerste Problem das kein Unternehmer ernst nimmt.</h3>
-        <p class="ac-excerpt">„Ohne mich läuft hier nichts" klingt nach Stolz. Im Verkaufsprozess klingt es nach Risikoaufschlag — und der kommt direkt vom Kaufpreis ab.</p>
-        <div class="ac-footer">
-          <span class="ac-author">Julian Mick</span>
-          <svg class="ac-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<section class="perspective">
-  <div class="perspective-inner">
-    <div class="perspective-left fade-up">
-      <h2>Thesen die ich<br><em>wirklich vertrete.</em></h2>
-      <p>Manche davon werden Berater-Kollegen ärgern. Das ist in Ordnung.</p>
-      <a href="./kontakt.html" class="perspective-cta">Diskutieren Sie mit mir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-    <div class="perspective-right fade-up">
-      <div class="insight-item">
-        <span class="insight-num">1</span>
-        <p class="insight-text">Die meisten M&A-Berater haben noch nie selbst eine Investitionsentscheidung getroffen. Sie begleiten Transaktionen — aber sie <em>verstehen</em> Investoren nicht.</p>
-      </div>
-      <div class="insight-item">
-        <span class="insight-num">2</span>
-        <p class="insight-text">Ein Information Memorandum das aussieht wie eine PowerPoint-Vorlage aus 2015 sagt dem Käufer alles über die Qualität des Beraters — <em>bevor er eine Zeile gelesen hat.</em></p>
-      </div>
-      <div class="insight-item">
-        <span class="insight-num">3</span>
-        <p class="insight-text">„Wir haben 20 Interessenten" ist keine gute Nachricht. <em>Drei ernsthafte Käufer</em> sind besser als zwanzig unqualifizierte.</p>
-      </div>
-      <div class="insight-item">
-        <span class="insight-num">4</span>
-        <p class="insight-text">Wer nur dann verdient wenn er verkauft, hat keinen Anreiz Ihnen zu sagen dass <em>Sie noch nicht bereit sind.</em> Wir schon.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-strip">
-  <div class="cta-strip-inner">
-    <div class="cta-text">
-      <h3>Über eines dieser<br><em>Themen sprechen?</em></h3>
-      <p>Vertraulich, direkt, ohne Agenda.</p>
-    </div>
-    <a href="./kontakt.html" class="cta-btn">Gespräch vereinbaren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <span class="footer-name">Julian Mick M&A Advisory</span>
@@ -326,20 +559,29 @@
   </div>
 </footer>
 
+<!-- SCRIPT -->
 <script>
 (function() {
   var nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
   var dd = document.querySelector('.nav-dropdown');
   if (dd) {
-    dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) { e.stopPropagation(); dd.classList.toggle('open'); });
+    dd.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+      e.stopPropagation(); dd.classList.toggle('open');
+    });
     document.addEventListener('click', function() { dd.classList.remove('open'); });
   }
-  var allAnim = document.querySelectorAll('.fade-up, .featured-card, .article-card');
-  allAnim.forEach(function(el, i) {
+  // Animate all fade/visible elements
+  var allAnimated = document.querySelectorAll('.fade-up, .l-item, .list-item, .u-card, .weg-card, .instr-card, .light-item, .uc-item, .opt-step, .p-step, .check-item');
+  allAnimated.forEach(function(el, i) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
-        if (e.isIntersecting) { setTimeout(function() { e.target.classList.add('visible'); }, i * 80); obs.unobserve(e.target); }
+        if (e.isIntersecting) {
+          setTimeout(function() { e.target.classList.add('visible'); }, i * 60);
+          obs.unobserve(e.target);
+        }
       });
     }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
     obs.observe(el);
